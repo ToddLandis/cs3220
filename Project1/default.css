@@ -1,0 +1,76 @@
+/*
+#0D1321
+#1D2D44
+#3E5C76
+#748CAB
+#F0EBD8
+*/
+
+html,body {
+	height:100%;
+	margin:0;
+	padding:0;
+}
+
+#main {
+	display:flex;
+	flex-direction:column;
+	height:97.6%;
+}
+
+#upper,#lower {
+	display:flex;
+	flex-direction:row;
+	padding:0;
+}
+
+#upper {
+	height: 75%;
+}
+
+div {
+	padding: 10px;
+}
+
+#UL,#LL {
+	width:20%;
+	border: 1px solid black;
+}
+
+#UR, #LR {
+	width:80%;
+	border: 1px solid black;
+}
+
+#UR,#UL {
+	height:97%;
+}
+
+#UR {
+	display:flex;
+	flex-direction:column;
+	overflow:auto;
+}
+
+.years {
+	display:flex;
+	flex-direction:row;
+	padding:0;
+}
+
+
+.semester {
+	width:33%;
+	border: 1px solid black;
+	border-radius: 5px;
+	margin:5px;
+}
+
+.semester p,h4 {
+	margin:4px;
+}
+
+h4 {
+	font-size:1em;
+	line-height
+}
