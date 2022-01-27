@@ -1,21 +1,40 @@
-/*
-#0D1321
-#1D2D44
-#3E5C76
-#748CAB
-#F0EBD8
-*/
+:root {
+    --dark-blue-1:  #0D1321;
+    --dark-blue-2:  #1D2D44;
+    --light-blue-1: #3E5C76;
+    --light-blue-2: #748CAB;
+    --off-white:    #fdfaef;
+}
+
+@font-face {
+    font-family: kenfolg;
+    src: url(Fonts/Kenfolg.otf);
+}
+
+@font-face {
+    font-family: national;
+    src: url(Fonts/national-regular.otf);
+}
 
 html,body {
 	height:100%;
 	margin:0;
 	padding:0;
+	background-color: var(--off-white);
 }
 
 #main {
 	display:flex;
 	flex-direction:column;
-	height:97.6%;
+	height:100%;
+}
+
+h1 {
+	background-color: var(--dark-blue-2);
+	font-family: kenfolg;
+	color: var(--off-white);
+	padding: 0.67em;
+	margin: 0;
 }
 
 #upper,#lower {
@@ -28,25 +47,28 @@ html,body {
 	height: 75%;
 }
 
-div {
-	padding: 10px;
+#lower {
+	height: 25%;
 }
 
 #UL,#LL {
 	width:20%;
-	border: 1px solid black;
+	border: 1px solid var(--dark-blue-1);
+	padding: 0.5em;
 }
 
 #UR, #LR {
 	width:80%;
-	border: 1px solid black;
+	border: 1px solid var(--dark-blue-1);
+	padding: 0.5em;
 }
 
 #UR,#UL {
-	height:97%;
+	height:100%-1em;
 }
 
 #UR {
+	background-color: var(--light-blue-2);
 	display:flex;
 	flex-direction:column;
 	overflow:auto;
@@ -60,17 +82,47 @@ div {
 
 
 .semester {
+	background-color: var(--off-white);
 	width:33%;
-	border: 1px solid black;
-	border-radius: 5px;
-	margin:5px;
+	border-radius: 0.5em;
+	margin:0.5em;
+	padding: 0.5em;
+
 }
 
 .semester p,h4 {
-	margin:4px;
+	margin:0.25em;
 }
 
 h4 {
-	font-size:1em;
-	line-height
+	font-family: kenfolg;
+	font-size:0.9em;
+}
+
+p {
+	font-family: national;
+}
+
+.semester p {
+	font-size: 0.9em;
+}
+
+a {
+    display: block;
+    text-align: center;
+    color: var(--off-white);
+    text-decoration: none;
+
+    transition-duration: 0.1s;
+    background-color: var(--dark-blue-2);
+
+    padding: 10px 0;
+	margin: 1em;
+
+    font-family: national;
+    font-size: 1em;
+}
+
+a:hover {
+    background-color: var(--light-blue-2);
 }
