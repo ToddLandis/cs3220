@@ -1,6 +1,6 @@
-echo Adding Changes
+echo \nAdding Changes
 git add --all
-echo Committing Changes
+echo \nCommitting Changes
 git commit -m "Pushing from John"
-echo Pushing to Github
+echo \nPushing to Github
 git push git@github.com:ToddLandis/cs3220.git
