@@ -46,6 +46,7 @@ h1 {
 
 #upper {
 	flex-grow:4;
+	flex-shrink:2;
 }
 
 #lower {
