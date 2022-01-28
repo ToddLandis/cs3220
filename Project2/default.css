@@ -45,12 +45,11 @@ h1 {
 }
 
 #upper {
-	height: 75%;
-	flex-shrink:2;
+	flex-grow:4;
 }
 
 #lower {
-	height: 25%;
+	flex-grow:1;
 }
 
 #UL,#LL {
