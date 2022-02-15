@@ -103,10 +103,10 @@ function make() {
 	
 	for (let year in years) {
 		thisYear = years[year];
-		nextYear = years[(parseInt(year)+1).to_string];
+		nextYear = years[(parseInt(year)+1).toString];
 		console.log(" year: " + year); //DEBUG
 		console.log(" years[year]: " + years[year]); //DEBUG
-		console.log(" next year: " + (parseInt(year)+1).to_string); //DEBUG
+		console.log(" next year: " + (parseInt(year)+1).toString); //DEBUG
 		console.log(" next years[year]: " + nextYear); //DEBUG
 		console.log(" thisYear.terms[\"Spring\"]: " + thisYear.terms["Spring"]); //DEBUG
 		instring = instring.concat("<div class=\"years\">");
