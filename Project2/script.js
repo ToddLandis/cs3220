@@ -115,13 +115,13 @@ function make() {
 		console.log(" years[year]: " + years[year]); //DEBUG
 		instring.concat("<div class=\"years\">");
 		
-		for (let term in thisYear) {
+		for (let term in thisYear.terms) {
 			thisTerm = thisYear[term];
 			console.log("  term: " + term); //DEBUG
 			console.log("  thisYear[term]: " + thisYear[term]); //DEBUG
 			instring.concat("<div class=\"semester\"><h4>" + term + " " + year + "<h4>");
 			
-			for (let course in thisTerm) {
+			for (let courses in thisTerm.courses) {
 				console.log("   course: " + course);
 				thisCourse = thisTerm[course]
 				console.log("   thisCourse: " + thisCourse + " " + thisCourse.courseName) //DEBUG
