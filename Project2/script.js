@@ -106,11 +106,13 @@ function convert(plan) {
 
 function make() {
 	var years = convert(populate());
-	
+	console.log("years: " + years); //DEBUG
 	var instring = "";
 	
 	for (let year in years) {
 		thisYear = years[year];
+		console.log("year: " + year); //DEBUG
+		console.log("years[year]: " + years[year]); //DEBUG
 		instring.concat("<div class=\"years\">");
 		
 		for (let term in thisYear) {
@@ -118,6 +120,7 @@ function make() {
 			instring.concat("<div class=\"semester\"><h4>" + term + " " + year + "<h4>");
 			
 			for (let course in thisTerm) {
+				console.log("course: " + course);
 				thisCourse = thisTerm[course]
 				console.log("thisCourse: " + thisCourse + " " + thisCourse.courseName) //DEBUG
 				instring.concat("<p>" + thisCourse.courseName + "</p>");
