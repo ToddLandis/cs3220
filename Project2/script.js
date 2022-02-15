@@ -13,7 +13,7 @@ class Plan {
 		this.major = major;
 		this.studentName = studentName;
 		this.semester = semester;
-		const this.courses = [];
+		this.courses = []; //FIXME I think the issue might be with the array declarations
 	}
 	addCourse(course) {
 		this.courses.push(course);
@@ -31,7 +31,7 @@ class Year {
 
 class Term {
 	constructor() {
-		const this.courses = [];
+		this.courses = []; //FIXME I think the issue might be with the array declarations
 	}
 	addCourse(course) {
 		this.courses.push(course);
