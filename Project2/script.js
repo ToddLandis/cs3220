@@ -103,9 +103,11 @@ function make() {
 	
 	for (let year in years) {
 		thisYear = years[year];
-		nextYear = years[(parseInt(year)+1).to_string]
+		nextYear = years[(parseInt(year)+1).to_string];
 		console.log(" year: " + year); //DEBUG
 		console.log(" years[year]: " + years[year]); //DEBUG
+		console.log(" next year: " + (parseInt(year)+1).to_string); //DEBUG
+		console.log(" next years[year]: " + nextYear); //DEBUG
 		console.log(" thisYear.terms[\"Spring\"]: " + thisYear.terms["Spring"]); //DEBUG
 		instring = instring.concat("<div class=\"years\">");
 		console.log(" instring: " + instring);//DEBUG
@@ -129,8 +131,8 @@ function make() {
 			
 			for (let course in thisTerm.courses) {
 				console.log("   course: " + course);
-				thisCourse = thisTerm.courses[course]
-				console.log("   thisCourse: " + thisCourse + " " + thisCourse.courseName) //DEBUG
+				thisCourse = thisTerm.courses[course];
+				console.log("   thisCourse: " + thisCourse + " " + thisCourse.courseName); //DEBUG
 				console.log("   thisCourse: " + thisCourse + "thisCourse.courseName: " + thisCourse.courseName); //DEBUG
 				instring = instring.concat("<p>" + thisCourse.courseName + "</p>");
 				console.log("   instring: " + instring);//DEBUG
