@@ -48,8 +48,6 @@ function populate() {
 	myPlan.addCourse(new Course("Spring", "2023", "CS-1230", "Python Programming"));
 	myPlan.addCourse(new Course("Summer", "2023", "Math-100", "Remediadiary Math"));
 	myPlan.addCourse(new Course("Summer", "2023", "Eng-100", "Remediadiary Reading"));
-	myPlan.addCourse(new Course("Fall", "2023", "CS-1240", "Java Programming"));
-	myPlan.addCourse(new Course("Fall", "2023", "CS-1250", "Dominating the World"));
 	
 	console.log("First Course Term: " + myPlan.courses[0].term);//DEBUG
 	
@@ -59,8 +57,6 @@ function populate() {
 	myPlan.addCourse(new Course("Spring", "2024", "CS-1230", "Python Programming"));
 	myPlan.addCourse(new Course("Summer", "2024", "Math-100", "Remediadiary Math"));
 	myPlan.addCourse(new Course("Summer", "2024", "Eng-100", "Remediadiary Reading"));
-	myPlan.addCourse(new Course("Fall", "2024", "CS-1240", "Java Programming"));
-	myPlan.addCourse(new Course("Fall", "2024", "CS-1250", "Dominating the World"));
 	
 	myPlan.addCourse(new Course("Fall", "2024", "CS-1210", "C++ Programming"));
 	myPlan.addCourse(new Course("Fall", "2024", "EG-1210", "Digital Logic Design"));
@@ -68,8 +64,6 @@ function populate() {
 	myPlan.addCourse(new Course("Spring", "2025", "CS-1230", "Python Programming"));
 	myPlan.addCourse(new Course("Summer", "2025", "Math-100", "Remediadiary Math"));
 	myPlan.addCourse(new Course("Summer", "2025", "Eng-100", "Remediadiary Reading"));
-	myPlan.addCourse(new Course("Fall", "2025", "CS-1240", "Java Programming"));
-	myPlan.addCourse(new Course("Fall", "2025", "CS-1250", "Dominating the World"));
 	
 	myPlan.addCourse(new Course("Fall", "2025", "CS-1210", "C++ Programming"));
 	myPlan.addCourse(new Course("Fall", "2025", "EG-1210", "Digital Logic Design"));
@@ -77,8 +71,6 @@ function populate() {
 	myPlan.addCourse(new Course("Spring", "2026", "CS-1230", "Python Programming"));
 	myPlan.addCourse(new Course("Summer", "2026", "Math-100", "Remediadiary Math"));
 	myPlan.addCourse(new Course("Summer", "2026", "Eng-100", "Remediadiary Reading"));
-	myPlan.addCourse(new Course("Fall", "2026", "CS-1240", "Java Programming"));
-	myPlan.addCourse(new Course("Fall", "2026", "CS-1250", "Dominating the World"));
 	
 	return myPlan;
 }
