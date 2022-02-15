@@ -25,8 +25,8 @@ class Year {
 	constructor() {
 		this.terms = {};
 	}
-	addTerm(term) {
-		this.terms.push(term);
+	addTerm(key, term) {
+		this.terms[key] = term;
 	}
 }
 
@@ -96,7 +96,7 @@ function convert(plan) {
 			console.log("  year: " + courses[i].year); //DEBUG
 		}
 		if (!(courses[i].term in myYears[courses[i].year])) {
-			myYears[courses[i].year].addTerm(new Term());
+			myYears[courses[i].year].addTerm(courses[i].term, new Term());
 			console.log("  term: " + courses[i].term); //DEBUG
 		}
 		myYears[courses[i].year][courses[i].term].addCourse(courses[i]);
