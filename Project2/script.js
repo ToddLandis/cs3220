@@ -86,7 +86,7 @@ function populate() {
 function convert(plan) {
 	
 	var myYears = {};
-	for (i in plan.courses) {
+	for (let i in plan.courses) {
 		if (!(i.year in myYears)) {
 			myYears[i.year] = new Year();
 			console.log(i.year); //DEBUG
