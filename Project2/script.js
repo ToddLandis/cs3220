@@ -96,7 +96,6 @@ function convert(plan) {
 }
 
 function make() {
-	var content = "";
 	var years = convert(populate());
 	
 	var instring = ""
@@ -119,9 +118,8 @@ function make() {
 		instring.concat("</div>");
 	}
 	
-	content.append(instring);
 	doc = document.getElementByID("UR");
-	doc.innerHTML = content;
+	doc.innerHTML = instring;
 }
 
 make();
