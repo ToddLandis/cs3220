@@ -83,15 +83,18 @@ function convert(plan) {
 	for (let i in courses) {
 		console.log(" Should be Object: " + i);
 		console.log(" Should be year: " + courses[i].year);
-		if (!(courses[i].year in myYears)) {
-			myYears[courses[i].year] = new Year();
-			console.log("  year: " + courses[i].year); //DEBUG
+		if (courses[i].term == "Fall") {
+			year = courses[i].year
+			if (!(year in myYears)) {
+				myYears[courses[i].year] = new Year();
+				console.log("  year: " + courses[i].year); //DEBUG
+			}
+			if (!(courses[i].term in myYears[courses[i].year].terms)) {
+				myYears[courses[i].year].addTerm(courses[i].term, new Term());
+				console.log("  term: " + courses[i].term); //DEBUG
+			}
 		}
-		if (!(courses[i].term in myYears[courses[i].year].terms)) {
-			myYears[courses[i].year].addTerm(courses[i].term, new Term());
-			console.log("  term: " + courses[i].term); //DEBUG
-		}
-		myYears[courses[i].year].terms[courses[i].term].addCourse(courses[i]);
+		myYears[year].terms[courses[i].term].addCourse(courses[i]);
 	}
 	return myYears;
 }
@@ -103,31 +106,18 @@ function make() {
 	
 	for (let year in years) {
 		thisYear = years[year];
-		nextYear = years[(parseInt(year)+1).toString()];
 		console.log(" year: " + year); //DEBUG
 		console.log(" years[year]: " + years[year]); //DEBUG
-		console.log(" next year: " + (parseInt(year)+1).toString()); //DEBUG
-		console.log(" next years[year]: " + nextYear); //DEBUG
 		console.log(" thisYear.terms[\"Spring\"]: " + thisYear.terms["Spring"]); //DEBUG
 		instring = instring.concat("<div class=\"years\">");
 		console.log(" instring: " + instring);//DEBUG
 		
 		for (let term in thisYear.terms) {
-			if (term == "Fall") {
-				thisTerm = thisYear.terms[term];
-				instring = instring.concat("<div class=\"semester\"><h4>" + term + " " + year + "</h4>");
-			} else {
-				if (nextYear !== undefined) {
-					console.log("--RUNSS--"); //DEBUG
-					thisTerm = nextYear.terms[term];
-					instring = instring.concat("<div class=\"semester\"><h4>" + term + " " + year + "</h4>");
-				} else {
-					continue;
-				}
-			}
+			thisTerm = thisYear.terms[term];
 			console.log("  term: " + term); //DEBUG
 			console.log("  thisYear[term]: " + thisYear[term]); //DEBUG
 			
+			instring = instring.concat("<div class=\"semester\"><h4>" + term + " " + year + "</h4>");
 			
 			console.log("  instring: " + instring);//DEBUG
 			
