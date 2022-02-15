@@ -118,7 +118,8 @@ function make() {
 			instring.concat("<div class=\"semester\"><h4>" + term + " " + year + "<h4>");
 			
 			for (let course in thisTerm) {
-				instring.concat("<p>" + course.courseName + "</p>");
+				thisCourse = thisTerm[course]
+				instring.concat("<p>" + thisCourse.courseName + "</p>");
 			}
 			
 			instring.concat("</div>");
