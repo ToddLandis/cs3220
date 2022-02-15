@@ -15,7 +15,7 @@ class Plan {
 		this.semester = semester;
 		this.courses = [];
 	}
-	function addCourse(course) {
+	addCourse(course) {
 		this.courses.push(course);
 	}
 }
@@ -24,7 +24,7 @@ class Year {
 	constructor() {
 		this.terms = {};
 	}
-	function addTerm(term) {
+	addTerm(term) {
 		this.terms.push(term);
 	}
 }
@@ -33,7 +33,7 @@ class Term {
 	constructor() {
 		this.courses = [];
 	}
-	function addCourse(course) {
+	addCourse(course) {
 		this.courses.push(course);
 	}
 }
