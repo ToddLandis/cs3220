@@ -85,7 +85,7 @@ function convert(plan) {
 	var myYears = {};
 	for (i in plan.courses) {
 		if (!(i.year in myYears)) {
-			myYears[year] = new Year();
+			myYears[i.year] = new Year();
 		}
 		if (!(i.term in myYears[i.year])) {
 			myYears[i.year][i.term] = new Term();
