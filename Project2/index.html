@@ -4,6 +4,18 @@
                 <title>APE</title>
                 <link rel="stylesheet" href="../Project1/default.css" />
                 <link rel="icon" type="image/x-icon" href="favicon.ico" />
+                <script language="javascript">
+                        function validate() {
+                                var textbox = document.ourform.textbox.value;
+                                var pos = textbox.search(/^(?\d{3})?-?\d{3}-?\d{4}$/);
+                                if (pos != 0) {
+					alert("The phone number " + textbox + " you entered is not valid.\n Please enter using the correct format");
+					document.ourform.textbox.focus();
+					document.ourform.textbox.select();
+					return false;
+                                }
+                        }
+                </script>
         </head>
         <body>
                 <div id="main">
@@ -39,8 +51,12 @@
                                 </div>
                         </div>
                         <div id="lower" class="half">
-                                <div id="LL"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ullamcorper
-                                        tincidunt turpis rutrum vulputate. Phasellus scelerPraesent mauris dolor</p>
+                                <div id="LL">
+                                        <form name="ourform" onsubmit="return validate()">
+                                                <input id="textbox" type="text" size="20" onchange="return(validate())" value="" />
+                                                Cell Phone Number "(ddd) ddd-dddd" <br />
+                                                <input type="submit" name="submitbutton" value="Submit" />
+                                        </form>
                                </div>
                                 <div id="LR"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ullamcorper 
                                         tincidunt turpis rutrum vulputate. Phasellus scelerPraesent mauris dolor, consequat 
