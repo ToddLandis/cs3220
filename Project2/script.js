@@ -6,14 +6,15 @@ class Course {
 		this.courseName = courseName;
 	}
 }
+
 class Plan {
-	constructor(planName, catalogueYear, major, studentName, semester) {
+	constructor(planName, catalogueYear, major, studentName, semester, courses = []) {
 		this.planName = planName;
 		this.catalogueYear = catalogueYear;
 		this.major = major;
 		this.studentName = studentName;
 		this.semester = semester;
-		this.courses = []; //FIXME I think the issue might be with the array declarations
+		this.courses = courses; //FIXME I think the issue might be with the array declarations
 	}
 	addCourse(course) {
 		this.courses.push(course);
@@ -30,8 +31,8 @@ class Year {
 }
 
 class Term {
-	constructor() {
-		this.courses = []; //FIXME I think the issue might be with the array declarations
+	constructor(courses = []) {
+		this.courses = courses; //FIXME I think the issue might be with the array declarations
 	}
 	addCourse(course) {
 		this.courses.push(course);
