@@ -99,7 +99,7 @@ function convert(plan) {
 			myYears[courses[i].year].addTerm(courses[i].term, new Term());
 			console.log("  term: " + courses[i].term); //DEBUG
 		}
-		myYears[courses[i].year][courses[i].term].addCourse(courses[i]);
+		myYears[courses[i].year].terms[courses[i].term].addCourse(courses[i]);
 	}
 	return myYears;
 }
