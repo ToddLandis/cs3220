@@ -121,7 +121,11 @@ function make() {
 			console.log("  term: " + term); //DEBUG
 			console.log("  thisYear[term]: " + thisYear[term]); //DEBUG
 			
-			instring = instring.concat("<div class=\"semester\"><h4>" + term + " " + year + "</h4>");
+			if (term == "Fall") {
+				instring = instring.concat("<div class=\"semester\"><h4>" + term + " " + year + "</h4>");
+			} else {
+				instring = instring.concat("<div class=\"semester\"><h4>" + term + " " + (parseInt(year)+1).toString() + "</h4>");
+			}
 			
 			console.log("  instring: " + instring);//DEBUG
 			
