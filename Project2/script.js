@@ -95,7 +95,7 @@ function convert(plan) {
 			myYears[courses[i].year] = new Year();
 			console.log("  year: " + courses[i].year); //DEBUG
 		}
-		if (!(courses[i].term in myYears[courses[i].year.terms])) {
+		if (!(courses[i].term in myYears[courses[i].year].terms)) {
 			myYears[courses[i].year].addTerm(courses[i].term, new Term());
 			console.log("  term: " + courses[i].term); //DEBUG
 		}
