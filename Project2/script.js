@@ -126,7 +126,7 @@ function make() {
 				console.log("   course: " + course);
 				thisCourse = thisTerm.courses[course]
 				console.log("   thisCourse: " + thisCourse + " " + thisCourse.courseName) //DEBUG
-				console.log("   thisCourse[1]: " + thisCourse[1] + "thisCourse[1].courseName: " + thisCourse[0].courseName); //DEBUG
+				console.log("   thisCourse: " + thisCourse + "thisCourse.courseName: " + thisCourse.courseName); //DEBUG
 				instring.concat("<p>" + thisCourse.courseName + "</p>");
 			}
 			
