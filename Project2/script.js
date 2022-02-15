@@ -118,6 +118,7 @@ function make() {
 		instring.concat("</div>");
 	}
 	
+	console.log("string: " + instring); //DEBUG
 	doc = document.getElementById("UR");
 	doc.innerHTML = instring;
 }
