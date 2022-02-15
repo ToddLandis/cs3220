@@ -78,22 +78,17 @@ function populate() {
 function convert(plan) {
 	
 	var myYears = {};
-	console.log("Convert Debug: " + plan.courses[1].year); //DEBUG
 	courses = plan.courses;
 	for (let i in courses) {
-		console.log(" Should be Object: " + i);
-		console.log(" Should be year: " + courses[i].year);
 		if (courses[i].term == "Fall") {
 			year = courses[i].year
 			if (!(year in myYears)) {
 				myYears[courses[i].year] = new Year();
-				console.log("  year: " + courses[i].year); //DEBUG
 			}
 			if (!(courses[i].term in myYears[courses[i].year].terms)) {
 				myYears[courses[i].year].addTerm("Fall", new Term());
 				myYears[courses[i].year].addTerm("Spring", new Term());
 				myYears[courses[i].year].addTerm("Summer", new Term());
-				console.log("  term: " + courses[i].term); //DEBUG
 			}
 		}
 		if (courses[i] !== undefined) {
@@ -105,21 +100,14 @@ function convert(plan) {
 
 function make() {
 	var years = convert(populate());
-	console.log("years: " + years); //DEBUG
 	var instring = "";
 	
 	for (let year in years) {
 		thisYear = years[year];
-		console.log(" year: " + year); //DEBUG
-		console.log(" years[year]: " + years[year]); //DEBUG
-		console.log(" thisYear.terms[\"Spring\"]: " + thisYear.terms["Spring"]); //DEBUG
 		instring = instring.concat("<div class=\"years\">");
-		console.log(" instring: " + instring);//DEBUG
 		
 		for (let term in thisYear.terms) {
 			thisTerm = thisYear.terms[term];
-			console.log("  term: " + term); //DEBUG
-			console.log("  thisYear[term]: " + thisYear[term]); //DEBUG
 			
 			if (term == "Fall") {
 				instring = instring.concat("<div class=\"semester\"><h4>" + term + " " + year + "</h4>");
@@ -127,15 +115,9 @@ function make() {
 				instring = instring.concat("<div class=\"semester\"><h4>" + term + " " + (parseInt(year)+1).toString() + "</h4>");
 			}
 			
-			console.log("  instring: " + instring);//DEBUG
-			
 			for (let course in thisTerm.courses) {
-				console.log("   course: " + course);
 				thisCourse = thisTerm.courses[course];
-				console.log("   thisCourse: " + thisCourse + " " + thisCourse.courseName); //DEBUG
-				console.log("   thisCourse: " + thisCourse + "thisCourse.courseName: " + thisCourse.courseName); //DEBUG
 				instring = instring.concat("<p>" + thisCourse.courseName + "</p>");
-				console.log("   instring: " + instring);//DEBUG
 			}
 			
 			instring = instring.concat("</div>");
@@ -144,7 +126,6 @@ function make() {
 		instring = instring.concat("</div>");
 	}
 	
-	console.log("string: " + instring); //DEBUG
 	doc = document.getElementById("UR");
 	doc.innerHTML = instring;
 }
