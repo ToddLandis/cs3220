@@ -76,6 +76,8 @@ function populate() {
 	myPlan.addCourse(new Course("Summer", "2026", "Eng-100", "Remediadiary Reading"));
 	myPlan.addCourse(new Course("Fall", "2026", "CS-1240", "Java Programming"));
 	myPlan.addCourse(new Course("Fall", "2026", "CS-1250", "Dominating the World"));
+	
+	return myPlan;
 }
 
 function convert(plan) {
@@ -90,8 +92,35 @@ function convert(plan) {
 		}
 		myYears[i.year][i.term].push(i);
 	}
+	return myYears;
 }
 
-function populate() {
+function make() {
+	var content = "";
+	var years = convert(populate());
 	
+	var instring = ""
+	
+	for (let year in years) {
+		thisYear = years[year]
+		instring.concat("<div class=\"years\">");
+		
+		for (let term in thisYear) {
+			thisTerm = thisYear[term]
+			instring.concat("<div class="semester"><h4>" + term + " " + year + "<h4>");
+			
+			for (let course in thisTerm) {
+				instring.concat("<p>" + course.courseName "</p>");
+			}
+			
+			instring.concat("</div>");
+		}
+		
+		instring.concat("</div>");
+	}
+	
+	
+	content.append(instring);
+	doc = document.getElementByID("UR");
+	doc.innerHTML = content;
 }
