@@ -89,15 +89,15 @@ function convert(plan) {
 	console.log("Convert Debug: " + plan.courses[1].year); //DEBUG
 	k = plan.courses;
 	for (let i in k) {
-		console.log("Should be Object: " + i);
-		console.log("Should be year: " + k[i].year);
+		console.log(" Should be Object: " + i);
+		console.log(" Should be year: " + k[i].year);
 		if (!(k[i].year in myYears)) {
 			myYears[k[i].year] = new Year();
-			console.log(k[i].year); //DEBUG
+			console.log("  year: " + k[i].year); //DEBUG
 		}
 		if (!(k[i].term in myYears[k[i].year])) {
 			myYears[k[i].year][k[i].term] = new Term();
-			console.log(k[i].term); //DEBUG
+			console.log("  term: " + k[i].term); //DEBUG
 		}
 		myYears[k[i].year][k[i].term].addCourse(k[i]);
 	}
@@ -111,8 +111,8 @@ function make() {
 	
 	for (let year in years) {
 		thisYear = years[year];
-		console.log("year: " + year); //DEBUG
-		console.log("years[year]: " + years[year]); //DEBUG
+		console.log(" year: " + year); //DEBUG
+		console.log(" years[year]: " + years[year]); //DEBUG
 		instring.concat("<div class=\"years\">");
 		
 		for (let term in thisYear) {
@@ -120,9 +120,10 @@ function make() {
 			instring.concat("<div class=\"semester\"><h4>" + term + " " + year + "<h4>");
 			
 			for (let course in thisTerm) {
-				console.log("course: " + course);
+				console.log("   course: " + course);
 				thisCourse = thisTerm[course]
-				console.log("thisCourse: " + thisCourse + " " + thisCourse.courseName) //DEBUG
+				console.log("   thisCourse: " + thisCourse + " " + thisCourse.courseName) //DEBUG
+				console.log("   thisCourse[1]: " + thisCourse[1] + "thisCourse[1].courseName: " + thisCourse[1].courseName); //DEBUG
 				instring.concat("<p>" + thisCourse.courseName + "</p>");
 			}
 			
