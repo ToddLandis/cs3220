@@ -5,18 +5,6 @@ class Course {
 		this.courseDesignator = courseDesignator;
 		this.courseName = courseName;
 	}
-	term() {
-		return this.term;
-	}
-	year() {
-		return this.year;
-	}
-	courseDesignator() {
-		return this.courseDesignator;
-	}
-	courseName() {
-		return this.courseName;
-	}
 }
 class Plan {
 	constructor(planName, catalogueYear, major, studentName, semester) {
@@ -25,13 +13,10 @@ class Plan {
 		this.major = major;
 		this.studentName = studentName;
 		this.semester = semester;
-		this.courses = [];
+		const this.courses = [];
 	}
 	addCourse(course) {
 		this.courses.push(course);
-	}
-	courses() {
-		return this.courses;
 	}
 }
 
@@ -46,7 +31,7 @@ class Year {
 
 class Term {
 	constructor() {
-		this.courses = [];
+		const this.courses = [];
 	}
 	addCourse(course) {
 		this.courses.push(course);
@@ -98,16 +83,16 @@ function populate() {
 function convert(plan) {
 	
 	var myYears = {};
-	for (let i in plan.courses()) {
-		if (!(i.year() in myYears)) {
-			myYears[i.year()] = new Year();
-			console.log(i.year()); //DEBUG
+	for (i in plan.courses) {
+		if (!(i.year in myYears)) {
+			myYears[i.year] = new Year();
+			console.log(i.year); //DEBUG
 		}
-		if (!(i.term() in myYears[i.year()])) {
-			myYears[i.year()][i.term()] = new Term();
-			console.log(i.term());
+		if (!(i.term in myYears[i.year])) {
+			myYears[i.year][i.term] = new Term();
+			console.log(i.term);
 		}
-		myYears[i.year()][i.term()].addCourse(i);
+		myYears[i.year][i.term].addCourse(i);
 	}
 	return myYears;
 }
