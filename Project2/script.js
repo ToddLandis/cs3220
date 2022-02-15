@@ -97,7 +97,7 @@ function convert(plan) {
 		}
 		if (!(k[i].term in myYears[k[i].year])) {
 			myYears[k[i].year][k[i].term] = new Term();
-			console.log(k[i].term);
+			console.log(k[i].term); //DEBUG
 		}
 		myYears[k[i].year][k[i].term].addCourse(k[i]);
 	}
@@ -119,6 +119,7 @@ function make() {
 			
 			for (let course in thisTerm) {
 				thisCourse = thisTerm[course]
+				console.log("thisCourse: " + thisCourse + " " + thisCourse.courseName) //DEBUG
 				instring.concat("<p>" + thisCourse.courseName + "</p>");
 			}
 			
