@@ -88,6 +88,8 @@ function convert(plan) {
 	var myYears = {};
 	console.log("Convert Debug: " + plan.courses[1].year); //DEBUG
 	for (let i in plan.courses) {
+		console.log("Should be Object: " + i);
+		console.log("Should be year: " + i.year);
 		if (!(i.year in myYears)) {
 			myYears[i.year] = new Year();
 			console.log(i.year); //DEBUG
