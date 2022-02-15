@@ -124,3 +124,5 @@ function make() {
 	doc = document.getElementByID("UR");
 	doc.innerHTML = content;
 }
+
+make();
