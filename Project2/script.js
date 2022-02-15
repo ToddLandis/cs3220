@@ -87,19 +87,19 @@ function convert(plan) {
 	
 	var myYears = {};
 	console.log("Convert Debug: " + plan.courses[1].year); //DEBUG
-	k = plan.courses;
-	for (let i in k) {
+	courses = plan.courses;
+	for (let i in courses) {
 		console.log(" Should be Object: " + i);
-		console.log(" Should be year: " + k[i].year);
-		if (!(k[i].year in myYears)) {
-			myYears[k[i].year] = new Year();
-			console.log("  year: " + k[i].year); //DEBUG
+		console.log(" Should be year: " + courses[i].year);
+		if (!(courses[i].year in myYears)) {
+			myYears[courses[i].year] = new Year();
+			console.log("  year: " + courses[i].year); //DEBUG
 		}
-		if (!(k[i].term in myYears[k[i].year])) {
-			myYears[k[i].year][k[i].term] = new Term();
-			console.log("  term: " + k[i].term); //DEBUG
+		if (!(courses[i].term in myYears[courses[i].year])) {
+			myYears[courses[i].year].addTerm(new Term());
+			console.log("  term: " + courses[i].term); //DEBUG
 		}
-		myYears[k[i].year][k[i].term].addCourse(k[i]);
+		myYears[courses[i].year][courses[i].term].addCourse(courses[i]);
 	}
 	return myYears;
 }
