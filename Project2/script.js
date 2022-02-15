@@ -98,7 +98,7 @@ function convert(plan) {
 function make() {
 	var years = convert(populate());
 	
-	var instring = ""
+	var instring = "";
 	
 	for (let year in years) {
 		thisYear = years[year]
