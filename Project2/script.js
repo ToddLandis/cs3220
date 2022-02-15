@@ -115,12 +115,14 @@ function make() {
 		for (let term in thisYear.terms) {
 			if (term == "Fall") {
 				thisTerm = thisYear.terms[term];
-				instring = instring.concat("<div class=\"semester\"><h4>" + term + " " + year + "<h4>");
+				instring = instring.concat("<div class=\"semester\"><h4>" + term + " " + year + "</h4>");
 			} else {
 				if (nextYear !== undefined) {
 					console.log("--RUNSS--"); //DEBUG
 					thisTerm = nextYear.terms[term];
-					instring = instring.concat("<div class=\"semester\"><h4>" + term + " " + (parseInt(year)+1).toString() + "<h4>");
+					instring = instring.concat("<div class=\"semester\"><h4>" + term + " " + year + "</h4>");
+				} else {
+					continue;
 				}
 			}
 			console.log("  term: " + term); //DEBUG
