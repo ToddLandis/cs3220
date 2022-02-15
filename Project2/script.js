@@ -87,7 +87,7 @@ function convert(plan) {
 	
 	var myYears = {};
 	console.log("Convert Debug: " + plan.courses[1].year); //DEBUG
-	k = plans.courses;
+	k = plan.courses;
 	for (let i in k) {
 		console.log("Should be Object: " + i);
 		console.log("Should be year: " + k[i].year);
