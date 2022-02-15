@@ -14,7 +14,7 @@ class Plan {
 		this.major = major;
 		this.studentName = studentName;
 		this.semester = semester;
-		this.courses = courses; //FIXME I think the issue might be with the array declarations
+		this.courses = courses;
 	}
 	addCourse(course) {
 		this.courses.push(course);
@@ -46,8 +46,8 @@ function populate() {
 	myPlan.addCourse(new Course("Fall", "2022", "EG-1210", "Digital Logic Design"));
 	myPlan.addCourse(new Course("Spring", "2023", "CS-1220", "C++ Programming 2"));
 	myPlan.addCourse(new Course("Spring", "2023", "CS-1230", "Python Programming"));
-	myPlan.addCourse(new Course("Summer", "2023", "Math-100", "Remediadiary Math"));
-	myPlan.addCourse(new Course("Summer", "2023", "Eng-100", "Remediadiary Reading"));
+	myPlan.addCourse(new Course("Summer", "2023", "Math-100", "Remedial Math"));
+	myPlan.addCourse(new Course("Summer", "2023", "Eng-100", "Remedial Reading"));
 	
 	console.log("First Course Term: " + myPlan.courses[0].term);//DEBUG
 	
@@ -55,22 +55,22 @@ function populate() {
 	myPlan.addCourse(new Course("Fall", "2023", "EG-1210", "Digital Logic Design"));
 	myPlan.addCourse(new Course("Spring", "2024", "CS-1220", "C++ Programming 2"));
 	myPlan.addCourse(new Course("Spring", "2024", "CS-1230", "Python Programming"));
-	myPlan.addCourse(new Course("Summer", "2024", "Math-100", "Remediadiary Math"));
-	myPlan.addCourse(new Course("Summer", "2024", "Eng-100", "Remediadiary Reading"));
+	myPlan.addCourse(new Course("Summer", "2024", "Math-100", "Remedial Math"));
+	myPlan.addCourse(new Course("Summer", "2024", "Eng-100", "Remedial Reading"));
 	
 	myPlan.addCourse(new Course("Fall", "2024", "CS-1210", "C++ Programming"));
 	myPlan.addCourse(new Course("Fall", "2024", "EG-1210", "Digital Logic Design"));
 	myPlan.addCourse(new Course("Spring", "2025", "CS-1220", "C++ Programming 2"));
 	myPlan.addCourse(new Course("Spring", "2025", "CS-1230", "Python Programming"));
-	myPlan.addCourse(new Course("Summer", "2025", "Math-100", "Remediadiary Math"));
-	myPlan.addCourse(new Course("Summer", "2025", "Eng-100", "Remediadiary Reading"));
+	myPlan.addCourse(new Course("Summer", "2025", "Math-100", "Remedial Math"));
+	myPlan.addCourse(new Course("Summer", "2025", "Eng-100", "Remedial Reading"));
 	
 	myPlan.addCourse(new Course("Fall", "2025", "CS-1210", "C++ Programming"));
 	myPlan.addCourse(new Course("Fall", "2025", "EG-1210", "Digital Logic Design"));
 	myPlan.addCourse(new Course("Spring", "2026", "CS-1220", "C++ Programming 2"));
 	myPlan.addCourse(new Course("Spring", "2026", "CS-1230", "Python Programming"));
-	myPlan.addCourse(new Course("Summer", "2026", "Math-100", "Remediadiary Math"));
-	myPlan.addCourse(new Course("Summer", "2026", "Eng-100", "Remediadiary Reading"));
+	myPlan.addCourse(new Course("Summer", "2026", "Math-100", "Remedial Math"));
+	myPlan.addCourse(new Course("Summer", "2026", "Eng-100", "Remedial Reading"));
 	
 	return myPlan;
 }
