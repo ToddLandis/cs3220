@@ -101,11 +101,11 @@ function make() {
 	var instring = "";
 	
 	for (let year in years) {
-		thisYear = years[year]
+		thisYear = years[year];
 		instring.concat("<div class=\"years\">");
 		
 		for (let term in thisYear) {
-			thisTerm = thisYear[term]
+			thisTerm = thisYear[term];
 			instring.concat("<div class=\"semester\"><h4>" + term + " " + year + "<h4>");
 			
 			for (let course in thisTerm) {
