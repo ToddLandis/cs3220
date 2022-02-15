@@ -113,7 +113,7 @@ function make() {
 		thisYear = years[year];
 		console.log(" year: " + year); //DEBUG
 		console.log(" years[year]: " + years[year]); //DEBUG
-		console.log(" thisYear.terms: " + thisYear.terms); //DEBUG
+		console.log(" thisYear.terms[\"Spring\"]: " + thisYear.terms["Spring"]); //DEBUG
 		instring.concat("<div class=\"years\">");
 		
 		for (let term in thisYear.terms) {
