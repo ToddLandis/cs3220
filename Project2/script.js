@@ -51,6 +51,8 @@ function populate() {
 	myPlan.addCourse(new Course("Fall", "2023", "CS-1240", "Java Programming"));
 	myPlan.addCourse(new Course("Fall", "2023", "CS-1250", "Dominating the World"));
 	
+	console.log("First Course Term: " + myPlan.course[0].term);//DEBUG
+	
 	myPlan.addCourse(new Course("Fall", "2023", "CS-1210", "C++ Programming"));
 	myPlan.addCourse(new Course("Fall", "2023", "EG-1210", "Digital Logic Design"));
 	myPlan.addCourse(new Course("Spring", "2024", "CS-1220", "C++ Programming 2"));
