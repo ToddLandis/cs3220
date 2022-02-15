@@ -8,7 +8,7 @@
 
 @font-face {
     font-family: kenfolg;
-    src: url(../../Fonts/Kengfolg.otf);
+    src: url(Fonts/Kenfolg.otf);
 }
 
 @font-face {
@@ -32,6 +32,16 @@ html,body {
 #header {
 	height: 10%;
 	background-color: var(--dark-blue-2);
+	display: flex;
+	flex-direction: row;
+}
+
+#title {
+	width: 80%
+}
+
+#proj_menu {
+	width: 20%
 }
 
 .half {
@@ -82,6 +92,14 @@ html,body {
 #LL {
 	border-top: 2px solid #D3D3D3;
 	border-right: 2px solid #D3D3D3;
+
+	text-align: center;
+	font-family: national;
+	font-size: 15px;
+}
+
+#LL br {
+	margin: 10px;
 }
 
 .years {
@@ -160,3 +178,54 @@ p {
 	font-family: national;
 	margin: 0;
 }
+
+
+/* Code taken from W3 schools, and modified to match styles */
+/* Dropdown Button */
+.dropbtn {
+	background-color: var(--dark-blue-2);
+	color: var(--off-white);
+	font-size: 24px;
+	font-family: national;
+	border: none;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+  }
+  
+  /* Dropdown button on hover & focus */
+  .dropbtn:hover, .dropbtn:focus {
+	background-color: var(--dark-blue-1);
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .proj_menu {
+	position: relative;
+	display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: var(--light-blue-2);
+	width: 20%;
+	text-align: center;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+	color: var(--off-white);
+	padding: 12px 16px;
+	text-decoration: none;
+	font-family: national;
+	display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: var(--light-blue-1)}
+  
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .show {display:block;}
