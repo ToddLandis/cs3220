@@ -90,7 +90,7 @@ function convert(plan) {
 		if (!(i.term in myYears[i.year])) {
 			myYears[i.year][i.term] = new Term();
 		}
-		myYears[i.year][i.term].push(i);
+		myYears[i.year][i.term].addCourse(i);
 	}
 	return myYears;
 }
