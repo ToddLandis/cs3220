@@ -103,7 +103,7 @@ function make() {
 	
 	for (let year in years) {
 		thisYear = years[year];
-		nextYear = years[(parseint(year)+1).to_string]
+		nextYear = years[(parseInt(year)+1).to_string]
 		console.log(" year: " + year); //DEBUG
 		console.log(" years[year]: " + years[year]); //DEBUG
 		console.log(" thisYear.terms[\"Spring\"]: " + thisYear.terms["Spring"]); //DEBUG
@@ -113,14 +113,17 @@ function make() {
 		for (let term in thisYear.terms) {
 			if (term == "Fall") {
 				thisTerm = thisYear.terms[term];
+				instring = instring.concat("<div class=\"semester\"><h4>" + term + " " + year + "<h4>");
 			} else {
 				if (nextYear !== undefined) {
 					thisTerm = nextYear.terms[term];
+					instring = instring.concat("<div class=\"semester\"><h4>" + term + " " + year + "<h4>");
 				}
 			}
 			console.log("  term: " + term); //DEBUG
 			console.log("  thisYear[term]: " + thisYear[term]); //DEBUG
-			instring = instring.concat("<div class=\"semester\"><h4>" + term + " " + year + "<h4>");
+			
+			
 			console.log("  instring: " + instring);//DEBUG
 			
 			for (let course in thisTerm.courses) {
