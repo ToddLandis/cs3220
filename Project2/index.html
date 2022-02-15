@@ -2,7 +2,7 @@
 <html>
         <head>
                 <title>APE</title>
-                <link rel="stylesheet" href="../Project1/default.css" />
+                <link rel="stylesheet" href="default.css" />
                 <link rel="icon" type="image/x-icon" href="favicon.ico" />
                 <script language="javascript">
                         function validate() {
@@ -19,7 +19,21 @@
         </head>
         <body>
                 <div id="main">
-                        <div id="header"><h1>Academic Planning Environment</h1></div>
+                        <div id="header">
+                                <div id="title">
+                                        <h1>Academic Planning Environment</h1>
+                                </div>
+                                <div id="proj_menu">
+                                        <button onclick="dropdownFunction()" class="dropbtn">Project 2</button>
+                                        <div id="myDropdown" class="dropdown-content">
+                                                <a href="/TermProject/Project1/index.html">Project 1</a>
+                                                <a href="/TermProject/Project3/index.html">Project 3</a>
+                                                <a href="/TermProject/Project4/index.html">Project 4</a>
+                                                <a href="/TermProject/Project5/index.html">Project 5</a>
+                                                <a href="/TermProject/Project6/index.html">Project 6</a>
+                                        </div>
+                                </div>
+                        </div>
                         <div id="upper" class="half">
                                 <div id="UL">
                                         <a href="http://csweb.cedarville.edu">People's Choice Awards</a>
@@ -53,7 +67,7 @@
                         <div id="lower" class="half">
                                 <div id="LL">
                                         <form action="http://judah.cedarville.edu/echo.php" name="ourform" onsubmit="return validate()">
-						Cell Phone Number "(ddd) ddd-dddd" <br />
+						<br>Cell Phone Number "(ddd) ddd-dddd" <br/>
                                                 <input id="textbox" type="text" size="20" onchange="return(validate())" value="" />
                                                 <input type="submit" name="submitbutton" value="Submit" />
                                         </form>
@@ -66,5 +80,5 @@
                         </div>
                 </div>
         </body>
-	<script src="./script.js"></script>
+        <script src="./script.js"></script>
 </html>
