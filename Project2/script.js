@@ -94,7 +94,9 @@ function convert(plan) {
 				console.log("  term: " + courses[i].term); //DEBUG
 			}
 		}
-		myYears[year].terms[courses[i].term].addCourse(courses[i]);
+		if (courses[i] !== undefined) {
+			myYears[year].terms[courses[i].term].addCourse(courses[i]);
+		}
 	}
 	return myYears;
 }
