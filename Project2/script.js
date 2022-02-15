@@ -122,7 +122,7 @@ function make() {
 			console.log("  thisYear[term]: " + thisYear[term]); //DEBUG
 			instring.concat("<div class=\"semester\"><h4>" + term + " " + year + "<h4>");
 			
-			for (let courses in thisTerm.courses) {
+			for (let course in thisTerm.courses) {
 				console.log("   course: " + course);
 				thisCourse = thisTerm.courses[course]
 				console.log("   thisCourse: " + thisCourse + " " + thisCourse.courseName) //DEBUG
