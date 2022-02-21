@@ -78,7 +78,7 @@ function dropdownFunction() {
 	*/
 	
     
-    return myPlan;
+    return evail("(" + response.responseText + ")");
   }
   
   function convert(plan) {
