@@ -70,7 +70,8 @@ function dropdownFunction() {
 			return myData; //FIXME
 		}
 	}
-	console.debug(myData);
+	request.send();
+	console.debug(request.responseText);
 	/*
 	var jsonResponse = response.responseText;
 	var addressObject = JSON.parse ( jsonResponse );
