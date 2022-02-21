@@ -67,6 +67,7 @@ function dropdownFunction() {
 	request.onreadystatechange = function() {
 		if(this.readyState == 4) {
 			var myData = request.responseText;
+			return myData; //FIXME
 		}
 	}
 	console.debug(myData);
