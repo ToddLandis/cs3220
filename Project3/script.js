@@ -63,7 +63,7 @@ function dropdownFunction() {
   
   function populate() {
     var request = new XMLHttpRequest();
-	request.open("GET",myURL,true); //FIXME myURL
+	request.open("GET","/~gallaghd/cs3220/termProject/getCombined.php",true); //FIXME myURL
 	request.onreadystatechange = function() {
 		if(this.readyState == 4) {
 			var myData = request.responseText;
