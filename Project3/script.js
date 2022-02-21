@@ -71,7 +71,7 @@ function dropdownFunction() {
 		}
 	}
 	request.send();
-	console.debug(request.responseText);
+	console.debug("responseText: " + request.responseText);
 	/*
 	var jsonResponse = response.responseText;
 	var addressObject = JSON.parse ( jsonResponse );
