@@ -75,6 +75,8 @@ function dropdownFunction() {
 	/*
 	var jsonResponse = response.responseText;
 	var addressObject = JSON.parse ( jsonResponse );
+
+	AJAX slide 22+
 	*/
 	
     
