@@ -157,7 +157,7 @@ h1 {
 	padding: 0;
 }
 
-#UL a {
+#UL h3 {
     display: block;
     text-align: center;
     color: black;
@@ -167,12 +167,13 @@ h1 {
     border-bottom: 1px solid var(--light-gray);
 
     padding: 1em;
+	margin: 0;
 
     font-family: national;
     font-size: 1em;
 }
 
-#UL a:hover {
+#UL h3:hover {
     background-color: var(--light-blue-2);
 	color: var(--off-white);
 }
