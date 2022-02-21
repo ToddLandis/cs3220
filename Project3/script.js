@@ -62,8 +62,18 @@ function dropdownFunction() {
   }
   
   function populate() {
-    var myPlan = new Plan("myPlan", "2022", "Comp. Sci.", "Fredrick Douglas", "Fall");
-    
+    var request = new XMLHttpRequest();
+	request.open("GET",myURL,true); //FIXME myURL
+	request.onreadystatechange = function() {
+		if(this.readyState == 4) {
+			var myData = request.responseText;
+		}
+	}
+
+	/*
+	var jsonResponse = response.responseText;
+	var addressObject = JSON.parse ( jsonResponse );
+	*/
 	
     
     return myPlan;
