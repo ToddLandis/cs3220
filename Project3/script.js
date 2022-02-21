@@ -64,35 +64,7 @@ function dropdownFunction() {
   function populate() {
     var myPlan = new Plan("myPlan", "2022", "Comp. Sci.", "Fredrick Douglas", "Fall");
     
-    myPlan.addCourse(new Course("Summer", "2023", "Eng-100", "Remediadiary Reading", 1));
-    myPlan.addCourse(new Course("Fall", "2022", "CS-1210", "C++ Programming", 3));
-    myPlan.addCourse(new Course("Fall", "2022", "EG-1210", "Digital Logic Design", 3));
-    myPlan.addCourse(new Course("Spring", "2023", "CS-1220", "C++ Programming 2", 3));
-    myPlan.addCourse(new Course("Spring", "2023", "CS-1230", "Python Programming", 3));
-    myPlan.addCourse(new Course("Spring", "2023", "OK-1010", "Intro to Introductions", 3));
-    myPlan.addCourse(new Course("Spring", "2023", "CS-6590", "Python Programming for losers", 3));
-    myPlan.addCourse(new Course("Summer", "2023", "Math-100", "Remediadiary Math", 2));
-    
-    myPlan.addCourse(new Course("Fall", "2023", "CS-1210", "C++ Programming", 3));
-    myPlan.addCourse(new Course("Fall", "2023", "EG-1210", "Digital Logic Design", 3));
-    myPlan.addCourse(new Course("Spring", "2024", "CS-1220", "C++ Programming 2", 3));
-    myPlan.addCourse(new Course("Spring", "2024", "CS-1230", "Python Programming", 3));
-    myPlan.addCourse(new Course("Summer", "2024", "Math-100", "Remediadiary Math", 2));
-    myPlan.addCourse(new Course("Summer", "2024", "Eng-100", "Remediadiary Reading", 1));
-    
-    myPlan.addCourse(new Course("Fall", "2024", "CS-1210", "C++ Programming", 3));
-    myPlan.addCourse(new Course("Fall", "2024", "EG-1210", "Digital Logic Design", 3));
-    myPlan.addCourse(new Course("Spring", "2025", "CS-1220", "C++ Programming 2", 3));
-    myPlan.addCourse(new Course("Spring", "2025", "CS-1230", "Python Programming", 3));
-    myPlan.addCourse(new Course("Summer", "2025", "Math-100", "Remediadiary Math", 2));
-    myPlan.addCourse(new Course("Summer", "2025", "Eng-100", "Remediadiary Reading", 1));
-    
-    myPlan.addCourse(new Course("Fall", "2025", "CS-1210", "C++ Programming", 3));
-    myPlan.addCourse(new Course("Fall", "2025", "EG-1210", "Digital Logic Design", 3));
-    myPlan.addCourse(new Course("Spring", "2026", "CS-1220", "C++ Programming 2", 3));
-    myPlan.addCourse(new Course("Spring", "2026", "CS-1230", "Python Programming", 3));
-    myPlan.addCourse(new Course("Summer", "2026", "Math-100", "Remediadiary Math", 2));
-    myPlan.addCourse(new Course("Summer", "2026", "Eng-100", "Remediadiary Reading", 1));
+	
     
     return myPlan;
   }
