@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+        <head>
+                <title>APE</title>
+                <link rel="stylesheet" href="default.css" />
+                <link rel="icon" type="image/x-icon" href="favicon.ico" />
+                <script language="javascript">
+                        function validate() {
+                                var textbox = document.ourform.textbox.value;
+                                var pos = textbox.search(/^\(?\d{3}\)?-? ?\d{3}-?\d{4}$/);
+                                if (pos != 0) {
+					alert("The phone number \"" + textbox + "\" you entered is not valid.\n Please enter using the correct format");
+					document.ourform.textbox.focus();
+					document.ourform.textbox.select();
+					return false;
+                                }
+                        }
+                </script>
+        </head>
+        <body>
+                <div id="main">
+                        <div id="header">
+                                <div id="title">
+                                        <h1>Academic Planning Environment</h1>
+                                </div>
+                                <div id="proj_menu">
+                                        <button onclick="dropdownFunction()" class="dropbtn">Project 2</button>
+                                        <div id="myDropdown" class="dropdown-content">
+                                                <a href="/TermProject/Project1/index.html">Project 1</a>
+                                                <a href="/TermProject/Project3/index.html">Project 3</a>
+                                                <a href="/TermProject/Project4/index.html">Project 4</a>
+                                                <a href="/TermProject/Project5/index.html">Project 5</a>
+                                                <a href="/TermProject/Project6/index.html">Project 6</a>
+                                        </div>
+                                </div>
+                        </div>
+                        <div id="upper" class="half">
+                                <div id="UL">
+                                        <a href="http://csweb.cedarville.edu">People's Choice Awards</a>
+                                        <a href="http://judah.cedarville.edu/~carpent/cs3220.html">Ryan's Homepage</a>
+                                        <a href="http://judah.cedarville.edu/~tilandis/cs3220.html">Todd's Homepage</a>
+                                        <a href="http://judah.cedarville.edu/~hearne/cs3220.html">Joshua's Homepage</a>
+                                </div>
+                                <div id="UR">
+                                        <div class="years">
+                                                <div class="semester"><h4>Fall 2018</h4><p>Class 1</p><p>Class 2</p><p>Class 3</p><p>Class 4</p><p>Class 5</p></div>
+                                                <div class="semester"><h4>Spring 2018</h4><p>Class 1</p><p>Class 2</p><p>Class 3</p><p>Class 4</p><p>Class 5</p></div>
+                                                <div class="semester"><h4>Summer 2018</h4><p>Class 1</p><p>Class 2</p><p>Class 3</p><p>Class 4</p><p>Class 5</p></div>
+                                        </div>
+                                        <div class="years">
+                                                <div class="semester"><h4>Fall 2019</h4><p>Class 1</p><p>Class 2</p><p>Class 3</p><p>Class 4</p><p>Class 5</p></div>
+                                                <div class="semester"><h4>Spring 2019</h4><p>Class 1</p><p>Class 2</p><p>Class 3</p><p>Class 4</p><p>Class 5</p></div>
+                                                <div class="semester"><h4>Summer 2019</h4><p>Class 1</p><p>Class 2</p><p>Class 3</p><p>Class 4</p><p>Class 5</p></div>
+                                        </div>
+                                        <div class="years">
+                                                <div class="semester"><h4>Fall 2020</h4><p>Class 1</p><p>Class 2</p><p>Class 3</p><p>Class 4</p><p>Class 5</p></div>
+                                                <div class="semester"><h4>Spring 2020</h4><p>Class 1</p><p>Class 2</p><p>Class 3</p><p>Class 4</p><p>Class 5</p></div>
+                                                <div class="semester"><h4>Summer 2020</h4><p>Class 1</p><p>Class 2</p><p>Class 3</p><p>Class 4</p><p>Class 5</p></div>
+                                        </div>
+                                        <div class="years">
+                                                <div class="semester"><h4>Fall 2021</h4><p>Class 1</p><p>Class 2</p><p>Class 3</p><p>Class 4</p><p>Class 5</p></div>
+                                                <div class="semester"><h4>Spring 2021</h4><p>Class 1</p><p>Class 2</p><p>Class 3</p><p>Class 4</p><p>Class 5</p></div>
+                                                <div class="semester"><h4>Summer 2021</h4><p>Class 1</p><p>Class 2</p><p>Class 3</p><p>Class 4</p><p>Class 5</p></div>
+                                        </div>
+                                </div>
+                        </div>
+                        <div id="lower" class="half">
+                                <div id="LL">
+                                        <form action="http://judah.cedarville.edu/echo.php" name="ourform" onsubmit="return validate()">
+						<br>Cell Phone Number "(ddd) ddd-dddd" <br/>
+                                                <input id="textbox" type="text" size="20" onchange="return(validate())" name="phone" value="" />
+                                                <input type="submit" name="submitbutton" value="Submit" />
+                                        </form>
+                               </div>
+                                <div id="LR"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ullamcorper 
+                                        tincidunt turpis rutrum vulputate. Phasellus scelerPraesent mauris dolor, consequat 
+                                        id metus non, feugiat gravida sapien. Aliquam vel faucibus tortor. Sed eget eros 
+                                        ullamcorper, feugiat diam ut, efficitur orci. Integer leo</p>
+                                </div>
+                        </div>
+                </div>
+        </body>
+        <script src="./script.js"></script>
+</html>
