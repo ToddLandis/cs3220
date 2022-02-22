@@ -147,7 +147,7 @@ function make(years) {
       // add each course to the term
       for (let course in thisTerm.courses) {
         thisCourse = thisTerm.courses[course];
-        instring = instring.concat("<p onfocus=\"\">" + thisCourse.courseDesignator + ":  " + thisCourse.courseName + "</p>");
+        instring = instring.concat("<p onfocus=\"\">" + thisCourse.id + ":  " + newCatalog[thisCourse.id].name + "</p>");
       }
 
       instring = instring.concat("</div>");
