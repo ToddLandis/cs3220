@@ -75,10 +75,9 @@ function populate() {
       newPlan = json.plan;
       newCatalogue = json.catalogue;
     }
-  }.then (
+  }
   request.send(null);
   console.log("Plan: " + newPlan);
-  )
   /*
   var jsonResponse = response.responseText;
   var addressObject = JSON.parse ( jsonResponse );
