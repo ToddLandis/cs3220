@@ -64,7 +64,6 @@ class Term {
 // Global Vars Needed
 var newPlan;
 var newCatalogue;
-var forceWait = true;
 function populate() {
   var request = new XMLHttpRequest();
   request.open("GET","/~gallaghd/cs3220/termProject/getCombined.php",true);
@@ -75,11 +74,15 @@ function populate() {
       json = JSON.parse(myData);
       newPlan = json.plan;
       newCatalogue = json.catalogue;
-      forceWait = false;
     }
   }
   request.send(null);
-  while (forceWait) {console.log("Waiting");} // easiest way to deal with async
+  var done = false;
+  while (!done) {
+    if (newPlan != undefined) {
+      done = true;
+    }
+  }
   console.log("Plan: " + newPlan);
   /*
   var jsonResponse = response.responseText;
