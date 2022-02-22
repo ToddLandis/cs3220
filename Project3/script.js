@@ -62,19 +62,21 @@ function dropdownFunction() {
   }
   
   function populate() {
+    var Plan;
+    var Catalogue;
     var request = new XMLHttpRequest();
 	  request.open("GET","/~gallaghd/cs3220/termProject/getCombined.php",true);
-	  request.onreadystatechange, response = function() {
+	  request.onreadystatechange = function() {
 		if(this.readyState == 4) {
 			var myData = this.responseText;
       console.log("MyData: " + myData);
       json = JSON.parse(myData);
-      return json
+      Plan = json.plan;
 		}
 	}
 	request.send(null);
   console.log("Request: " + request.onreadystatechange);
-  console.log("Response: " + response);
+  console.log("Plan: " + Plan);
 	/*
 	var jsonResponse = response.responseText;
 	var addressObject = JSON.parse ( jsonResponse );
