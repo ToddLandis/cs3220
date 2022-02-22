@@ -66,7 +66,7 @@ function dropdownFunction() {
 	  request.open("GET","/~gallaghd/cs3220/termProject/getCombined.php",true);
 	  request.onreadystatechange, response = function() {
 		if(this.readyState == 4) {
-			var myData = request.responseText;
+			var myData = this.responseText;
       console.log("MyData: " + response);
       return myData
 		}
