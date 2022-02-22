@@ -67,13 +67,12 @@ function dropdownFunction() {
 	  request.onreadystatechange = function() {
 		if(this.readyState == 4) {
 			var myData = request.responseText;
-			return myData; //FIXME
 		}
 	}
 	request.send(null);
   response = request.responseText;
-	console.log("responseText: " + request.responseText);
-  json = JSON.parse(response)
+	console.log("responseText: " + myData);
+  json = JSON.parse(myData)
 	/*
 	var jsonResponse = response.responseText;
 	var addressObject = JSON.parse ( jsonResponse );
