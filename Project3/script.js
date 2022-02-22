@@ -77,17 +77,14 @@ function populate() {
     }
   }
   request.send(null);
-  console.log("Plan: " + newPlan);
   /*
   var jsonResponse = response.responseText;
   var addressObject = JSON.parse ( jsonResponse );
 
   AJAX slide 22+
   */
-
-  
-  return newPlan;
 }
+populate();
   
 function convert(plan) {
   
@@ -121,7 +118,7 @@ function convert(plan) {
 }
   
 function make() {
-  var years = convert(populate());
+  var years = convert(newPlan); // NewPlan produced by the async function inside populate()
   var instring = "";
   
   instring = instring.concat("<div class=\"profile\"></div>")
