@@ -79,7 +79,7 @@ function populate() {
     }
   }
   request.send(null);
-  while (forceWait) {} // easiest way to deal with async
+  while (forceWait) {console.log("Waiting");} // easiest way to deal with async
   console.log("Plan: " + newPlan);
   /*
   var jsonResponse = response.responseText;
