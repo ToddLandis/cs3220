@@ -76,7 +76,6 @@ function populate() {
     }
   }
   request.send(null);
-  console.log("Request: " + request.onreadystatechange);
   console.log("Plan: " + Plan);
   /*
   var jsonResponse = response.responseText;
