@@ -74,16 +74,14 @@ function populate() {
       json = JSON.parse(myData);
       newPlan = json.plan;
       newCatalog = json.catalog;
+
+      //AJAXfunctions should go here ///////////////////////////////////////////////////////////////////
       make(convert(newPlan))
+
+      //////////////////////////////////////////////////////////////////////////////////////////////////
     }
   }
   request.send(null);
-  /*
-  var jsonResponse = response.responseText;
-  var addressObject = JSON.parse ( jsonResponse );
-
-  AJAX slide 22+
-  */
 }
   
 function convert(plan) {
@@ -162,3 +160,4 @@ function make(years) {
   
 // make(); // had to change with async
 populate(); // main async function
+// Anything that uses the AJAX data should be called in populate() at the location marked with a comment //AJAXfunctions
