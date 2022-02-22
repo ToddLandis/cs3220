@@ -62,8 +62,8 @@ class Term {
 }
 
 // Global Vars Needed
-var Plan;
-var Catalogue;
+var newPlan;
+var newCatalogue;
 function populate() {
   var request = new XMLHttpRequest();
   request.open("GET","/~gallaghd/cs3220/termProject/getCombined.php",true);
@@ -72,12 +72,12 @@ function populate() {
       var myData = this.responseText;
       console.log("MyData: " + myData);
       json = JSON.parse(myData);
-      Plan = json.plan;
-      Catalogue = json.catalogue;
+      newPlan = json.plan;
+      newCatalogue = json.catalogue;
     }
   }
   request.send(null);
-  console.log("Plan: " + Plan);
+  console.log("Plan: " + newPlan);
   /*
   var jsonResponse = response.responseText;
   var addressObject = JSON.parse ( jsonResponse );
@@ -86,7 +86,7 @@ function populate() {
   */
 
   
-  return Plan;
+  return newPlan;
 }
   
 function convert(plan) {
