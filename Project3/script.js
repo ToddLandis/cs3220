@@ -142,7 +142,7 @@ function make(years) {
       var hours = 0
       for (let course in thisTerm.courses) {
         thisCourse = thisTerm.courses[course];
-        newCatalog.courses[thisCourse.id].credits;
+        hours = newCatalog.courses[thisCourse.id].credits;
       }
       instring = instring.concat("<h5>Hours: " + hours + "</h5></div>")
       
