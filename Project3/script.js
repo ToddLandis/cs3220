@@ -71,7 +71,6 @@ function populate() {
   request.onreadystatechange = function() {
     if(this.readyState == 4) {
       var myData = this.responseText;
-      console.log("MyData: " + myData);
       json = JSON.parse(myData);
       newPlan = json.plan;
       newCatalog = json.catalog;
