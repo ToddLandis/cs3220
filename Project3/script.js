@@ -72,7 +72,7 @@ function dropdownFunction() {
 	}
 	request.send();
   response = request.responseText;
-	console.debug("responseText: " + request.responseText);
+	console.log("responseText: " + request.responseText);
 	/*
 	var jsonResponse = response.responseText;
 	var addressObject = JSON.parse ( jsonResponse );
