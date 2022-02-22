@@ -64,15 +64,15 @@ function dropdownFunction() {
   function populate() {
     var request = new XMLHttpRequest();
 	  request.open("GET","/~gallaghd/cs3220/termProject/getCombined.php",true);
-	  request.onreadystatechange = function() {
+	  request.onreadystatechange,response = function() {
 		if(this.readyState == 4) {
 			var myData = request.responseText;
+      return myData
 		}
 	}
 	request.send(null);
-  response = request.responseText;
-	console.log("responseText: " + myData);
-  json = JSON.parse(myData)
+	console.log("responseText: " + response);
+  json = JSON.parse(response)
 	/*
 	var jsonResponse = response.responseText;
 	var addressObject = JSON.parse ( jsonResponse );
