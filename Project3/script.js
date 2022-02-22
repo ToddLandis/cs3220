@@ -73,6 +73,9 @@ function dropdownFunction() {
 		}
 	}
 	request.send(null);
+  response = request.responseText;
+  console.log("Response: " + response);
+  json = JSON.parse(response);
 	/*
 	var jsonResponse = response.responseText;
 	var addressObject = JSON.parse ( jsonResponse );
