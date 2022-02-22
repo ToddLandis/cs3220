@@ -72,6 +72,7 @@ function populate() {
       console.log("MyData: " + myData);
       json = JSON.parse(myData);
       Plan = json.plan;
+      Catalogue = json.catalogue;
     }
   }
   request.send(null);
@@ -85,7 +86,7 @@ function populate() {
   */
 
   
-  return response;
+  return Plan;
 }
   
 function convert(plan) {
