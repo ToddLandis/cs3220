@@ -73,6 +73,7 @@ function dropdownFunction() {
 		}
 	}
 	request.send(null);
+  console.log("Request: " + request.onreadystatechange);
   console.log("Response: " + response);
 	/*
 	var jsonResponse = response.responseText;
