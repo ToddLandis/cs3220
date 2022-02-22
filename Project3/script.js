@@ -74,7 +74,7 @@ function populate() {
       console.log("MyData: " + myData);
       json = JSON.parse(myData);
       newPlan = json.plan;
-      newCatalog = json.catalogue;
+      newCatalog = json.catalog;
       make(convert(newPlan))
     }
   }
