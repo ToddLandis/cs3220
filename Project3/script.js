@@ -74,6 +74,7 @@ function populate() {
       json = JSON.parse(myData);
       newPlan = json.plan;
       newCatalogue = json.catalogue;
+      make(convert(newPlan))
     }
   }
   request.send(null);
@@ -84,7 +85,6 @@ function populate() {
   AJAX slide 22+
   */
 }
-populate();
   
 function convert(plan) {
   
@@ -117,8 +117,8 @@ function convert(plan) {
   return myYears;
 }
   
-function make() {
-  var years = convert(newPlan); // NewPlan produced by the async function inside populate()
+function make(years) {
+  //var years = convert(populate()); // had to change with async
   var instring = "";
   
   instring = instring.concat("<div class=\"profile\"></div>")
@@ -159,4 +159,5 @@ function make() {
   doc.innerHTML = instring;
 }
   
-make();
+// make(); // had to change with async
+populate(); // main async function
