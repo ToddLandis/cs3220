@@ -64,7 +64,7 @@ function dropdownFunction() {
   function populate() {
     var request = new XMLHttpRequest();
 	  request.open("GET","/~gallaghd/cs3220/termProject/getCombined.php",true);
-	  request.onreadystatechange = function() {
+	  response, request.onreadystatechange = function() {
 		if(this.readyState == 4) {
 			var myData = this.responseText;
       console.log("MyData: " + myData);
@@ -73,9 +73,7 @@ function dropdownFunction() {
 		}
 	}
 	request.send(null);
-  response = request.responseText;
   console.log("Response: " + response);
-  json = JSON.parse(response);
 	/*
 	var jsonResponse = response.responseText;
 	var addressObject = JSON.parse ( jsonResponse );
@@ -84,7 +82,7 @@ function dropdownFunction() {
 	*/
 	
     
-    return json;
+    return response;
   }
   
   function convert(plan) {
