@@ -63,16 +63,17 @@ function dropdownFunction() {
   
   function populate() {
     var request = new XMLHttpRequest();
-	request.open("GET","/~gallaghd/cs3220/termProject/getCombined.php",true); //FIXME myURL
-	request.onreadystatechange = function() {
+	  request.open("GET","/~gallaghd/cs3220/termProject/getCombined.php",true);
+	  request.onreadystatechange = function() {
 		if(this.readyState == 4) {
 			var myData = request.responseText;
 			return myData; //FIXME
 		}
 	}
-	request.send();
+	request.send(null);
   response = request.responseText;
 	console.log("responseText: " + request.responseText);
+  json = JSON.parse(response)
 	/*
 	var jsonResponse = response.responseText;
 	var addressObject = JSON.parse ( jsonResponse );
@@ -81,7 +82,7 @@ function dropdownFunction() {
 	*/
 	
     
-    return eval(response);
+    return json;
   }
   
   function convert(plan) {
