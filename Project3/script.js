@@ -60,10 +60,11 @@ class Term {
     this.courses.push(course);
   }
 }
-  
+
+// Global Vars Needed
+var Plan;
+var Catalogue;
 function populate() {
-  var Plan;
-  var Catalogue;
   var request = new XMLHttpRequest();
   request.open("GET","/~gallaghd/cs3220/termProject/getCombined.php",true);
   request.onreadystatechange = function() {
