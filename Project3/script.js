@@ -67,7 +67,7 @@ function dropdownFunction() {
 	  request.onreadystatechange = function() {
 		if(this.readyState == 4) {
 			var myData = this.responseText;
-      console.log("MyData: " + response);
+      console.log("MyData: " + myData);
       json = JSON.parse(myData);
       return json
 		}
