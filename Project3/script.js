@@ -81,7 +81,7 @@ function dropdownFunction() {
 	*/
 	
     
-    return eval("(" + response+ ")");
+    return eval(response);
   }
   
   function convert(plan) {
