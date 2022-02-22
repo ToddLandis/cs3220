@@ -75,15 +75,10 @@ function populate() {
       newPlan = json.plan;
       newCatalogue = json.catalogue;
     }
-  }
+  }.then (
   request.send(null);
-  var done = false;
-  while (!done) {
-    if (newPlan != undefined) {
-      done = true;
-    }
-  }
   console.log("Plan: " + newPlan);
+  )
   /*
   var jsonResponse = response.responseText;
   var addressObject = JSON.parse ( jsonResponse );
