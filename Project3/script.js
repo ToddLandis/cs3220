@@ -71,6 +71,7 @@ function dropdownFunction() {
 		}
 	}
 	request.send();
+  response = request.responseText;
 	console.debug("responseText: " + request.responseText);
 	/*
 	var jsonResponse = response.responseText;
@@ -80,7 +81,7 @@ function dropdownFunction() {
 	*/
 	
     
-    return eval("(" + response.responseText + ")");
+    return eval("(" + response+ ")");
   }
   
   function convert(plan) {
