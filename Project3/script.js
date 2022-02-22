@@ -63,7 +63,8 @@ class Term {
 
 // Global Vars Needed
 var newPlan;
-var newCatalogue;
+var newCatalog;
+
 function populate() {
   var request = new XMLHttpRequest();
   request.open("GET","/~gallaghd/cs3220/termProject/getCombined.php",true);
@@ -73,7 +74,7 @@ function populate() {
       console.log("MyData: " + myData);
       json = JSON.parse(myData);
       newPlan = json.plan;
-      newCatalogue = json.catalogue;
+      newCatalog = json.catalogue;
       make(convert(newPlan))
     }
   }
