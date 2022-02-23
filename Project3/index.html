@@ -31,37 +31,48 @@
                 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
                 <script>
                 $( function() {
-                  $( "#accordion" ).accordion();
+                  	$( "#accordion" ).accordion({
+				heightStyle: "fill"
+			});
                 } );
                 </script>
         </head>
         <body>
                 <div id="main">
                         <div id="header">
+                                <div id="left">
+                                        <button onclick="darkModeFunction()" class="modebtn">Dark Mode</button>
+                                </div>
                                 <div id="title">
                                         <h1>Academic Planning Environment</h1>
                                 </div>
-                                <div id="proj_menu">
-                                        <button onclick="dropdownFunction()" class="dropbtn">v3.0</button>
-                                        <div id="myDropdown" class="dropdown-content">
-                                                <a href="/~tilandis/Project1/index.html">Version 1</a>
-                                                <a href="/~tilandis/Project2/index.html">Version 2</a>
-                                                <a href="/~tilandis/Project4/index.html">Version 4</a>
-                                                <a href="/~tilandis/Project5/index.html">Version 5</a>
-                                                <a href="/~tilandis/Project6/index.html">Version 6</a>
+                                <div id="right">
+                                        <div class="menu">
+                                                <button onclick="projDropdownFunction()" class="dropbtn">v3.0</button>
+                                                <div id="projDropdown" class="dropdown-content">
+                                                        <a href="/~tilandis/Project1/index.html">Version 1</a>
+                                                        <a href="/~tilandis/Project2/index.html">Version 2</a>
+                                                        <a href="/~tilandis/Project4/index.html">Version 4</a>
+                                                        <a href="/~tilandis/Project5/index.html">Version 5</a>
+                                                        <a href="/~tilandis/Project6/index.html">Version 6</a>
+                                                </div>
+                                        </div>
+                                        <div class="menu">
+                                                <button onclick="linksDropdownFunction()" class="dropbtn">Links</button>
+                                                <div id="linksDropdown" class="dropdown-content">
+                                                        <a href="http://csweb.cedarville.edu">People's Choice Awards</a>
+                                                        <a href="http://judah.cedarville.edu/~carpent/cs3220.html">Ryan's Homepage</a>
+                                                        <a href="http://judah.cedarville.edu/~tilandis/cs3220.html">Todd's Homepage</a>
+                                                        <a href="http://judah.cedarville.edu/~hearne/cs3220.html">Joshua's Homepage</a>
+                                                </div>
                                         </div>
                                 </div>
                         </div>
                         <div id="upper" class="half">
                                 <div id="UL">
-                                        <!---<a href="http://csweb.cedarville.edu">People's Choice Awards</a>
-                                        <a href="http://judah.cedarville.edu/~carpent/cs3220.html">Ryan's Homepage</a>
-                                        <a href="http://judah.cedarville.edu/~tilandis/cs3220.html">Todd's Homepage</a>
-                                        <a href="http://judah.cedarville.edu/~hearne/cs3220.html">Joshua's Homepage</a>--->
-
                                         <div id="accordion">
                                                 <h3>Requirements</h3>
-                                                <div>
+                                                <div class="accordion-content">
                                                         <p>
                                                         Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
                                                         ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
@@ -70,7 +81,7 @@
                                                         </p>
                                                 </div>
                                                 <h3>Electives</h3>
-                                                <div>
+                                                <div class="accordion-content">
                                                         <p>
                                                         Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
                                                         purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
@@ -79,7 +90,7 @@
                                                         </p>
                                                 </div>
                                                 <h3>Cognates</h3>
-                                                <div>
+                                                <div class="accordion-content">
                                                         <p>
                                                         Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
                                                         Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
