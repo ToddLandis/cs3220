@@ -18,6 +18,14 @@ window.onclick = function(event) {
   }
 }
 
+/* dark mode function */
+function darkModeFunction() {
+  var element = document.body;
+  var content = document.getElementsByClassName("modebtn");
+  element.classList.toggle("dark-mode");
+  content.innerText = "Light Mode";
+}
+
 class Course {
   constructor(term, year, courseDesignator, courseName, hours) {
     this.term = term;
