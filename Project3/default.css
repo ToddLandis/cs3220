@@ -128,7 +128,7 @@ h1 {
 
 /* Code taken from W3 schools, and modified to match styles */
 /* Dropdown Button */
-.dropbtn, .modebtn {
+.projdropbtn, .linksdropbtn, .modebtn {
 	background-color: var(--header-color);
 	color: var(--title-color);
 	font-size: 1.2em;
@@ -139,7 +139,7 @@ h1 {
   }
   
   /* Dropdown button on hover & focus */
-  .dropbtn:hover, .modebtn:hover {
+  .projdropbtn:hover, .projdropbtn:hover, .modebtn:hover {
 	background-color: var(--header-highlight);
   }
   
