@@ -208,20 +208,24 @@ populate(); // main async function
 // Kelly Blue Book Problem //
 
 // KBByear()
-console.log("test");
-var request = new XMLHttpRequest();
-request.open("GET","/~gallaghd/ymm/ymmdb.php?fmt=json",true);
-request.onreadystatechange = function() {
-  console.log("TEST"); //DEBUG
-  if(this.readyState == 4) {
-    data = this.responseText;
-    json = JSON.parse(data);
-    string = "";
-    for (i in json) {
-      string = string.concat("<option>" + json[i] + "</option>");
+function KBByear() {
+  console.log("test");
+  var request = new XMLHttpRequest();
+  request.open("GET","/~gallaghd/ymm/ymmdb.php?fmt=json",true);
+  request.onreadystatechange = function() {
+    console.log("TEST"); //DEBUG
+    if(this.readyState == 4) {
+      data = this.responseText;
+      json = JSON.parse(data);
+      string = "";
+      for (i in json) {
+        string = string.concat("<option>" + json[i] + "</option>");
+      }
+      console.log(string); //DEBUG
+      html = document.getElementById("KBByear");
+      html.innerHTML = string;
     }
-    console.log(string); //DEBUG
-    html = document.getElementById("KBByear");
-    html.innerHTML = string;
   }
 }
+KBByear();
+
