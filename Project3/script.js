@@ -99,15 +99,15 @@ function populate() {
         electives = json.categories.Electives.courses;
         cognates = json.categories.Cognates.courses;
 
-        var html = $('core').innerHTML;
+        html = document.getElementById('core').innerHTML;
         for (i in core) {
           html = html.concat("<p>" + core[i] + ": " + newCatalog.courses[core[i]].name + "</p>");
         }
-        html = $('electives').innerHTML;
+        html = document.getElementById('electives').innerHTML;
         for (i in electives) {
           html = html.concat("<p>" + electives[i] + ": " + newCatalog.courses[electives[i]].name + "</p>");
         }
-        html = $('cognates').innerHTML;
+        html = document.getElementById('cognates').innerHTML;
         for (i in cognates) {
           html = html.concat("<p>" + cognates[i] + ": " + newCatalog.courses[cognates[i]].name + "</p>");
         }
@@ -217,7 +217,7 @@ function make(years) {
     instring = instring.concat("</div>");
   }
   // set #UR to be dynamic
-  doc = $("UR");
+  doc = document.getElementById("UR");
   doc.innerHTML = instring;
 }
   
