@@ -89,7 +89,7 @@ function populate() {
       $(document).ready( function () {
         try {
           $('#table_id').DataTable({
-            data: newCatalog.courses,
+            data: newCatalog.courses.CS-1210,
             column: [
               {data: 'id'},
               {data: 'name'},
