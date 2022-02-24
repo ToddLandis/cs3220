@@ -87,9 +87,7 @@ function populate() {
       data = newCatalog.courses;
       datatables = [];
       for (i in data) {
-        datatables += data[i].id
-        datatables += data[i].name
-        datatables += data[i].description
+        datatables += data[i]
       }
       console.log(datatables); //DEBUG
 
