@@ -84,16 +84,44 @@ function populate() {
       newPlan = json.plan;
       newCatalog = json.catalog;
 
+      //AJAXfunctions should go here ///////////////////////////////////////////////////////////////////
+
+      make(convert(newPlan))
+
+      // ACCORDIAN //////////////////////////////
+      var request = new XMLHttpRequest();
+      request.open("GET","/~gallaghd/cs3220/termProject/getRequirements.php",true);
+      request.onreadystatechange = function() {
+        var myData = this.responseText;
+        json = JSON.parse(myData).categories;
+        core = json.Core.courses;
+        electives = json.Electives.courses;
+        cognates = json.Cognates.courses;
+
+        var html = $('core').innerHTML;
+        for (i in core) {
+          html = html.append("<p>" + core[i] + ": " + newCatalog.courses[core[i]].name + "</p>");
+        }
+        html = $('electives').innerHTML;
+        for (i in electives) {
+          html = html.append("<p>" + electives[i] + ": " + newCatalog.courses[electives[i]].name + "</p>");
+        }
+        html = $('cognates').innerHTML;
+        for (i in cognates) {
+          html = html.append("<p>" + cognates[i] + ": " + newCatalog.courses[cognates[i]].name + "</p>");
+        }
+
+      }
+      request.send(null);
+
+      // DATATABLES //////////////////////////////////////////////////
       data = newCatalog.courses;
       datatables = [];
       for (i in data) {
         row = data[i]
         datatables.push([row.id, row.name, row.description, row.credits]);
       }
-      console.log(datatables); //DEBUG
 
-      //AJAXfunctions should go here ///////////////////////////////////////////////////////////////////
-      make(convert(newPlan))
       $(document).ready( function () {
         try {
           $('#table_id').DataTable({
@@ -188,7 +216,7 @@ function make(years) {
     instring = instring.concat("</div>");
   }
   // set #UR to be dynamic
-  doc = document.getElementById("UR");
+  doc = $("UR");
   doc.innerHTML = instring;
 }
   
