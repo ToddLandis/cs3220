@@ -95,10 +95,10 @@ function populate() {
       arequest.onreadystatechange = function() {
         var theData = this.responseText;
         console.log(theData); //DEBUG
-        json = JSON.parse(theData);
-        core = json.categories.Core.courses;
-        electives = json.categories.Electives.courses;
-        cognates = json.categories.Cognates.courses;
+        ajson = JSON.parse(theData);
+        core = ajson.categories.Core.courses;
+        electives = ajson.categories.Electives.courses;
+        cognates = ajson.categories.Cognates.courses;
 
         html = document.getElementById('core').innerHTML;
         for (i in core) {
