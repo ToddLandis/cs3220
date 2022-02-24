@@ -102,7 +102,7 @@ function populate() {
               {data: 'name'},
               {data: 'description'},
             ],
-            "pageLength": 3
+            "pageLength": 11
           });
         }
         catch (e) {
