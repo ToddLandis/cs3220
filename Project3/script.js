@@ -200,6 +200,10 @@ function make(years) {
   doc.innerHTML = instring;
 }
   
+// make(); // had to change with async
+populate(); // main async function
+// Anything that uses the AJAX data should be called in populate() at the location marked with a comment //AJAXfunctions
+
 
 // Kelly Blue Book Problem //
 
@@ -221,11 +225,3 @@ request.onreadystatechange = function() {
     html.innerHTML = string;
   }
 }
-
-
-
-// make(); // had to change with async
-populate(); // main async function
-// Anything that uses the AJAX data should be called in populate() at the location marked with a comment //AJAXfunctions
-
-
