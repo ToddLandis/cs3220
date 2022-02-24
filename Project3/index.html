@@ -49,24 +49,24 @@
                 <div id="main">
                         <div id="header">
                                 <div id="left">
-                                        <button onclick="darkModeFunction()" id="modebtn">Dark Mode</button>
+                                        <button onclick="darkModeFunction()" class="headerbtn" id="modebtn">Dark Mode</button>
                                 </div>
                                 <div id="title">
                                         <h1>Academic Planning Environment</h1>
                                 </div>
                                 <div id="right">
                                         <div class="menu">
-                                                <button onclick="projDropdownFunction()" id="projdropbtn">v3.0</button>
+                                                <button onclick="projDropdownFunction()" class="headerbtn" id="projdropbtn">v3.0</button>
                                                 <div id="projDropdown" class="dropdown-content">
-                                                        <a href="/~tilandis/Project1/index.html">Version 1</a>
-                                                        <a href="/~tilandis/Project2/index.html">Version 2</a>
-                                                        <a href="/~tilandis/Project4/index.html">Version 4</a>
-                                                        <a href="/~tilandis/Project5/index.html">Version 5</a>
-                                                        <a href="/~tilandis/Project6/index.html">Version 6</a>
+                                                        <a href="../Project1/index.html">Version 1</a>
+                                                        <a href="../Project2/index.html">Version 2</a>
+                                                        <a href="../Project4/index.html">Version 4</a>
+                                                        <a href="../Project5/index.html">Version 5</a>
+                                                        <a href="../Project6/index.html">Version 6</a>
                                                 </div>
                                         </div>
                                         <div class="menu">
-                                                <button onclick="linksDropdownFunction()" id="linksdropbtn">Links</button>
+                                                <button onclick="linksDropdownFunction()" class="headerbtn" id="linksdropbtn">Links</button>
                                                 <div id="linksDropdown" class="dropdown-content">
                                                         <a href="http://csweb.cedarville.edu">People's Choice Awards</a>
                                                         <a href="http://judah.cedarville.edu/~carpent/cs3220.html">Ryan's Homepage</a>
@@ -96,14 +96,18 @@
                         </div>
                         <div id="lower" class="half">
                                 <div id="LL">
+                                        <h3>Kelly Blue Book Problem</h3>
                                         <form name="ourform">
-						<select id="KBByear" onchange="KBBmakeF()"></select>
-                                                <select id="KBBmake" onchange="return KBBmodelF()"></select>
-                                                <select id="KBBmodel"></select>
+                                                <label>Year</label>
+						<select id="KBByear" class="sel" onchange="KBBmakeF()"></select>
+                                                <label>Make</label>
+                                                <select id="KBBmake" class="sel" onchange="return KBBmodelF()"></select>
+                                                <label>Model</label>
+                                                <select id="KBBmodel" class="sel"></select>
                                         </form>
                                </div>
                                 <div id="LR">
-                                        <table id="table_id" class="display">
+                                        <table id="table_id" class="">
                                                 <thead>
                                                         <tr>
                                                                 <th>Course Designator</th>
