@@ -1,11 +1,11 @@
 /* fonts and colors */
 
 :root {
-    --header-highlight: #0D1321;
-	--title-color:	    #fdfaef;
-    --header-color:		#1D2D44;
-    --UR-color: 		#748CAB;
-    --bg-color:    		#fdfaef;
+	--header-highlight: 	#0D1321;
+	--title-color:	    	#fdfaef;
+	--header-color:		#1D2D44;
+	--UR-color: 		#748CAB;
+	--bg-color:    		#fdfaef;
 	--highlight: 		#d3d3d3;
 	--highlight-2: 		#748CAB;
 	--border-color: 	#d3d3d3;
@@ -13,6 +13,11 @@
 	--border-color-3:	#fdfaef;
 	--text-color:		black;
 	--form-color:		#748CAB;
+
+	--row-odd-title:	#e4e2dc;
+	--row-even-title:	#fdfaef;
+	--row-odd:		#e4e2dc;
+	--row-even:		#fdfaef;
 }
 
 @font-face {
@@ -27,17 +32,22 @@
 
 .dark-mode {
 	--header-highlight:	#1D2D44;
-	--title-color:	    #9e9e9e;
+	--title-color:	    	#9e9e9e;
 	--header-color:		#0D1321;
 	--UR-color: 		#16181a; /*2f2f2f*/
 	--bg-color:    		#202020;
-	--highlight:   		#6f6f6f;
+	--highlight:   		#494949;
 	--highlight-2:   	#748CAB;
 	--border-color:   	#6f6f6f;
-	--border-color-2:   #6f6f6f;
+	--border-color-2:   	#6f6f6f;
 	--border-color-3:	#6f6f6f;
 	--text-color:		#9e9e9e;
 	--form-color: 		#6f6f6f;
+
+	--row-odd-title:	#0D1321;
+	--row-even-title:	#202020;
+	--row-odd:		#0D1321;
+	--row-even:		#202020;
 }
 
 /* ----------- page layout styles ----------- */
@@ -128,7 +138,7 @@ h1 {
 
 /* Code taken from W3 schools, and modified to match styles */
 /* Dropdown Button */
-#projdropbtn, #linksdropbtn, #modebtn {
+.headerbtn {
 	background-color: var(--header-color);
 	color: var(--title-color);
 	font-size: 1.2em;
@@ -136,10 +146,12 @@ h1 {
 	font-family: national;
 	border: none;
 	height: 100%;
+	transition-duration: 0.3s;
+	cursor: pointer;
   }
   
   /* Dropdown button on hover & focus */
-  #projdropbtn:hover, #linksdropbtn:hover, #modebtn:hover {
+  .headerbtn:hover {
 	background-color: var(--header-highlight);
   }
   
@@ -228,9 +240,14 @@ h1 {
 	font-size: 1em;
 	padding: 2px;
 	list-style: circle;
+	cursor: pointer;
 }
 
 .accordion-content p:hover {
+	background-color: var(--highlight);
+}
+
+.accordion-content p:focus {
 	background-color: var(--highlight);
 }
 
@@ -268,6 +285,7 @@ h1 {
 
 .semester p {
 	font-size: 0.9em;
+	cursor: pointer;
 }
 
 .semester p:hover, p:focus {
@@ -306,35 +324,38 @@ p {
 #LL {
 	border-top: 1px solid var(--border-color);
 	border-right: 1px solid var(--border-color);
-
-	text-align: center;
-	font-family: national;
-	font-size: 15px;
 }
 
 #LL h3 {
-	margin: 0.75em;
-}
-
-input[type=text] {
-	height: 2em;
-	width: 55%;
-	margin: 0;
-	padding: 0;
-	background-color: var(--bg-color);
-	border: 1.5px solid var(--form-color);
-}
-
-input[type=submit] {
-	width: 25%;
-	
-	font-size: 1em;
 	font-family: national;
-	color: var(--bg-color);
-	margin: 0;
-	padding: 0.25em;
-	background-color: var(--form-color);
-	border: 1.5px solid var(--form-color);
+	font-size: 1.5em;
+	color: var(--text-color);
+	text-align: center;
+	margin: 0.5em 0;
+}
+
+
+form {
+	align-content: center;
+}
+
+label {
+	font-family: national;
+	color: var(--text-color);
+	font-size: 1em;
+	margin: 0 0 0.25em 0;
+	display: block;
+	text-align: center;
+}
+
+.sel {
+	width: 80%;
+	display: block;
+	margin: 0 auto 1em auto;
+	font-size: 0.75em;
+	color: var(--text-color);
+	background-color: var(--bg-color);
+	transition-duration: 0.3s; 
 }
 
 /* -------------- LR Styles -------------- */
@@ -343,7 +364,53 @@ input[type=submit] {
 	border-top: 1px solid var(--border-color-2);
 }
 
-/* Temporary Formatting */
-#LR p {
-	margin: 1em;
+#table_id_filter {
+	margin: 0.5em 0.5em 0 0;
+}
+
+input[type=text] {
+	height: 2em;
+	margin: 0;
+	padding: 0;
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	border: 1.5px solid var(--form-color);
+}
+
+#table_id th {
+	color: var(--text-color);
+	font-family: national;
+	font-size: 1em;
+}
+
+#table_id tr {
+	font-family: national;
+	font-size: 0.9em;
+	color: var(--text-color);
+	border: none;
+	
+}
+
+#table_id tr.odd {
+	background-color: var(--row-odd);
+	transition-duration: 0.3s;
+	transition-delay: 0;
+}
+
+#table_id tr.even {
+	background-color: var(--row-even);
+	transition-duration: 0.3s;
+	transition-delay: 0;
+}
+
+#table_id tr.odd td.sorting_1 {
+	background-color: var(--row-odd-title);
+	transition-duration: 0.3s;
+	transition-delay: 0;
+}
+
+#table_id tr.even td.sorting_1 {
+	background-color: var(--row-even-title);
+	transition-duration: 0.3s;
+	transition-delay: 0;
 }
