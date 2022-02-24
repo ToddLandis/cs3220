@@ -45,7 +45,7 @@
                 <script>
 // KBBmake()
 var makes;
-function KBBmake() {
+function KBBmakeF() {
   console.log("test");
   var request = new XMLHttpRequest();
   var value = document.getElementById("KBByear");
@@ -69,7 +69,7 @@ function KBBmake() {
 
 
 // KBBmodel()
-function KBBmodel() {
+function KBBmodelF() {
   console.log("test");
   var request = new XMLHttpRequest();
   var value = document.getElementById("KBBmake"); //FIXME
@@ -144,8 +144,8 @@ function KBBmodel() {
                         <div id="lower" class="half">
                                 <div id="LL">
                                         <form name="ourform">
-						<select id="KBByear" onchange="return(KBBmake())"></select>
-                                                <select id="KBBmake" onchange="return KBBmodel()"></select>
+						<select id="KBByear" onchange="KBBmakeF()"></select>
+                                                <select id="KBBmake" onchange="return KBBmodelF()"></select>
                                                 <select id="KBBmodel"></select>
                                         </form>
                                </div>
