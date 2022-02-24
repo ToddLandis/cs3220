@@ -229,23 +229,22 @@ KBByearF();
 
 
 // KBBmake()
-var makes;
+var makes = {};
 function KBBmakeF() {
   console.log("test");
   var request = new XMLHttpRequest();
-  var value = document.getElementById("KBByear").value;
+  var year = document.getElementById("KBByear").value;
   console.log("Value: " + value);
-  request.open("GET","/~gallaghd/ymm/ymmdb.php?fmt=json&year="+value,true);
+  request.open("GET","/~gallaghd/ymm/ymmdb.php?fmt=json&year="+year,true);
   request.onreadystatechange = function() {
     console.log("TEST"); //DEBUG
     if(this.readyState == 4) {
       data = this.responseText;
       json = JSON.parse(data);
-      console.log(data);
-      console.log(json);
       string = "";
       for (i in json) {
         string = string.concat("<option>" + json[i].name + "</option>");
+        makes[json[i].name] = json[i].id;
       }
       console.log(string); //DEBUG
       html = document.getElementById("KBBmake");
@@ -260,8 +259,10 @@ function KBBmakeF() {
 function KBBmodelF() {
   console.log("test");
   var request = new XMLHttpRequest();
-  var value = document.getElementById("KBBmake"); //FIXME
-  request.open("GET","/~gallaghd/ymm/ymmdb.php?fmt=json&year="+value,true); //FIXME
+  var year = document.getElementById("KBByear").value;
+  var value = document.getElementById("KBBmake").value; //FIXME
+  var make = makes[value];
+  request.open("GET","/~gallaghd/ymm/ymmdb.php?fmt=json&year="+year+"&make="+make,true); //FIXME
   request.onreadystatechange = function() {
     console.log("TEST"); //DEBUG
     if(this.readyState == 4) {
