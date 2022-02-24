@@ -93,6 +93,7 @@ function populate() {
       request.open("GET","/~gallaghd/cs3220/termProject/getRequirements.php",true);
       request.onreadystatechange = function() {
         var myData = this.responseText;
+        console.log(myData);
         json = JSON.parse(myData);
         core = json.categories.Core.courses;
         electives = json.categories.Electives.courses;
