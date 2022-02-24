@@ -223,7 +223,7 @@ function KBByearF() {
       }
       html = document.getElementById("KBByear");
       html.innerHTML = string;
-      KBBmake();
+      KBBmakeF();
     }
   }
   request.send(null);
@@ -252,7 +252,7 @@ function KBBmakeF() {
       console.log(string); //DEBUG
       html = document.getElementById("KBBmake");
       html.innerHTML = string;
-      KBBmodel();
+      KBBmodelF();
     }
   }
   request.send(null);
