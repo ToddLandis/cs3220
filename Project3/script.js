@@ -73,21 +73,21 @@ function populate() {
           html = document.getElementById('core');
           var string = "";
           for (i in core) {
-            string = string.concat("<p>" + core[i] + ": " + newCatalog.courses[core[i]].name + "</p>");
+            string = string.concat("<p tabindex=\"0\">" + core[i] + ": " + newCatalog.courses[core[i]].name + "</p>");
           }
           html.innerHTML = string;
 
           string = "";
           html = document.getElementById('electives');
           for (i in electives) {
-            string = string.concat("<p>" + electives[i] + ": " + newCatalog.courses[electives[i]].name + "</p>");
+            string = string.concat("<p tabindex=\"0\">" + electives[i] + ": " + newCatalog.courses[electives[i]].name + "</p>");
           }
           html.innerHTML = string;
 
           string = "";
           html = document.getElementById('cognates');
           for (i in cognates) {
-            string = string.concat("<p>" + cognates[i] + ": " + newCatalog.courses[cognates[i]].name + "</p>");
+            string = string.concat("<p tabindex=\"0\">" + cognates[i] + ": " + newCatalog.courses[cognates[i]].name + "</p>");
           }
           html.innerHTML = string;
         }
@@ -106,6 +106,8 @@ function populate() {
         try {
           $('#table_id').DataTable({
             data: datatables,
+            paging: false,
+            info: false,
             column: [
               {data: 'id'},
               {data: 'name'},
@@ -188,7 +190,7 @@ function make(years) {
       // add each course to the term
       for (let course in thisTerm.courses) {
         thisCourse = thisTerm.courses[course];
-        instring = instring.concat("<p onfocus=\"\">" + thisCourse.id + ":  " + newCatalog.courses[thisCourse.id].name + "</p>");
+        instring = instring.concat("<p tabindex=\"0\">" + thisCourse.id + ":  " + newCatalog.courses[thisCourse.id].name + "</p>");
       }
 
       instring = instring.concat("</div>");
@@ -215,7 +217,7 @@ function KBByearF() {
     if(this.readyState == 4) {
       data = this.responseText;
       json = JSON.parse(data);
-      string = "<option></option>";
+      string = "";
       for (i in json) {
         string = string.concat("<option>" + json[i] + "</option>");
       }
