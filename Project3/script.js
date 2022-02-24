@@ -248,7 +248,7 @@ function KBBmake() {
         string = string.concat("<option>" + json[i].name + "</option>");
       }
       console.log(string); //DEBUG
-      html = document.getElementById("KBByear");
+      html = document.getElementById("KBBmake");
       html.innerHTML = string;
     }
   }
@@ -273,7 +273,7 @@ function KBBmodel() {
         string = string.concat("<option>" + json[i] + "</option>");
       }
       console.log(string); //DEBUG
-      html = document.getElementById("KBByear");
+      html = document.getElementById("KBBmodel");
       html.innerHTML = string;
     }
   }
