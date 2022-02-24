@@ -12,8 +12,19 @@ function linksDropdownFunction() {
 
 // Close the dropdown menu if the user clicks outside of it
 window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
+  if (!event.target.matches('.projdropbtn')) {
+    var dropdowns = document.getElementByID("projDropdown");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+
+  if (!event.target.matches('.linksdropbtn')) {
+    var dropdowns = document.getElementByID("linksDropdown");
     var i;
     for (i = 0; i < dropdowns.length; i++) {
       var openDropdown = dropdowns[i];
