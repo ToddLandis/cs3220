@@ -208,6 +208,7 @@ populate(); // main async function
 // Kelly Blue Book Problem //
 
 // KBByear()
+console.log("test");
 var request = new XMLHttpRequest();
 request.open("GET","/~gallaghd/ymm/ymmdb.php?fmt=json",true);
 request.onreadystatechange = function() {
