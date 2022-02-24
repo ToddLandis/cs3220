@@ -90,12 +90,12 @@ function populate() {
       make(convert(newPlan))
 
       // ACCORDIAN //////////////////////////////
-      var request = new XMLHttpRequest();
-      request.open("GET","/~gallaghd/cs3220/termProject/getRequirements.php",true);
-      request.onreadystatechange = function() {
-        var myData = this.responseText;
-        console.log(myData);
-        json = JSON.parse(myData);
+      var arequest = new XMLHttpRequest();
+      arequest.open("GET","/~gallaghd/cs3220/termProject/getRequirements.php",true);
+      arequest.onreadystatechange = function() {
+        var theData = this.responseText;
+        console.log(theData);
+        json = JSON.parse(theData);
         core = json.categories.Core.courses;
         electives = json.categories.Electives.courses;
         cognates = json.categories.Cognates.courses;
@@ -114,7 +114,7 @@ function populate() {
         }
 
       }
-      request.send(null);
+      arequest.send(null);
 
       // DATATABLES //////////////////////////////////////////////////
       data = newCatalog.courses;
