@@ -232,7 +232,7 @@ KBByear();
 
 
 // KBBmake()
-var KBBmake;
+var makes;
 function KBBmake() {
   console.log("test");
   var request = new XMLHttpRequest();
