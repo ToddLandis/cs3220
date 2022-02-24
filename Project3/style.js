@@ -7,24 +7,26 @@ function linksDropdownFunction() {
     document.getElementById("linksDropdown").classList.toggle("show");
 }
     
-  // Close the dropdown menu if the user clicks outside of it
-  window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
-      var dropdowns = document.getElementsByClassName("dropdown-content");
-      var i;
-      for (i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+    if (!event.target.matches('.projdropbtn')) {
+        var dropdown = document.getElementById("projDropdown");
+        if (dropdown.classList.contains('show')) {
+            dropdown.classList.remove('show');
         }
-      }
     }
-  }
+    if (!event.target.matches('.linksdropbtn')) {
+        var dropdown = document.getElementById("linksDropdown");
+        if (dropdown.classList.contains('show')) {
+            dropdown.classList.remove('show');
+        }
+    }
+}
   
-  /* dark mode function */
-  function darkModeFunction() {
+/* dark mode function */
+function darkModeFunction() {
     var element = document.body;
-    var content = document.getElementsByClassName("modebtn");
+    var content = document.getElementsById("modebtn");
     element.classList.toggle("dark-mode");
     content.innerText = "Light Mode";
-  }
+}
