@@ -207,8 +207,20 @@ populate(); // main async function
 // Anything that uses the AJAX data should be called in populate() at the location marked with a comment //AJAXfunctions
 
 
+// Kelly Blue Book Problem //
 
-document.getElementById("#ourform").on('submit', function(e) {
-  var xmlhttp = new XMLHttpRequest();
-
-});
+// KBByear()
+var request = new XMLHttpRequest();
+request.open("GET","/~gallaghd/ymm/ymmdb.php?fmt=json",true);
+request.onreadystatechange = function() {
+  if(this.readyState == 4) {
+    data = this.responseText;
+    json = JSON.parse(data);
+    string = "";
+    for (i in json) {
+      string = string.concat("<option>" + json[i] + "</option>");
+    }
+    html = document.getElementById("KBByear");
+    html.innerHTML = string;
+  }
+}
