@@ -139,7 +139,7 @@ h1 {
   }
   
   /* Dropdown button on hover & focus */
-  #projdropbtn:hover, #projdropbtn:hover, #modebtn:hover {
+  #projdropbtn:hover, #linksdropbtn:hover, #modebtn:hover {
 	background-color: var(--header-highlight);
   }
   
