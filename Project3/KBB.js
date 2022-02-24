@@ -5,7 +5,7 @@ var makes;
 function KBBmake() {
   console.log("test");
   var request = new XMLHttpRequest();
-  var value = document.getElementById("KBBmake");
+  var value = document.getElementById("KBByear");
   request.open("GET","/~gallaghd/ymm/ymmdb.php?fmt=json&year="+value,true);
   request.onreadystatechange = function() {
     console.log("TEST"); //DEBUG
