@@ -28,5 +28,6 @@ function darkModeFunction() {
     var element = document.body;
     var content = document.getElementById("modebtn");
     element.classList.toggle("dark-mode");
-    content.innerText = "Light Mode";
+    if (content.innerText == "Dark Mode") {content.innerText = "Light Mode";}
+    if (content.innerText == "Light Mode") {content.innerText = "Dark Mode";}
 }
