@@ -99,7 +99,16 @@ function populate() {
       datatables = [];
       for (i in data) {
         row = data[i]
-        datatables.push([row.id, row.name, row.description, row.credits]);
+        // EASTER EGG
+        if (row.id == "CS-3410") {
+          datatables.push([row.id, row.name, "The bane of Computer Science", row.credits]);
+        }
+        else if(row.id == "CS-3510") {
+          datatables.push([row.id, row.name, "Meh", row.credits]);
+        }
+        else { //Actual code needed
+          datatables.push([row.id, row.name, row.description, row.credits]);
+        }
       }
 
       $(document).ready( function () {
