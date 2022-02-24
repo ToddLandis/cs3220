@@ -104,7 +104,7 @@ function populate() {
               {data: 'description'},
               {data: 'credits'}
             ],
-            "pageLength": 11
+            "pageLength": 1000
           });
         }
         catch (e) {
