@@ -208,7 +208,7 @@ populate(); // main async function
 
 
 
-document.getElementById("#ourform").onabort('submit', function(e) {
+document.getElementById("#ourform").on('submit', function(e) {
   var xmlhttp = new XMLHttpRequest();
 
 });
