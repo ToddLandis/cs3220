@@ -80,7 +80,7 @@ function populate() {
   request.onreadystatechange = function() {
     if(this.readyState == 4) {
       var myData = this.responseText;
-      console.log(myData);
+    //  console.log(myData);  //DEBUG
       json = JSON.parse(myData);
       newPlan = json.plan;
       newCatalog = json.catalog;
@@ -94,7 +94,7 @@ function populate() {
       arequest.open("GET","/~gallaghd/cs3220/termProject/getRequirements.php",true);
       arequest.onreadystatechange = function() {
         var theData = this.responseText;
-        console.log(theData);
+        console.log(theData); //DEBUG
         json = JSON.parse(theData);
         core = json.categories.Core.courses;
         electives = json.categories.Electives.courses;
