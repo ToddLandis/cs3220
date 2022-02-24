@@ -90,29 +90,30 @@ function populate() {
       make(convert(newPlan))
 
       // ACCORDIAN //////////////////////////////
-      var arequest = new XMLHttpRequest();
-      arequest.open("GET","/~gallaghd/cs3220/termProject/getRequirements.php",true);
-      arequest.onreadystatechange = function() {
-        var theData = this.responseText;
-        console.log(theData); //DEBUG
-        ajson = JSON.parse(theData);
-        core = ajson.categories.Core.courses;
-        electives = ajson.categories.Electives.courses;
-        cognates = ajson.categories.Cognates.courses;
+      var request = new XMLHttpRequest();
+      request.open("GET","/~gallaghd/cs3220/termProject/getRequirements.php",true);
+      request.onreadystatechange = function() {
+        if(this.readyState == 4) {
+          var myData = this.responseText;
+          console.log(myData); //DEBUG
+          json = JSON.parse(myData);
+          core = json.categories.Core.courses;
+          electives = json.categories.Electives.courses;
+          cognates = json.categories.Cognates.courses;
 
-        html = document.getElementById('core').innerHTML;
-        for (i in core) {
-          html = html.concat("<p>" + core[i] + ": " + newCatalog.courses[core[i]].name + "</p>");
+          html = document.getElementById('core').innerHTML;
+          for (i in core) {
+            html = html.concat("<p>" + core[i] + ": " + newCatalog.courses[core[i]].name + "</p>");
+          }
+          html = document.getElementById('electives').innerHTML;
+          for (i in electives) {
+            html = html.concat("<p>" + electives[i] + ": " + newCatalog.courses[electives[i]].name + "</p>");
+          }
+          html = document.getElementById('cognates').innerHTML;
+          for (i in cognates) {
+            html = html.concat("<p>" + cognates[i] + ": " + newCatalog.courses[cognates[i]].name + "</p>");
+          }
         }
-        html = document.getElementById('electives').innerHTML;
-        for (i in electives) {
-          html = html.concat("<p>" + electives[i] + ": " + newCatalog.courses[electives[i]].name + "</p>");
-        }
-        html = document.getElementById('cognates').innerHTML;
-        for (i in cognates) {
-          html = html.concat("<p>" + cognates[i] + ": " + newCatalog.courses[cognates[i]].name + "</p>");
-        }
-
       }
       arequest.send(null);
 
