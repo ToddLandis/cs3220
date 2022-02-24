@@ -36,19 +36,24 @@
 			});
                 } );
                 </script>
+
+                <!-- Datatables Scripts -->
+                <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.css">
+                <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.js"></script>
+
         </head>
         <body>
                 <div id="main">
                         <div id="header">
                                 <div id="left">
-                                        <button onclick="darkModeFunction()" id="modebtn">Dark Mode</button>
+                                        <button onclick="darkModeFunction()" class="modebtn">Dark Mode</button>
                                 </div>
                                 <div id="title">
                                         <h1>Academic Planning Environment</h1>
                                 </div>
                                 <div id="right">
                                         <div class="menu">
-                                                <button onclick="projDropdownFunction()" id="projdropbtn">v3.0</button>
+                                                <button onclick="projDropdownFunction()" class="dropbtn">v3.0</button>
                                                 <div id="projDropdown" class="dropdown-content">
                                                         <a href="/~tilandis/Project1/index.html">Version 1</a>
                                                         <a href="/~tilandis/Project2/index.html">Version 2</a>
@@ -58,7 +63,7 @@
                                                 </div>
                                         </div>
                                         <div class="menu">
-                                                <button onclick="linksDropdownFunction()" id="linksdropbtn">Links</button>
+                                                <button onclick="linksDropdownFunction()" class="dropbtn">Links</button>
                                                 <div id="linksDropdown" class="dropdown-content">
                                                         <a href="http://csweb.cedarville.edu">People's Choice Awards</a>
                                                         <a href="http://judah.cedarville.edu/~carpent/cs3220.html">Ryan's Homepage</a>
@@ -113,7 +118,12 @@
                                         </form>
                                </div>
                                 <div id="LR">
-                                        <div id="myTable"></div>
+                                        <table id="table_id" class="display">
+                                                <thead>
+                                                </thead>
+                                                <tbody>
+                                                </tbody>
+                                        </table>
                                 </div>
                         </div>
                 </div>

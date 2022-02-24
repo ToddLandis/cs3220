@@ -1,30 +1,14 @@
 // Include Scripts
-
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
-function projDropdownFunction() {
-  document.getElementById("projDropdown").classList.toggle("show");
+function dropdownFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
 }
-
-function linksDropdownFunction() {
-  document.getElementById("linksDropdown").classList.toggle("show");
-}
-
+  
 // Close the dropdown menu if the user clicks outside of it
 window.onclick = function(event) {
-  if (!event.target.matches('.projdropbtn')) {
-    var dropdowns = document.getElementByID("projDropdown");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-
-  if (!event.target.matches('.linksdropbtn')) {
-    var dropdowns = document.getElementByID("linksDropdown");
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
     var i;
     for (i = 0; i < dropdowns.length; i++) {
       var openDropdown = dropdowns[i];
@@ -102,6 +86,17 @@ function populate() {
 
       //AJAXfunctions should go here ///////////////////////////////////////////////////////////////////
       make(convert(newPlan))
+      $(document).ready( function () {
+        $('#table_id').DataTable({
+          data: newCatalog.courses,
+          column: [
+            {data: 'id'},
+            {data: 'name'},
+            {data: 'description'},
+          ],
+          "pageLength": 3
+        });
+} );
       
       //////////////////////////////////////////////////////////////////////////////////////////////////
     }
