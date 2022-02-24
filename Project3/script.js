@@ -215,7 +215,7 @@ function KBByearF() {
     if(this.readyState == 4) {
       data = this.responseText;
       json = JSON.parse(data);
-      string = "";
+      string = "<option></option>";
       for (i in json) {
         string = string.concat("<option>" + json[i] + "</option>");
       }
