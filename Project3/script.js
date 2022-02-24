@@ -218,6 +218,7 @@ request.onreadystatechange = function() {
     for (i in json) {
       string = string.concat("<option>" + json[i] + "</option>");
     }
+    console.log(string);
     html = document.getElementById("KBByear");
     html.innerHTML = string;
   }
