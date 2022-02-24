@@ -270,7 +270,7 @@ function KBBmodelF() {
       json = JSON.parse(data);
       string = "";
       for (i in json) {
-        string = string.concat("<option>" + json[i] + "</option>");
+        string = string.concat("<option>" + json[i].name + "</option>");
       }
       console.log(string); //DEBUG
       html = document.getElementById("KBBmodel");
