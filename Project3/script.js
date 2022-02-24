@@ -91,6 +91,7 @@ function populate() {
         datatables += data[i].name
         datatables += data[i].description
       }
+      console.log(datatables); //DEBUG
 
       //AJAXfunctions should go here ///////////////////////////////////////////////////////////////////
       make(convert(newPlan))
