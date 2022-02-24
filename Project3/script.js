@@ -102,17 +102,25 @@ function populate() {
           cognates = json.categories.Cognates.courses;
 
           html = document.getElementById('core');
+          var string = "";
           for (i in core) {
-            html.append("<p>" + core[i] + ": " + newCatalog.courses[core[i]].name + "</p>");
+            string = string.concat("<p>" + core[i] + ": " + newCatalog.courses[core[i]].name + "</p>");
           }
+          html.innerHTML = string;
+
+          string = "";
           html = document.getElementById('electives');
           for (i in electives) {
-            html.append("<p>" + electives[i] + ": " + newCatalog.courses[electives[i]].name + "</p>");
+            string = string.concat("<p>" + electives[i] + ": " + newCatalog.courses[electives[i]].name + "</p>");
           }
+          html.innerHTML = string;
+          
+          string = "";
           html = document.getElementById('cognates');
           for (i in cognates) {
-            html.append("<p>" + cognates[i] + ": " + newCatalog.courses[cognates[i]].name + "</p>");
+            string = string.concat("<p>" + cognates[i] + ": " + newCatalog.courses[cognates[i]].name + "</p>");
           }
+          html.innerHTML = string;
         }
       }
       request.send(null);
