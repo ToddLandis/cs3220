@@ -217,7 +217,7 @@ function KBByearF() {
     if(this.readyState == 4) {
       data = this.responseText;
       json = JSON.parse(data);
-      string = "";
+      string = "<option></option>"; // Otherwise, this loads with a top value in it, but does not call KBBmake() and selecting the same value doesn't call it. Requires the user to select another option and then the original which isn't good.
       for (i in json) {
         string = string.concat("<option>" + json[i] + "</option>");
       }
