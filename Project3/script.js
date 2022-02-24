@@ -211,6 +211,7 @@ populate(); // main async function
 var request = new XMLHttpRequest();
 request.open("GET","/~gallaghd/ymm/ymmdb.php?fmt=json",true);
 request.onreadystatechange = function() {
+  console.log("TEST"); //DEBUG
   if(this.readyState == 4) {
     data = this.responseText;
     json = JSON.parse(data);
@@ -218,7 +219,7 @@ request.onreadystatechange = function() {
     for (i in json) {
       string = string.concat("<option>" + json[i] + "</option>");
     }
-    console.log(string);
+    console.log(string); //DEBUG
     html = document.getElementById("KBByear");
     html.innerHTML = string;
   }
