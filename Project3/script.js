@@ -226,6 +226,7 @@ function KBByear() {
       html.innerHTML = string;
     }
   }
+  request.send(null);
 }
 KBByear();
 
