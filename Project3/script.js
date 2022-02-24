@@ -115,7 +115,7 @@ function populate() {
           }
         }
       }
-      arequest.send(null);
+      request.send(null);
 
       // DATATABLES //////////////////////////////////////////////////
       data = newCatalog.courses;
