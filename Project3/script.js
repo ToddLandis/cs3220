@@ -240,6 +240,8 @@ function KBBmakeF() {
     if(this.readyState == 4) {
       data = this.responseText;
       json = JSON.parse(data);
+      console.log(data);
+      console.log(json);
       string = "";
       for (i in json) {
         string = string.concat("<option>" + json[i].name + "</option>");
