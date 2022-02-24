@@ -84,12 +84,18 @@ function populate() {
       newPlan = json.plan;
       newCatalog = json.catalog;
 
+      data = newCatalog.courses;
+      datatables = [];
+      for (i in data) {
+        datatables += data[i]
+      }
+
       //AJAXfunctions should go here ///////////////////////////////////////////////////////////////////
       make(convert(newPlan))
       $(document).ready( function () {
         try {
           $('#table_id').DataTable({
-            data: newCatalog.courses.CS-1210,
+            data: datatables,
             column: [
               {data: 'id'},
               {data: 'name'},
