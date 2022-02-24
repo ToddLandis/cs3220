@@ -51,7 +51,6 @@ function populate() {
   request.onreadystatechange = function() {
     if(this.readyState == 4) {
       var myData = this.responseText;
-      console.log(myData);  //DEBUG
       json = JSON.parse(myData);
       newPlan = json.plan;
       newCatalog = json.catalog;
@@ -66,7 +65,6 @@ function populate() {
       request.onreadystatechange = function() {
         if(this.readyState == 4) {
           var myData = this.responseText;
-          console.log(myData); //DEBUG
           json = JSON.parse(myData);
           core = json.categories.Core.courses;
           electives = json.categories.Electives.courses;
