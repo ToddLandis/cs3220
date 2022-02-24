@@ -234,7 +234,7 @@ function KBBmakeF() {
   console.log("test");
   var request = new XMLHttpRequest();
   var year = document.getElementById("KBByear").value;
-  console.log("Value: " + value);
+  console.log("Value: " + year);
   request.open("GET","/~gallaghd/ymm/ymmdb.php?fmt=json&year="+year,true);
   request.onreadystatechange = function() {
     console.log("TEST"); //DEBUG
