@@ -87,15 +87,20 @@ function populate() {
       //AJAXfunctions should go here ///////////////////////////////////////////////////////////////////
       make(convert(newPlan))
       $(document).ready( function () {
-        $('#table_id').DataTable({
-          data: newCatalog.courses,
-          column: [
-            {data: 'id'},
-            {data: 'name'},
-            {data: 'description'},
-          ],
-          "pageLength": 3
-        });
+        try {
+          $('#table_id').DataTable({
+            data: newCatalog.courses,
+            column: [
+              {data: 'id'},
+              {data: 'name'},
+              {data: 'description'},
+            ],
+            "pageLength": 3
+          });
+        }
+        catch (e) {
+          console.log("Whoops, that's an error");
+        }
 } );
       
       //////////////////////////////////////////////////////////////////////////////////////////////////
