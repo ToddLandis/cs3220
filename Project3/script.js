@@ -254,7 +254,6 @@ function KBBmake() {
   }
   request.send(null);
 }
-KBBmake();
 
 
 // KBBmodel()
@@ -279,4 +278,3 @@ function KBBmodel() {
   }
   request.send(null);
 }
-KBBmodel();
