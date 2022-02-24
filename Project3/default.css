@@ -223,18 +223,14 @@ h1 {
 	margin: 0 10px;
 }
 
-.accordion-content ul {
-	margin: 0;
-}
-
-.accordion-content li {
+.accordion-content p {
 	font-family: national;
 	font-size: 1em;
 	padding: 2px;
 	list-style: circle;
 }
 
-.accordion-content li:hover {
+.accordion-content p:hover {
 	background-color: var(--highlight);
 }
 
