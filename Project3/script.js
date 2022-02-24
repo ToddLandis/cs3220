@@ -217,12 +217,13 @@ function KBByearF() {
     if(this.readyState == 4) {
       data = this.responseText;
       json = JSON.parse(data);
-      string = "<option></option>"; // Otherwise, this loads with a top value in it, but does not call KBBmake() and selecting the same value doesn't call it. Requires the user to select another option and then the original which isn't good.
+      string = "";
       for (i in json) {
         string = string.concat("<option>" + json[i] + "</option>");
       }
       html = document.getElementById("KBByear");
       html.innerHTML = string;
+      KBBmake();
     }
   }
   request.send(null);
@@ -251,6 +252,7 @@ function KBBmakeF() {
       console.log(string); //DEBUG
       html = document.getElementById("KBBmake");
       html.innerHTML = string;
+      KBBmodel();
     }
   }
   request.send(null);
