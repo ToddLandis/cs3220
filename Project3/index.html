@@ -96,7 +96,16 @@
                         </div>
                         <div id="lower" class="half">
                                 <div id="LL">
-                                </div>
+                                        <h3>Kelly Blue Book Problem</h3>
+                                        <form name="ourform">
+                                                <label>Year</label>
+						<select id="KBByear" class="sel" onchange="KBBmakeF()"></select>
+                                                <label>Make</label>
+                                                <select id="KBBmake" class="sel" onchange="return KBBmodelF()"></select>
+                                                <label>Model</label>
+                                                <select id="KBBmodel" class="sel"></select>
+                                        </form>
+                               </div>
                                 <div id="LR">
                                         <table id="table_id" class="">
                                                 <thead>
