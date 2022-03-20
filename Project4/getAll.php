@@ -5,7 +5,7 @@
 
     // $row = mysqli_fetch_assoc($result); // Hash where values can be accessed using column names
     print "Student Names";
-    for $rowNum = 0; $rowNum < mysql_num_rows($result); $rowNum++) {
+    for ($rowNum = 0; $rowNum < mysql_num_rows($result); $rowNum++) {
         $row = mysqli_fetch_assoc($result);
         print htmlspecialchars($row["Name"]);
         print "\n"
