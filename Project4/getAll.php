@@ -8,7 +8,7 @@
     for ($rowNum = 0; $rowNum < mysql_num_rows($result); $rowNum++) {
         $row = mysqli_fetch_assoc($result);
         print htmlspecialchars($row["Name"]);
-        print "\n"
+        print "\n";
     }
     mysqli_close($db);
 ?>
