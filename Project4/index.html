@@ -4,28 +4,6 @@
                 <title>APE</title>
                 <link rel="stylesheet" href="default.css" />
                 <link rel="icon" type="image/x-icon" href="favicon.ico" />
-                <script language="javascript">
-                        function check() {
-                                var textbox = document.ourform.textbox.value;
-                                var pos = textbox.search(/^\(?\d{3}\)?-? ?\d{3}-?\d{4}$/);
-                                if (pos != 0) {
-                                        document.ourform.textbox.style.border = "1.5px solid #FF7F7F";
-                                }
-                                else {
-                                        document.ourform.textbox.style.border = "1.5px solid #93c47d";
-                                }
-                        }
-                        function validate() {
-                                var textbox = document.ourform.textbox.value;
-                                var pos = textbox.search(/^\(?\d{3}\)?-? ?\d{3}-?\d{4}$/);
-                                if (pos != 0) {
-					alert("The phone number \"" + textbox + "\" you entered is not valid.");
-					document.ourform.textbox.focus();
-					document.ourform.textbox.select();
-					return false;
-                                }
-                        }
-                </script>
                 <!--- This code is taken from JQueryUI to implement the accordion -->
                 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
                 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
