@@ -1,12 +1,14 @@
 <?php
 $mysqli = new mysqli('james', 'cs3220', '', 'cs3220_Sp22') 
     or die('Database connect error.');
-$year = 2018;   // get from Plan
-$major=1;  // id field for CS major; get from Plan 
 
-$stmt = mysqli->prepare(“SELECT fieldA, fieldB from Requirements 
-        where year= ? AND  major= ?;”);
-$stmt->bind_param(“ii", $year, $major)
+
+$year = 2018;   // get from Plan
+$major=1;  // id field for CS major; get from Plan
+
+$stmt = mysqli->prepare("SELECT fieldA, fieldB from Requirements 
+        where year= ? AND  major= ?;");
+$stmt->bind_param("ii", $year, $major)
         or die('Database bind error.');
 
 $stmt->execute()
