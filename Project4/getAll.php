@@ -1,14 +1,24 @@
 <?php
-    $db = mysqli_connect("james","cs3220","","cs3220_Sp22") or die ("Error: Unable to connected to database");
-    $query = "SELECT * FROM `CHL_User` WHERE 1";
-    $result = mysqli_query($db, $query) or die ("Error: Unsuccessful query");
+$mysqli = new mysqli('james', 'cs3220', '', 'cs3220_Sp22') 
+    or die('Database connect error.');
+$year = 2018;   // get from Plan
+$major=1;  // id field for CS major; get from Plan 
 
-    // $row = mysqli_fetch_assoc($result); // Hash where values can be accessed using column names
-    print "Student Names\n";
-    for ($rowNum = 0; $rowNum < mysqli_num_rows($result); $rowNum++) {
-        $row = mysqli_fetch_assoc($result);
-        print htmlspecialchars($row["Name"]);
-        print "\n";
-    }
-    mysqli_close($db);
+$stmt = mysqli->prepare(“SELECT fieldA, fieldB from Requirements 
+        where year= ? AND  major= ?;”);
+$stmt->bind_param(“ii", $year, $major)
+        or die('Database bind error.');
+
+$stmt->execute()
+        or die('Database execute error.');
+$stmt->store_result();    // optional for efficiency; fetches all results
+$stmt->bind_result($fieldA, $fieldB);
+
+$reqs = array();
+while ($stmt->fetch()) {
+    $reqs[] = new Requirement($fieldA, $fieldB);
+}
+
+$stmt->close();
+$mysqli->close();
 ?>
