@@ -1,3 +1,46 @@
+class Course {
+  constructor(term, year, courseDesignator, courseName, hours) {
+    this.term = term;
+    this.year = year;
+    this.courseDesignator = courseDesignator;
+    this.courseName = courseName;
+    this.hours = hours;
+  }
+}
+  
+class Plan {
+  constructor(planName, catalogueYear, major, studentName, semester, courses = []) {
+    this.planName = planName;
+    this.catalogueYear = catalogueYear;
+    this.major = major;
+    this.studentName = studentName;
+    this.semester = semester;
+    this.courses = courses;
+  }
+  addCourse(course) {
+    this.courses.push(course);
+  }
+}
+  
+class Year {
+  constructor() {
+    this.terms = {};
+  }
+  addTerm(key, term) {
+    this.terms[key] = term;
+  }
+}
+  
+class Term {
+  constructor(courses = []) {
+    this.courses = courses;
+    this.hours = 0;
+  }
+  addCourse(course) {
+    this.courses.push(course);
+  }
+}
+
 // Global Vars Needed
 var newPlan;
 var newCatalog;
@@ -11,6 +54,21 @@ function populate() {
       json = JSON.parse(myData);
       newPlan = json.plan;
       newCatalog = json.catalog;
+      
+      student = newPlan.student;
+      planName = newPlan.name;
+      major = newPlan.major;
+      currentyear = newPlan.currYear;
+      currentterm = newPlan.currTerm;
+
+      info = document.getElementById("planinfo");
+      var pinfo = "";
+      pinfo = pinfo.concat("<p>Student: " + student + "<p/>");
+      pinfo = pinfo.concat("<p>Plan Name: " + planName + "<p/>");
+      pinfo = pinfo.concat("<p>Major: " + major + "<p/>");
+
+      info.innerHTML = pinfo;
+
 
       //AJAXfunctions should go here ///////////////////////////////////////////////////////////////////
 
@@ -30,21 +88,21 @@ function populate() {
           html = document.getElementById('core');
           var string = "";
           for (i in core) {
-            string = string.concat("<p tabindex=\"0\">" + core[i] + ": " + newCatalog.courses[core[i]].name + "</p>");
+            string = string.concat("<p class=\"requirement\" tabindex=\"0\" id=\"req_" + core[i] + "\" draggable=\"true\" ondragstart=\"drag(event)\" ondragend=\"stopdrag(event)\">" + core[i] + ": " + newCatalog.courses[core[i]].name + "</p>");
           }
           html.innerHTML = string;
 
           string = "";
           html = document.getElementById('electives');
           for (i in electives) {
-            string = string.concat("<p tabindex=\"0\">" + electives[i] + ": " + newCatalog.courses[electives[i]].name + "</p>");
+            string = string.concat("<p class=\"requirement\" tabindex=\"0\" id=\"req_" + electives[i] + "\" draggable=\"true\" ondragstart=\"drag(event)\" ondragend=\"stopdrag(event)\">" + electives[i] + ": " + newCatalog.courses[electives[i]].name + "</p>");
           }
           html.innerHTML = string;
 
           string = "";
           html = document.getElementById('cognates');
           for (i in cognates) {
-            string = string.concat("<p tabindex=\"0\">" + cognates[i] + ": " + newCatalog.courses[cognates[i]].name + "</p>");
+            string = string.concat("<p class=\"requirement\" tabindex=\"0\" id=\"req_" + cognates[i] + "\" draggable=\"true\" ondragstart=\"drag(event)\" ondragend=\"stopdrag(event)\">" + cognates[i] + ": " + newCatalog.courses[cognates[i]].name + "</p>");
           }
           html.innerHTML = string;
         }
@@ -56,16 +114,7 @@ function populate() {
       datatables = [];
       for (i in data) {
         row = data[i]
-        // EASTER EGG
-        if (row.id == "CS-3410") {
-          datatables.push([row.id, row.name, "The bane of Computer Science", row.credits]);
-        }
-        else if(row.id == "CS-3510") {
-          datatables.push([row.id, row.name, "Meh", row.credits]);
-        }
-        else { //Actual code needed
-          datatables.push([row.id, row.name, row.description, row.credits]);
-        }
+        datatables.push([row.id, row.name, row.description, row.credits]);
       }
 
       $(document).ready( function () {
@@ -80,13 +129,21 @@ function populate() {
               {data: 'description'},
               {data: 'credits'}
             ],
-            "pageLength": 1000
+            "pageLength": 1000,
+            // Add HTML5 draggable class to each row
+            createdRow: function ( row, data, dataIndex, cells ) {
+                $(row).attr('class', 'fromTable');
+                $(row).attr('draggable', 'true');
+                $(row).attr('ondragstart', 'dragFromTable(event)');
+                $(row).attr('ondragend', 'stopdrag(event)');
+            }
           });
         }
         catch (e) {
           console.log("Whoops, that's an error");
         }
-} );
+
+      } );
       
       //////////////////////////////////////////////////////////////////////////////////////////////////
     }
@@ -140,9 +197,9 @@ function make(years) {
       
       // add header to the term
       if (term == "Fall") {
-        instring = instring.concat("<div class=\"semester\"><div class=\"term_head\"><h4>" + term + " " + year + "</h4>");
+        instring = instring.concat("<div class=\"semester\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"><div class=\"term_head\"><h4>" + term + " " + year + "</h4>");
       } else {
-        instring = instring.concat("<div class=\"semester\"><div class=\"term_head\"><h4>" + term + " " + (parseInt(year)+1).toString() + "</h4>");
+        instring = instring.concat("<div class=\"semester\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"><div class=\"term_head\"><h4>" + term + " " + (parseInt(year)+1).toString() + "</h4>");
       }
 
       // add hours to each term
@@ -156,7 +213,7 @@ function make(years) {
       // add each course to the term
       for (let course in thisTerm.courses) {
         thisCourse = thisTerm.courses[course];
-        instring = instring.concat("<p tabindex=\"0\">" + thisCourse.id + ":  " + newCatalog.courses[thisCourse.id].name + "</p>");
+        instring = instring.concat("<p id=\"" + thisCourse.id + "\" draggable=\"true\" ondragstart=\"drag(event)\" ondragend=\"stopdrag(event)\" onmouseover=\"deleteoption(event)\" onmouseout=\"removedel(event)\">" + thisCourse.id + ":  " + newCatalog.courses[thisCourse.id].name + "</p>");
       }
 
       instring = instring.concat("</div>");
@@ -168,5 +225,12 @@ function make(years) {
   doc.innerHTML = instring;
 }
   
-// Anything that uses the AJAX data should be called in populate() at the location marked with a comment //AJAXfunctions
+// make(); // had to change with async
 populate(); // main async function
+// Anything that uses the AJAX data should be called in populate() at the location marked with a comment //AJAXfunctions
+
+
+// write modified plan to the database
+function savePlan() {
+  return;
+}
