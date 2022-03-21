@@ -1,11 +1,11 @@
 /* fonts and colors */
 
 :root {
-	--header-highlight: 	#0D1321;
-	--title-color:	    	#fdfaef;
-	--header-color:		#1D2D44;
-	--UR-color: 		#748CAB;
-	--bg-color:    		#fdfaef;
+    --header-highlight: #0D1321;
+	--title-color:	    #fdfaef;
+    --header-color:		#1D2D44;
+    --UR-color: 		#748CAB;
+    --bg-color:    		#fdfaef;
 	--highlight: 		#d3d3d3;
 	--highlight-2: 		#748CAB;
 	--border-color: 	#d3d3d3;
@@ -16,8 +16,8 @@
 
 	--row-odd-title:	#e4e2dc;
 	--row-even-title:	#fdfaef;
-	--row-odd:		#e4e2dc;
-	--row-even:		#fdfaef;
+	--row-odd:			#e4e2dc;
+	--row-even:			#fdfaef;
 }
 
 @font-face {
@@ -32,22 +32,22 @@
 
 .dark-mode {
 	--header-highlight:	#1D2D44;
-	--title-color:	    	#9e9e9e;
+	--title-color:	    #9e9e9e;
 	--header-color:		#0D1321;
 	--UR-color: 		#16181a; /*2f2f2f*/
 	--bg-color:    		#202020;
 	--highlight:   		#494949;
 	--highlight-2:   	#748CAB;
 	--border-color:   	#6f6f6f;
-	--border-color-2:   	#6f6f6f;
+	--border-color-2:   #6f6f6f;
 	--border-color-3:	#6f6f6f;
 	--text-color:		#9e9e9e;
 	--form-color: 		#6f6f6f;
 
 	--row-odd-title:	#0D1321;
 	--row-even-title:	#202020;
-	--row-odd:		#0D1321;
-	--row-even:		#202020;
+	--row-odd:			#0D1321;
+	--row-even:			#202020;
 }
 
 /* ----------- page layout styles ----------- */
@@ -89,7 +89,7 @@ p, a, h2, h3, h4, h5, ul {
 }
 
 #lower {
-	height: 25%;
+	height: 35%;
 	overflow: auto;
 }
 
@@ -110,7 +110,6 @@ p, a, h2, h3, h4, h5, ul {
 /* ------------ Header Styles ------------ */
 
 #header {
-	height: 10%;
 	background-color: var(--header-color);
 	display: flex;
 	flex-direction: row;
@@ -133,6 +132,7 @@ p, a, h2, h3, h4, h5, ul {
 h1 {
 	font-family: kenfolg;
 	color: var(--title-color);
+	font-size: 2em;
 	margin: 0.75em 0.25em;
 }
 
@@ -197,6 +197,41 @@ h1 {
 	#lower {
 		height: 20%;
 	}
+}
+
+#infobar {
+	background-color: var(--highlight);
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding: 5px;
+	transition-duration: 0.3s;
+}
+
+#planinfo {
+	padding: 7.5px;
+}
+
+#planinfo p {
+	color: var(--text-color);
+	font-size: 1em;
+	display: inline;
+	margin: 0.25em;
+}
+
+#infobar button {
+	background-color: var(--highlight);
+	color: var(--text-color);
+	font-size: 1em;
+	font-family: national;
+	border: 1.5px solid var(--border-color-2);
+	border-radius: 1em;
+	padding: 5px 10px;
+	transition-duration: 0.3s;
+}
+
+#infobar button:hover {
+	background-color: var(--border-color-2);
 }
 
 /* -------------- UL Styles -------------- */
@@ -273,6 +308,7 @@ h1 {
 	border: 0.5px solid var(--border-color-3);
 	width:30%;
 	min-width: 200px;
+	min-height: 60px;
 	border-radius: 0.5em;
 	margin: 0.25em 0 0.25em 0.5em;
 	padding: 0.5em;
@@ -317,6 +353,11 @@ h5 {
 p {
 	font-family: national;
 	margin: 0;
+	display: block;
+}
+
+.hide {
+	display: none;
 }
 
 /* -------------- LL Styles -------------- */
