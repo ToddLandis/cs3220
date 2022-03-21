@@ -22,7 +22,7 @@ function allowDrop(ev) {
     ghostEle = document.createElement('p');
     ghostEle.classList.add('dragging');
     ghostEle.innerHTML = rowdata;
-    ghostEle.style.backgroundColor = "#d3d3d3";
+    ghostEle.style.backgroundColor = "var(--highlight)";
     ghostEle.style.width = "fit-content";
     ghostEle.id = "ghost";
 
