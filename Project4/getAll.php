@@ -53,8 +53,8 @@ while ($stmt->fetch()) {
 $stmt->close();
 
 for ($i = 0; $i < count($plans); $i++) {
-        $stmt = $mysqli->prepare("SELECT ID, Plan_ID, Course_ID, Year, Semester from CHL_Plan_Courses
-                where Plan_ID = ?");
+        $stmt = $mysqli->prepare("SELECT ID, Plan_ID, Course_ID, Year, Semester from CHL_Plan_Courses where Plan_ID = ?")
+                or die("SQL Error.") ;
         $stmt->bind_param("i", $plans[i]['ID'])
                 or die('Database bind error.');
 
