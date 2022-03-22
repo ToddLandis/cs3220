@@ -66,6 +66,7 @@ function populate() {
           for (i in cat) {
             string = string.concat("<p class=\"requirement\" tabindex=\"0\" id=\"req_" + i.id + "\" draggable=\"true\" ondragstart=\"drag(event)\" ondragend=\"stopdrag(event)\">" + i.id + ": " + newCatalog.courses[i].name + "</p>");
           }
+          string += "</div>";
         /*
           string = "";
           html = document.getElementById('electives');
@@ -81,7 +82,7 @@ function populate() {
           }
           html.innerHTML = string;*/
       }
-      html.innerHTML = string + "</div>";
+      html.innerHTML = string;
 
       // DATATABLES //////////////////////////////////////////////////
       data = newCatalog.courses;
