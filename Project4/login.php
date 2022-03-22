@@ -51,7 +51,7 @@
                         <input id="submit-btn" type="submit" value="Log in"/>
                     </form>
                     <p id="or">or</p>
-                    <a href="./signup.html" id="signup">Sign up</a>
+                    <a href="./signup.php" id="signup">Sign up</a>
                 </div>
             </div>
         </div>
