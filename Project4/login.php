@@ -28,6 +28,7 @@
         else { //FIXME take out style tag and fix style to actually be correct
             echo '<div id="passwordError" style="text-align:center;border-color:red;background-color:light red;>Incorrect Username or Password</div>';
         }
+    }
     $stmt->close();
 ?>
 <!DOCTYPE html>
