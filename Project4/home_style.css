@@ -168,7 +168,7 @@ a.choice_btn {
     align-content: center;
 }
 
-#userfield, #passfield, #namefield, #plannamefield, #major {
+#userfield, #passfield, #confirmpassfield, #namefield, #plannamefield, #major {
     background-color: var(--dark-blue-2);
     border-bottom: 3px solid var(--off-white);
     height: 2em;
