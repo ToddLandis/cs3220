@@ -49,7 +49,7 @@
                     <form name="loginform" onsubmit="validate(); return false;">
                         <input name="userfield" id="userfield" type="text" placeholder="Username"/>
                         <input name="passfield" id="passfield" type="password" placeholder="Password"/>
-                        <input id="submit-btn" type="submit" value="Log in"/>
+                        <input onsubmit="validate(); return false;" id="submit-btn" type="submit" value="Log in"/>
                     </form>
                     <p id="or">or</p>
                     <a href="./signup.php" id="signup">Sign up</a>
