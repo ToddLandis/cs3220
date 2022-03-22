@@ -36,7 +36,7 @@ $stmt->close();
 
 $stmt = $mysqli->prepare("SELECT ID, User_ID, Catalog_ID, Plan_Name from CHL_Plan
         where User_ID = ?");
-$stmt->bind_param($ID)
+$stmt->bind_param("ii", $ID)
         or die('Database bind error.');
 
 $stmt->execute()
