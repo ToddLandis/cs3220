@@ -219,7 +219,7 @@ h1 {
 	margin: 0.25em;
 }
 
-#infobar button {
+.infobtn button {
 	background-color: var(--highlight);
 	color: var(--text-color);
 	font-size: 1em;
@@ -230,7 +230,7 @@ h1 {
 	transition-duration: 0.3s;
 }
 
-#infobar button:hover {
+.infobtn button:hover {
 	background-color: var(--border-color-2);
 }
 

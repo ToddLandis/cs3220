@@ -60,7 +60,11 @@ if (!isset($_SESSION['user'])) {
                                         </div>
                                 </div>
                         </div>
-                        <div id="infobar"><div id="planinfo"></div><button id="savebtn" onclick="savePlan()">Save Plan</button></div>
+                        <div id="infobar">
+                                <div id="planinfo"></div>
+                                <button class="infobtn" id="savebtn" onclick="savePlan()">Save Plan</button>
+                                <button class="infobtn" id="logoutbtn" onclick="logOut()">Log Out</button>
+                        </div>
                         <div id="upper" class="half">
                                 <div id="UL">
                                         <div id="accordion">
