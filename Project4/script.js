@@ -56,7 +56,7 @@ function populate() {
       html = document.getElementById('accordion');
       var string = "";
       for (let cat in requirements) {
-        
+          console.log("DEBUG");
           string += '<div id="core" class="accordion-content"><h3>' + cat + '</h3>';
         /*
           core = json.categories.Core.courses;
@@ -64,6 +64,7 @@ function populate() {
           cognates = json.categories.Cognates.courses;
           */
           for (i in cat) {
+            console.log("DEBUG2");
             string = string.concat("<p class=\"requirement\" tabindex=\"0\" id=\"req_" + i.id + "\" draggable=\"true\" ondragstart=\"drag(event)\" ondragend=\"stopdrag(event)\">" + i.id + ": " + newCatalog.courses[i].name + "</p>");
           }
           string += "</div>";
