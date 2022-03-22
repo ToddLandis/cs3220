@@ -104,6 +104,7 @@ $stmt->bind_result($fieldA, $fieldB, $fieldC);
 
 $requirements = array();
 while ($stmt->fetch()) {
+        $requirements[$fieldC] = array();
         array_push($requirements[$fieldC], ['id'=>$fieldA, 'Title'=>$fieldB, 'category'=>$fieldC]);
 }
 $stmt->close();
