@@ -1,9 +1,39 @@
+<?php
+    $name = htmlspecialchars($_POST["name"]);
+    $pass = htmlspecialchars($_POST["pass"]);
+
+    $mysqli = new mysqli('james', 'cs3220', '', 'cs3220_Sp22') 
+    or die('Database connect error.');
+    $stmt = $mysqli->prepare("SELECT ID, Name, Password, Dark_Mode from CHL_User 
+        where Name = ?")
+        or die("Prepare error.");
+    $stmt->bind_param("s", $name) //FIXME probably remove "ii"
+            or die('Database bind error.');
+
+    $stmt->execute()
+            or die('Database execute error.');
+    $stmt->store_result();    // optional for efficiency; fetches all results
+    $stmt->bind_result($ID, $fieldB, $fieldC, $Dark_Mode);
+    $stmt->fetch();
+
+    if ($fieldC == $pass) {
+        session_start();
+        session_register($ID, $Dark_Mode);
+        header("Location: ./index.php");
+    }
+    $user = array();
+        $user['ID'] = $fieldA;
+        $user['Name'] = $fieldB;
+        $user['Dark_Mode'] = $fieldC;
+    $stmt->close();
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8"/>
         <title>Hearne Homepage</title>
         <link rel="stylesheet" href="./home_style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
         <div id="page-container">
@@ -18,8 +48,8 @@
             <div id="content-wrap">
                 <div id="login-container">
                     <form name="loginform" onsubmit="validate()">
-                        <input id="userfield" type="text" placeholder="Username"/>
-                        <input id="passfield" type="password" placeholder="Password"/>
+                        <input name="userfield" id="userfield" type="text" placeholder="Username"/>
+                        <input name="passfield" id="passfield" type="password" placeholder="Password"/>
                         <input id="submit-btn" type="submit" value="Log in"/>
                     </form>
                     <p id="or">or</p>
@@ -28,4 +58,14 @@
             </div>
         </div>
     </body>
+    <script type="javascript">
+        function validate() {
+            url = 'login.php'
+            data = 'user=' + $('#userfield').val() + '&pass=' + $('#passfield');
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: data
+            });
+    </script>
 </html>
