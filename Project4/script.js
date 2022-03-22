@@ -173,9 +173,9 @@ function make(years) {
       
       // add header to the term
       if (term == "Fall") {
-        instring = instring.concat("<div class=\"semester\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"><div class=\"term_head\"><h4>" + term + " " + year + "</h4>");
+        instring = instring.concat("<div class=\"semester\" id=\"" + term + " " + year + "\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"><div class=\"term_head\"><h4>" + term + " " + year + "</h4>");
       } else {
-        instring = instring.concat("<div class=\"semester\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"><div class=\"term_head\"><h4>" + term + " " + (parseInt(year)+1).toString() + "</h4>");
+        instring = instring.concat("<div class=\"semester\" id=\"" + term + " " + year + "\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"><div class=\"term_head\"><h4>" + term + " " + (parseInt(year)+1).toString() + "</h4>");
       }
 
       // add hours to each term
