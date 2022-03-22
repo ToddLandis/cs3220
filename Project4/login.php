@@ -26,7 +26,7 @@
         else {
             //TODO Joshua this is right up your alley
             // Modify page to show that the wrong username/password was used.
-            echo 'Username ' . $name . ' or password invalid';
+            echo 'Username "' . $name . '" or password invalid';
             // if you need it in the html body you could set a variable here which is detected later in the page in another set of php brackets
         }
     }
