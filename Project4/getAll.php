@@ -53,8 +53,8 @@ while ($stmt->fetch()) {
 $stmt->close();
 
 for ($i = 0; $i < count($plans); $i++) {
-        $stmt = $mysqli->prepare("SELECT ID, Plan_ID, Course_ID, Year, Semester from CHL_Plan_Courses where Plan_ID = ?")
-                or die("SQL Error.") ;
+        $stmt = $mysqli->prepare("SELECT ID, Plan_ID, Course_ID, Year, Semester from CHL_Plan_Courses 
+                where Plan_ID = ?");
         $stmt->bind_param("i", $plans[i]['ID'])
                 or die('Database bind error.');
 
@@ -73,19 +73,19 @@ for ($i = 0; $i < count($plans); $i++) {
 
 
 // catalog
-$stmt = $mysqli->prepare("SELECT ID, Catalog_ID, Course_ID, Year, Designator, Title, Description, Credits from CHL_Catalog_Courses,CHL_Catalog,CHL_Course
-        where CHL_CatalogCourses.Catalog_ID = CHL_Catalog.ID AND CHL_CatalogCourses.Course_ID = Course.ID AND Year = ?");
+$stmt = $mysqli->prepare("SELECT Catalog_ID, Course_ID, Year, Designator, Title, Description, Credits from CHL_Catalog_Courses,CHL_Catalog,CHL_Course
+        where CHL_Catalog_Courses.Catalog_ID = CHL_Catalog.ID AND CHL_Catalog_Courses.Course_ID = CHL_Course.ID AND Year = ?");
 $stmt->bind_param("i", $year)
         or die('Database bind error.');
 
 $stmt->execute()
         or die('Database execute error.');
 $stmt->store_result();    // optional for efficiency; fetches all results
-$stmt->bind_result($fieldA, $fieldB, $fieldC, $fieldD, $fieldE, $fieldF, $fieldG, $fieldH);
+$stmt->bind_result($fieldA, $fieldB, $fieldC, $fieldD, $fieldE, $fieldF, $fieldG);
 
 $catalog = array();
 while ($stmt->fetch()) {
-    array_push($catalog, ['id'=>$fieldE, 'name'=>$fieldF, 'description'=>$fieldG, 'credits'=>$fieldH]);
+    array_push($catalog, ['id'=>$fieldD, 'name'=>$fieldE, 'description'=>$fieldF, 'credits'=>$fieldG]);
 }
 $stmt->close();
 
