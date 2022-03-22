@@ -86,7 +86,7 @@ $stmt->bind_result($fieldA, $fieldB, $fieldC, $fieldD, $fieldE, $fieldF, $fieldG
 
 $catalog = array();
 while ($stmt->fetch()) {
-    array_push($catalog, ['id'=>$fieldD, 'name'=>$fieldE, 'description'=>$fieldF, 'credits'=>$fieldG]);
+    $catalog[$fieldB] = ['name'=>$fieldE, 'description'=>$fieldF, 'credits'=>$fieldG])];
 }
 $stmt->close();
 
