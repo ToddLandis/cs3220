@@ -3,7 +3,7 @@ $mysqli = new mysqli('james', 'cs3220', '', 'cs3220_Sp22')
     or die('Database connect error.');
 
 // Arguments
-$ID = htmlspecialchars($_GET["ID"]);
+//session_start(); // This will directly bring in variables referenced like "$ID"
 $ID = 1; //DEBUG
 //$password = htmlspecialchars($_GET["pass"]); //FIXME session key
 
