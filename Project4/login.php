@@ -25,8 +25,9 @@
             $_SESSION["Dark_Mode"] = $Dark_Mode;
             header("Location: ./index.php");
         }
-        else { //FIXME take out style tag and fix style to actually be correct
-            echo '<div id="passwordError" style="text-align:center;border-color:red;background-color:light red;>Incorrect Username or Password</div>';
+        else {
+            //TODO Joshua this is right up your alley
+            // Modify page to show that the wrong username/password was used.
         }
     }
     $stmt->close();
