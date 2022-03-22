@@ -1,3 +1,15 @@
+// global variable stack
+var changestack = [];
+
+class Change {
+  constuctor(change, course, term, year) {
+    this.change = change
+    this.course = course;
+    this.term = term;
+    this.year = year;
+  }
+}
+
 function allowDrop(ev) {
     ev.preventDefault();
   }
@@ -10,6 +22,14 @@ function allowDrop(ev) {
       setTimeout(() => {
         ev.target.classList.add('hide');
       }, 0);
+
+      var course = ev.target.id;
+      var term = ev.target.parentNode.id.substring(0, ev.target.id.search(" "));
+      var year = ev.target.parentNode.id.substring(ev.target.id.search(" "));
+  
+      changestack.push(new Change("delete", course, term, year));
+      // DEBUG
+      console.log("removed " + course + " from "  + ev.target.parentNode.id);
     }
   }
 
@@ -84,6 +104,14 @@ function allowDrop(ev) {
         ev.target.parentNode.appendChild(data);
     else 
         ev.target.appendChild(data);
+
+    var course = data.id;
+    var term = ev.target.id.substring(0, ev.target.id.search(" "));
+    var year = ev.target.id.substring(ev.target.id.search(" "));
+
+    changestack.push(new Change("insert", course, term, year));
+    // DEBUG
+    console.log("inserted " + course + " to "  + ev.target.id);
   }
 
   function deleteoption(ev) {
@@ -115,5 +143,19 @@ function allowDrop(ev) {
 
   function removeclass(ev) {
     var oldclass = document.getElementById(ev.target.parentNode.id);
+    
+    var course = oldclass.id;
+    var term = oldclass.parentNode.id.substring(0, ev.target.id.search(" "));
+    var year = oldclass.parentNode.id.substring(ev.target.id.search(" "));
+
+    changestack.push(new Change("delete", course, term, year));
+    // DEBUG
+    console.log("removed " + course + " from "  + oldclass.parentNode.id);
+
     oldclass.remove()
   }
+
+// write modified plan to the database
+function savePlan() {
+  
+}
