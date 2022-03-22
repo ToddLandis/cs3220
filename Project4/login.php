@@ -61,6 +61,7 @@
         function validate() {
             url = 'login.php'
             data = 'user=' + $('#userfield').val() + '&pass=' + $('#passfield');
+            console.log(data); //DEBUG
             $.ajax({
                 type: "POST",
                 url: url,
