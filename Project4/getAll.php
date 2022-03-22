@@ -11,7 +11,7 @@ $ID = 1; //DEBUG
 $combined = array();
 
 
-
+//FIXME move to // plans and get from SQL
 $year = 2020;   // get from Plan
 $major=1;  // id field for CS major; get from Plan FIXME
 

@@ -1,3 +1,21 @@
+class Year {
+  constructor() {
+    this.terms = {};
+  }
+  addTerm(key, term) {
+    this.terms[key] = term;
+  }
+}
+  
+class Term {
+  constructor(courses = []) {
+    this.courses = courses;
+    this.hours = 0;
+  }
+  addCourse(course) {
+    this.courses.push(course);
+  }
+}
 
 // Global Vars Needed
 var newPlan;
