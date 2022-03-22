@@ -160,7 +160,7 @@ a.choice_btn {
 
 /*   login page styles   */
 
-#login-container {
+#login-container, #signup-container {
     background-color: var(--dark-blue-2);
     margin: 1.5em auto 0 auto;
     padding: 3em;
@@ -168,11 +168,12 @@ a.choice_btn {
     align-content: center;
 }
 
-#userfield, #passfield {
+#userfield, #passfield, #namefield, #plannamefield, #majorfield {
     background-color: var(--dark-blue-2);
     border-bottom: 3px solid var(--off-white);
     height: 2em;
     width: 100%;
+    margin: 0.25em 0;
 }
 
 ::placeholder {
@@ -199,7 +200,6 @@ a.choice_btn {
     background: none;
     border: none;
     border-bottom: 3px solid var(--off-white);
-    margin: 0.5em 0 1em 0;
   }
 
   input[type=submit] {
@@ -242,4 +242,15 @@ input[type=submit]:hover {
     cursor: pointer;
 }
 
-/*   signup page styles   */
+label {
+    font-family: national;
+    color: var(--off-white);
+    display: block;
+    margin: 0.5em 0;
+    font-size: 1.25em;
+}
+
+input[type=radio] {
+    
+    margin: 0 0 0.5em 0;
+}
