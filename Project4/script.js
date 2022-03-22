@@ -65,7 +65,7 @@ function populate() {
           */
           for (i in requirements[cat]) {
             console.log("DEBUG2");
-            string = string.concat("<p class=\"requirement\" tabindex=\"0\" id=\"req_" + i.id + "\" draggable=\"true\" ondragstart=\"drag(event)\" ondragend=\"stopdrag(event)\">" + i.id + ": " + i.Title+ "</p>");
+            string = string.concat("<p class=\"requirement\" tabindex=\"0\" id=\"req_" + requirements[cat][i].id + "\" draggable=\"true\" ondragstart=\"drag(event)\" ondragend=\"stopdrag(event)\">" + requirements[cat][i].id + ": " + requirements[cat][i].Title+ "</p>");
           }
           string += "</div>";
         /*
