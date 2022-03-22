@@ -56,7 +56,7 @@ $stmt->close();
 for ($i = 0; $i < count($plans); $i++) {
         $stmt = $mysqli->prepare("SELECT ID, Plan_ID, Course_ID, Year, Semester from CHL_Plan_Courses 
                 where Plan_ID = ?");
-        $stmt->bind_param("s", $plans[i]['ID'])
+        $stmt->bind_param("s", $plans[$i]['ID'])
                 or die('Database bind error.');
 
         $stmt->execute()
