@@ -57,7 +57,7 @@
             </div>
         </div>
     </body>
-    <script type="javascript">
+    <script>
         function validate() {
             url = 'login.php'
             data = 'user=' + $('#userfield').val() + '&pass=' + $('#passfield');
