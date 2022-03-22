@@ -66,7 +66,7 @@ for ($i = 0; $i < count($plans); $i++) {
 
         $plan_courses = array();
         while ($stmt->fetch()) {
-                array_push($courses, ['ID'=>$fieldA, 'Plan_ID'=>$fieldB, 'Course_ID'=>$fieldC, 'year'=>$fieldD, 'term'=>$fieldE]);
+                array_push($plan_courses, ['ID'=>$fieldA, 'Plan_ID'=>$fieldB, 'Course_ID'=>$fieldC, 'year'=>$fieldD, 'term'=>$fieldE]);
         }
         $plans[i]['courses'] = $plan_courses;
         $stmt->close();
