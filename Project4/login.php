@@ -18,12 +18,16 @@
     $stmt->bind_result($ID, $fieldB, $fieldC, $Dark_Mode);
     $stmt->fetch();
 
-    if (($fieldC == $pass) && !(empty($pass))) {
-        session_start();
-        $_SESSION["ID"] = $ID;
-        $_SESSION["Dark_Mode"] = $Dark_Mode;
-        header("Location: ./index.php");
-    }
+    if (!(empty($pass)) {
+        if ($fieldC == $pass) {
+            session_start();
+            $_SESSION["ID"] = $ID;
+            $_SESSION["Dark_Mode"] = $Dark_Mode;
+            header("Location: ./index.php");
+        }
+        else { //FIXME take out style tag and fix style to actually be correct
+            echo '<div id="passwordError" style="text-align:center;border-color:red;background-color:light red;>Incorrect Username or Password</div>';
+        }
     $stmt->close();
 ?>
 <!DOCTYPE html>
@@ -47,7 +51,7 @@
             <div id="content-wrap">
                 <div id="login-container">
                     <form name="loginform" method="post" action="login.php">
-                        <input name="userfield" id="userfield" type="text" placeholder="Username"/>
+                        <input name="userfield" id="userfield" type="text" placeholder="Username" value="<?php echo $username ?>"/>
                         <input name="passfield" id="passfield" type="password" placeholder="Password"/>
                         <input onsubmit="validate(); return false;" id="submit-btn" type="submit" value="Log in"/>
                     </form>
