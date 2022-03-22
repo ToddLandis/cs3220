@@ -15,7 +15,7 @@ $year = 2018;   // get from Plan
 $major=1;  // id field for CS major; get from Plan
 
 
-$stmt = mysqli->prepare("SELECT ID, Name, Dark_Mode from CHL_User 
+$stmt = $mysqli->prepare("SELECT ID, Name, Dark_Mode from CHL_User 
         where ID = ?")
         or die("Prepare error.");
 $stmt->bind_param("ii", $ID) //FIXME probably remove "ii"
@@ -33,7 +33,7 @@ while ($stmt->fetch()) { //FIXME shouldn't need loop in this instance
 $stmt->close();
 
 
-$stmt = mysqli->prepare("SELECT ID, User_ID, Catalog_ID, Plan_Name from CHL_Plan
+$stmt = $mysqli->prepare("SELECT ID, User_ID, Catalog_ID, Plan_Name from CHL_Plan
         where User_ID = ?");
 $stmt->bind_param("ii", $ID)
         or die('Database bind error.');
