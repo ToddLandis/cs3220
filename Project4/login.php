@@ -1,6 +1,7 @@
 <?php
     $name = htmlspecialchars($_POST["userfield"]);
     $pass = htmlspecialchars($_POST["passfield"]);
+    echo "Username:" . $name;
     echo "Password: " . $pass;
 
     $mysqli = new mysqli('james', 'cs3220', '', 'cs3220_Sp22') 
@@ -8,7 +9,7 @@
     $stmt = $mysqli->prepare("SELECT ID, Name, Password, Dark_Mode from CHL_User 
         where Name = ?")
         or die("Prepare error.");
-    $stmt->bind_param("s", $name) //FIXME probably remove "ii"
+    $stmt->bind_param("s", $name)
             or die('Database bind error.');
 
     $stmt->execute()
