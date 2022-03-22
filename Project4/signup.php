@@ -20,6 +20,7 @@
                     <form name="signupform" onsubmit="createplan()">
                         <input id="userfield" type="text" placeholder="Username"/>
                         <input id="passfield" type="password" placeholder="Password"/>
+                        <input id="confirmpassfield" type="password" placeholder="Confirm Password"/>
                         <input id="namefield" type="text" placeholder="Student Name"/>
                         <input id="plannamefield" type="text" placeholder="Plan Name"/>
                         <select name="major" id="major" placeholder="Student Major">
