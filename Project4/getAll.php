@@ -84,9 +84,9 @@ $stmt->execute()
 $stmt->store_result();    // optional for efficiency; fetches all results
 $stmt->bind_result($fieldA, $fieldB, $fieldC, $fieldD, $fieldE, $fieldF, $fieldG);
 
-$catalog = array();
+$catalog['courses'] = array();
 while ($stmt->fetch()) {
-    $catalog[$fieldB] = ['name'=>$fieldE, 'description'=>$fieldF, 'credits'=>$fieldG];
+    $catalog['courses'][$fieldB] = ['name'=>$fieldE, 'description'=>$fieldF, 'credits'=>$fieldG];
 }
 $stmt->close();
 
