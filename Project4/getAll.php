@@ -29,7 +29,7 @@ $stmt->bind_result($fieldA, $fieldB, $fieldC);
 
 $user = array();
 while ($stmt->fetch()) { //FIXME shouldn't need loop in this instance
-    array_push($user, "ID"=>$fieldA, "Name"=>$fieldB, "Dark_Mode"=>$fieldC);
+    array_push($user, ["ID"=>$fieldA, "Name"=>$fieldB, "Dark_Mode"=>$fieldC]);
 }
 $stmt->close();
 
@@ -47,8 +47,7 @@ $stmt->bind_result($fieldA, $fieldB, $fieldC, $fieldD);
 $plan = array();
 $i = 0;
 while ($stmt->fetch()) {
-    $plan[i] = ["ID"=>$fieldA, "User_ID"=>$fieldB, "Catalog_ID"=>$fieldC, Plan_Name=>$fieldD];
-    $i++;
+    array_push($plan, ["ID"=>$fieldA, "User_ID"=>$fieldB, "Catalog_ID"=>$fieldC, Plan_Name=>$fieldD]);
 }
 $stmt->close();
 
