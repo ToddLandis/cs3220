@@ -1,6 +1,6 @@
 <?php
-    $name = htmlspecialchars($_POST["name"]);
-    $pass = htmlspecialchars($_POST["pass"]);
+    $name = htmlspecialchars($_POST["userfield"]);
+    $pass = htmlspecialchars($_POST["passfield"]);
 
     $mysqli = new mysqli('james', 'cs3220', '', 'cs3220_Sp22') 
     or die('Database connect error.');
