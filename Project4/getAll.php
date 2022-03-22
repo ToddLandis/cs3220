@@ -2,6 +2,19 @@
 $mysqli = new mysqli('james', 'cs3220', '', 'cs3220_Sp22') 
     or die('Database connect error.');
 
+// Arguments
+$name = htmlspecialchars($GET["name"]);
+$password = htmlspecialchars($GET["pass"]); //FIXME session key
+
+// Return array
+$combined = array();
+
+// top level
+$combined['plan'] = $plan;
+$combined['catalog'] = $catalog;
+$combined['Requirements'] = $requirements;
+$combined['User'] = $user;
+$combined['PlanList'] = $planList;
 
 $year = 2018;   // get from Plan
 $major=1;  // id field for CS major; get from Plan
@@ -22,5 +35,8 @@ while ($stmt->fetch()) {
 }
 
 $stmt->close();
+
+
 $mysqli->close();
+echo json_encode($combined);
 ?>
