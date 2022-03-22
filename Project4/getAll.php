@@ -54,8 +54,8 @@ while ($stmt->fetch()) {
 $stmt->close();
 
 for ($i = 0; $i < count($plans); $i++) {
-        $stmt = $mysqli->prepare("SELECT ID, Plan_ID, Course_ID, Year, Semester from CHL_Plan_Courses 
-                where Plan_ID = ?");
+        $stmt = $mysqli->prepare("SELECT Course_ID, Designator, Title, Year, Semester from CHL_Plan_Courses,CHL_Course 
+                where CHL_Plan_Courses.Course_ID = CHL_Course.ID AND Plan_ID = ?");
         $stmt->bind_param("s", $plans[$i]['ID'])
                 or die('Database bind error.');
 
@@ -66,7 +66,7 @@ for ($i = 0; $i < count($plans); $i++) {
 
         $plan_courses = array();
         while ($stmt->fetch()) {
-                array_push($plan_courses, ['ID'=>$fieldA, 'Plan_ID'=>$fieldB, 'Course_ID'=>$fieldC, 'year'=>$fieldD, 'term'=>$fieldE]);
+                array_push($plan_courses, ['DBID'=>$fieldA, 'id'=>$fieldB, 'name'=>$fieldC, 'year'=>$fieldD, 'term'=>$fieldE]);
         }
         $plans[$i]['courses'] = $plan_courses;
         $stmt->close();
