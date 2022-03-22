@@ -20,7 +20,7 @@ $major=1;  // id field for CS major; get from Plan FIXME
 $stmt = $mysqli->prepare("SELECT ID, Name, Dark_Mode from CHL_User 
         where ID = ?")
         or die("Prepare error.");
-$stmt->bind_param("1", $ID) //FIXME probably remove "ii"
+$stmt->bind_param("i", $ID) //FIXME probably remove "ii"
         or die('Database bind error.');
 
 $stmt->execute()
@@ -55,7 +55,7 @@ $stmt->close();
 for ($i = 0; $i < count($plans); $i++) {
         $stmt = $mysqli->prepare("SELECT ID, Plan_ID, Course_ID, Year, Semester from CHL_Plan_Courses 
                 where Plan_ID = ?");
-        $stmt->bind_param("i", $plans[i]['ID'])
+        $stmt->bind_param("s", $plans[i]['ID'])
                 or die('Database bind error.');
 
         $stmt->execute()
@@ -93,7 +93,7 @@ $stmt->close();
 // requirements
 $stmt = $mysqli->prepare("SELECT CHL_Course.Designator, CHL_Course.Title, CHL_Category.Name from CHL_Category_Courses,CHL_Category,CHL_Requirements,CHL_Course 
         where CHL_Category_Courses.Category_ID = CHL_Category.ID AND CHL_Category.Req_ID = CHL_Requirements.ID AND CHL_Category_Courses.Course_ID = CHL_Course.ID AND Major = ?");
-$stmt->bind_param("i", $major)
+$stmt->bind_param("s", $major)
         or die('Database bind error.');
 
 $stmt->execute()
