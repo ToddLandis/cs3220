@@ -162,7 +162,6 @@ a.choice_btn {
 
 #login-container, #signup-container {
     background-color: var(--dark-blue-2);
-    margin: 1.5em auto 0 auto;
     padding: 3em;
     width: 400px;
     align-content: center;
@@ -208,7 +207,7 @@ a.choice_btn {
 	font-size: 1.25em;
 	font-family: national;
 	color: var(--off-white);
-	margin: 0;
+	margin: 1em 0 0 0;
 	padding: 0.35em;
 	background-color: var(--light-blue-2);
     border: none;
@@ -248,9 +247,4 @@ label {
     display: block;
     margin: 0.5em 0;
     font-size: 1.25em;
-}
-
-input[type=radio] {
-    
-    margin: 0 0 0.5em 0;
 }
