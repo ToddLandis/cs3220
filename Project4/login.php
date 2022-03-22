@@ -18,7 +18,7 @@
     $stmt->bind_result($ID, $fieldB, $fieldC, $Dark_Mode);
     $stmt->fetch();
 
-    if (!(empty($pass)) {
+    if (!(empty($pass))) {
         if ($fieldC == $pass) {
             session_start();
             $_SESSION["ID"] = $ID;
