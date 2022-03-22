@@ -4,6 +4,7 @@ $mysqli = new mysqli('james', 'cs3220', '', 'cs3220_Sp22')
 
 // Arguments
 $ID = htmlspecialchars($_GET["ID"]);
+$ID = 0; //DEBUG
 //$password = htmlspecialchars($_GET["pass"]); //FIXME session key
 
 // Return array
