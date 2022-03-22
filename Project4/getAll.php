@@ -27,6 +27,7 @@ $stmt->execute()
         or die('Database execute error.');
 $stmt->store_result();    // optional for efficiency; fetches all results
 $stmt->bind_result($fieldA, $fieldB, $fieldC);
+$stmt->fetch();
 
 $user = array();
     $user['ID'] = $fieldA;
