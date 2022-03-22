@@ -13,7 +13,7 @@ function populate() {
       newPlan = json.plans[0];
       newCatalog = json.catalog;
       
-      student = newPlan.User_ID;
+      student = newPlan.User_name + newPlan.User_ID;
       planName = newPlan.Plan_Name;
       major = newPlan.major;
       currentyear = newPlan.currYear;
