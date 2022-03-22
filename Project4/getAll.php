@@ -16,6 +16,7 @@ $year = 2018;   // get from Plan
 $major=1;  // id field for CS major; get from Plan
 
 
+// user
 $stmt = $mysqli->prepare("SELECT ID, Name, Dark_Mode from CHL_User 
         where ID = ?")
         or die("Prepare error.");
@@ -34,6 +35,7 @@ $user = array();
 $stmt->close();
 
 
+// plans
 $stmt = $mysqli->prepare("SELECT ID, User_ID, Catalog_ID, Plan_Name, currYear, currTerm from CHL_Plan
         where User_ID = ?");
 $stmt->bind_param("i", $ID)
@@ -69,6 +71,23 @@ for ($i = 0; $i < count($plans); $i++) {
         $stmt->close();
 }
 
+
+// catalog
+$stmt = $mysqli->prepare("SELECT ID, Catalog_ID, Course_ID, Year, Designator, Title, Description, Credits from CHL_CatalogCourses,CHL_Catalog,Course
+        where CHL_CatalogCourses.Catalog_ID = CHL_Catalog.ID AND CHL_CatalogCourses.Course_ID = Course.ID AND Year = ?");
+$stmt->bind_param("i", $year)
+        or die('Database bind error.');
+
+$stmt->execute()
+        or die('Database execute error.');
+$stmt->store_result();    // optional for efficiency; fetches all results
+$stmt->bind_result($fieldA, $fieldB, $fieldC, $fieldD, $fieldE, $fieldF, $fieldG, $fieldH);
+
+$catalog = array();
+while ($stmt->fetch()) {
+    array_push($catalog, ['id'=>$fieldE, 'name'=>$fieldF, 'description'=>$fieldG, 'credits'=>$fieldH]);
+}
+$stmt->close();
 
 // top level
 $combined['plans'] = $plans; //modified from 'plan'
