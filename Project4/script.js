@@ -1,45 +1,3 @@
-class Course {
-  constructor(term, year, courseDesignator, courseName, hours) {
-    this.term = term;
-    this.year = year;
-    this.courseDesignator = courseDesignator;
-    this.courseName = courseName;
-    this.hours = hours;
-  }
-}
-  
-class Plan {
-  constructor(planName, catalogueYear, major, studentName, semester, courses = []) {
-    this.planName = planName;
-    this.catalogueYear = catalogueYear;
-    this.major = major;
-    this.studentName = studentName;
-    this.semester = semester;
-    this.courses = courses;
-  }
-  addCourse(course) {
-    this.courses.push(course);
-  }
-}
-  
-class Year {
-  constructor() {
-    this.terms = {};
-  }
-  addTerm(key, term) {
-    this.terms[key] = term;
-  }
-}
-  
-class Term {
-  constructor(courses = []) {
-    this.courses = courses;
-    this.hours = 0;
-  }
-  addCourse(course) {
-    this.courses.push(course);
-  }
-}
 
 // Global Vars Needed
 var newPlan;
@@ -47,16 +5,16 @@ var newCatalog;
 
 function populate() {
   var request = new XMLHttpRequest();
-  request.open("GET","/~gallaghd/cs3220/termProject/getCombined.php",true);
+  request.open("GET","/~tilandis/TermProject/Project4/getAll.php",true);
   request.onreadystatechange = function() {
     if(this.readyState == 4) {
       var myData = this.responseText;
       json = JSON.parse(myData);
-      newPlan = json.plan;
+      newPlan = json.plans[0];
       newCatalog = json.catalog;
       
-      student = newPlan.student;
-      planName = newPlan.name;
+      student = newPlan.User_ID;
+      planName = newPlan.Plan_Name;
       major = newPlan.major;
       currentyear = newPlan.currYear;
       currentterm = newPlan.currTerm;

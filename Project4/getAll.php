@@ -37,7 +37,7 @@ $stmt->close();
 
 
 // plans
-$stmt = $mysqli->prepare("SELECT ID, User_ID, Catalog_ID, Plan_Name, currYear, currTerm from CHL_Plan
+$stmt = $mysqli->prepare("SELECT ID, User_ID, Catalog_ID, Plan_Name, currYear, currTerm, Major from CHL_Plan
         where User_ID = ?");
 $stmt->bind_param("i", $ID)
         or die('Database bind error.');
@@ -45,11 +45,11 @@ $stmt->bind_param("i", $ID)
 $stmt->execute()
         or die('Database execute error.');
 $stmt->store_result();    // optional for efficiency; fetches all results
-$stmt->bind_result($fieldA, $fieldB, $fieldC, $fieldD, $fieldE, $fieldF);
+$stmt->bind_result($fieldA, $fieldB, $fieldC, $fieldD, $fieldE, $fieldF, $fieldG);
 
 $plans = array();
 while ($stmt->fetch()) {
-    array_push($plans, ['ID'=>$fieldA, 'User_ID'=>$fieldB, 'Catalog_ID'=>$fieldC, 'Plan_Name'=>$fieldD, 'currYear'=>$fieldE, 'currTerm'=>$fieldF]);
+    array_push($plans, ['ID'=>$fieldA, 'User_ID'=>$fieldB, 'Catalog_ID'=>$fieldC, 'Plan_Name'=>$fieldD, 'currYear'=>$fieldE, 'currTerm'=>$fieldF, 'major'=>$fieldG]);
 }
 $stmt->close();
 
