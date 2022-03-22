@@ -162,12 +162,13 @@ a.choice_btn {
 
 #login-container, #signup-container {
     background-color: var(--dark-blue-2);
+    margin: 0 auto;
     padding: 3em;
     width: 400px;
     align-content: center;
 }
 
-#userfield, #passfield, #namefield, #plannamefield, #majorfield {
+#userfield, #passfield, #namefield, #plannamefield, #major {
     background-color: var(--dark-blue-2);
     border-bottom: 3px solid var(--off-white);
     height: 2em;
@@ -181,17 +182,7 @@ a.choice_btn {
     margin: 0.25em 0; 
   }
 
-  input[type=text] {
-    color: var(--off-white);
-    font-family: national;
-    font-size: 1.25em;
-
-    background: none;
-    border: none;
-    border-bottom: 3px solid var(--off-white);
-  }
-
-  input[type=password] {
+  input[type=text], input[type=password], select {
     color: var(--off-white);
     font-family: national;
     font-size: 1.25em;
@@ -247,4 +238,8 @@ label {
     display: block;
     margin: 0.5em 0;
     font-size: 1.25em;
+}
+
+input[type="radio"] {
+    margin: 0 0.5em;
 }
