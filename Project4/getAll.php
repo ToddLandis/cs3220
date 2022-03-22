@@ -28,13 +28,13 @@ $stmt->store_result();    // optional for efficiency; fetches all results
 $stmt->bind_result($fieldA, $fieldB, $fieldC);
 
 $user = array();
-while ($stmt->fetch()) { //FIXME shouldn't need loop in this instance
-    array_push($user, ["ID"=>$fieldA, "Name"=>$fieldB, "Dark_Mode"=>$fieldC]);
-}
+    $user['ID'] = $fieldA;
+    $user['Name'] = $fieldB
+    $user['Dark_Mode'] = $fieldC;
 $stmt->close();
 
 
-$stmt = $mysqli->prepare("SELECT ID, User_ID, Catalog_ID, Plan_Name from CHL_Plan
+$stmt = $mysqli->prepare("SELECT ID, User_ID, Catalog_ID, Plan_Name, currYear, currTerm from CHL_Plan
         where User_ID = ?");
 $stmt->bind_param("i", $ID)
         or die('Database bind error.');
@@ -42,39 +42,40 @@ $stmt->bind_param("i", $ID)
 $stmt->execute()
         or die('Database execute error.');
 $stmt->store_result();    // optional for efficiency; fetches all results
-$stmt->bind_result($fieldA, $fieldB, $fieldC, $fieldD);
+$stmt->bind_result($fieldA, $fieldB, $fieldC, $fieldD, $fieldE, $fieldF);
 
-$plan = array();
-$i = 0;
+$plans = array();
 while ($stmt->fetch()) {
-    array_push($plan, ["ID"=>$fieldA, "User_ID"=>$fieldB, "Catalog_ID"=>$fieldC, Plan_Name=>$fieldD]);
+    array_push($plans, ['ID'=>$fieldA, 'User_ID'=>$fieldB, 'Catalog_ID'=>$fieldC, 'Plan_Name'=>$fieldD, 'currYear'=>$fieldE, 'currTerm'=>$fieldF]);
 }
 $stmt->close();
 
+for ($i = 0; $i < count($plan); $i++) {
+        $stmt = $mysqli->prepare("SELECT ID, Plan_ID, Course_ID, Year, Semester from CHL_Plan_Courses
+                where Plan_ID = ?");
+        $stmt->bind_param("i", $plan[i]['ID'])
+                or die('Database bind error.');
 
-$stmt = $mysqli->prepare("SELECT ID, User_ID, Catalog_ID, Plan_Name from CHL_Plan
-        where User_ID = ?");
-$stmt->bind_param("i", $ID)
-        or die('Database bind error.');
+        $stmt->execute()
+                or die('Database execute error.');
+        $stmt->store_result();    // optional for efficiency; fetches all results
+        $stmt->bind_result($fieldA, $fieldB, $fieldC, $fieldD, $fieldE);
 
-$stmt->execute()
-        or die('Database execute error.');
-$stmt->store_result();    // optional for efficiency; fetches all results
-$stmt->bind_result($fieldA, $fieldB, $fieldC, $fieldD);
-
-$plan = array();
-while ($stmt->fetch()) {
-    array_push($plan, $fieldA, $fieldB, $fieldC, $fieldD);
+        $plan_courses = array();
+        while ($stmt->fetch()) {
+                array_push($courses, ['ID'=>$fieldA, 'Plan_ID'=>$fieldB, 'Course_ID'=>$fieldC, 'year'=>$fieldD, 'term'=>$fieldE]);
+        }
+        $plan[i]['courses'] = $plan_courses;
+        $stmt->close();
 }
-$stmt->close();
 
 
 // top level
-$combined['plan'] = $plan;
+$combined['plans'] = $plans; //modified from 'plan'
 $combined['catalog'] = $catalog;
 $combined['Requirements'] = $requirements;
 $combined['User'] = $user;
-$combined['PlanList'] = $planList;
+$combined['PlanList'] = $planList; //dontneed
 
 $mysqli->close();
 echo json_encode($combined);
