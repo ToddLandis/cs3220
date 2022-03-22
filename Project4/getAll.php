@@ -12,7 +12,7 @@ $combined = array();
 
 
 
-$year = 2018;   // get from Plan
+$year = 2020;   // get from Plan
 $major=1;  // id field for CS major; get from Plan FIXME
 
 
