@@ -30,6 +30,7 @@ function populate() {
       json = JSON.parse(myData);
       newPlan = json.plans[0];
       newCatalog = json.catalog;
+      requirements = json.requirements;
       
       student = newPlan.User_name;
       stu_ID = newPlan.User_ID;
@@ -52,23 +53,21 @@ function populate() {
       make(convert(newPlan))
 
       // ACCORDIAN //////////////////////////////
-      var request = new XMLHttpRequest();
-      request.open("GET","/~gallaghd/cs3220/termProject/getRequirements.php",true);
-      request.onreadystatechange = function() {
-        if(this.readyState == 4) {
-          var myData = this.responseText;
-          json = JSON.parse(myData);
+      html = document.getElementById('accordian');
+      var string = "";
+      for (let cat in requirements) {
+        
+          string += '<div id="core" class="accordion-content"><h3>' + cat + '</h3>';
+        /*
           core = json.categories.Core.courses;
           electives = json.categories.Electives.courses;
           cognates = json.categories.Cognates.courses;
-
-          html = document.getElementById('core');
+          */
           var string = "";
-          for (i in core) {
-            string = string.concat("<p class=\"requirement\" tabindex=\"0\" id=\"req_" + core[i] + "\" draggable=\"true\" ondragstart=\"drag(event)\" ondragend=\"stopdrag(event)\">" + core[i] + ": " + newCatalog.courses[core[i]].name + "</p>");
+          for (i in cat) {
+            string = string.concat("<p class=\"requirement\" tabindex=\"0\" id=\"req_" + i.id + "\" draggable=\"true\" ondragstart=\"drag(event)\" ondragend=\"stopdrag(event)\">" + i.id + ": " + newCatalog.courses[i].name + "</p>");
           }
-          html.innerHTML = string;
-
+        /*
           string = "";
           html = document.getElementById('electives');
           for (i in electives) {
@@ -81,10 +80,9 @@ function populate() {
           for (i in cognates) {
             string = string.concat("<p class=\"requirement\" tabindex=\"0\" id=\"req_" + cognates[i] + "\" draggable=\"true\" ondragstart=\"drag(event)\" ondragend=\"stopdrag(event)\">" + cognates[i] + ": " + newCatalog.courses[cognates[i]].name + "</p>");
           }
-          html.innerHTML = string;
-        }
+          html.innerHTML = string;*/
       }
-      request.send(null);
+      html.innerHTML = string + "</div>";
 
       // DATATABLES //////////////////////////////////////////////////
       data = newCatalog.courses;
