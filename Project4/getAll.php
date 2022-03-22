@@ -19,7 +19,7 @@ $major=1;  // id field for CS major; get from Plan
 $stmt = $mysqli->prepare("SELECT ID, Name, Dark_Mode from CHL_User 
         where ID = ?")
         or die("Prepare error.");
-$stmt->bind_param($ID) //FIXME probably remove "ii"
+$stmt->bind_param("i", $ID) //FIXME probably remove "ii"
         or die('Database bind error.');
 
 $stmt->execute()
