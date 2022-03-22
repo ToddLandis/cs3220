@@ -13,7 +13,7 @@ $combined = array();
 
 
 $year = 2018;   // get from Plan
-$major=1;  // id field for CS major; get from Plan
+$major=1;  // id field for CS major; get from Plan FIXME
 
 
 // user
@@ -88,6 +88,26 @@ while ($stmt->fetch()) {
     array_push($catalog, ['id'=>$fieldD, 'name'=>$fieldE, 'description'=>$fieldF, 'credits'=>$fieldG]);
 }
 $stmt->close();
+
+
+// requirements
+$stmt = $mysqli->prepare("SELECT CHL_Course.Designator, CHL_Course.Title, CHL_Category.Name from CHL_Category_Courses,CHL_Category,CHL_Requirements,CHL_Course 
+        where CHL_Category_Courses.Category_ID = CHL_Category.ID AND CHL_Category.Req_ID = CHL_Requirements.ID AND CHL_Category_Courses.Course_ID = CHL_Course.ID AND Major = ?");
+$stmt->bind_param("i", $major)
+        or die('Database bind error.');
+
+$stmt->execute()
+        or die('Database execute error.');
+$stmt->store_result();    // optional for efficiency; fetches all results
+$stmt->bind_result($fieldA, $fieldB, $fieldC);
+
+$requirements = array();
+while ($stmt->fetch()) {
+    array_push($requirements[$fieldC], ['id'=>$fieldA, 'Title'=>$fieldB]);
+}
+$stmt->close();
+
+
 
 // top level
 $combined['plans'] = $plans; //modified from 'plan'
