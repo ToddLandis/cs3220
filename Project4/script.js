@@ -190,7 +190,7 @@ function make(years) {
       // add each course to the term
       for (let course in thisTerm.courses) {
         thisCourse = thisTerm.courses[course];
-        instring = instring.concat("<p id=\"" + thisCourse.id + "\" draggable=\"true\" ondragstart=\"drag(event)\" ondragend=\"stopdrag(event)\" onmouseover=\"deleteoption(event)\" onmouseout=\"removedel(event)\">" + thisCourse.id + ":  " + newCatalog.courses[thisCourse.id].name + "</p>");
+        instring = instring.concat("<p id=\"" + thisCourse.id + "\" draggable=\"true\" ondragstart=\"drag(event)\" ondragend=\"stopdrag(event)\" onmouseover=\"deleteoption(event)\" onmouseout=\"removedel(event)\">" + thisCourse.id + ":  " + newCatalog.courses[thisCourse.DBID].name + "</p>");
       }
 
       instring = instring.concat("</div>");
