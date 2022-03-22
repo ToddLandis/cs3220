@@ -18,13 +18,10 @@
 
     if ($fieldC == $pass) {
         session_start();
-        session_register($ID, $Dark_Mode);
+        $_SESSION["ID"] = $ID;
+        $_SESSION["Dark_Mode"] = $Dark_Mode;
         header("Location: ./index.php");
     }
-    $user = array();
-        $user['ID'] = $fieldA;
-        $user['Name'] = $fieldB;
-        $user['Dark_Mode'] = $fieldC;
     $stmt->close();
 ?>
 <!DOCTYPE html>
