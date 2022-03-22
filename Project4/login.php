@@ -18,7 +18,7 @@
     $stmt->bind_result($ID, $fieldB, $fieldC, $Dark_Mode);
     $stmt->fetch();
 
-    if (($fieldC == $pass) && ($pass != null)) {
+    if (($fieldC == $pass) && !(empty($pass))) {
         session_start();
         $_SESSION["ID"] = $ID;
         $_SESSION["Dark_Mode"] = $Dark_Mode;
@@ -46,7 +46,7 @@
             </div>
             <div id="content-wrap">
                 <div id="login-container">
-                    <form name="loginform" onsubmit="validate(); return false;">
+                    <form name="loginform" method="post" action="login.php">
                         <input name="userfield" id="userfield" type="text" placeholder="Username"/>
                         <input name="passfield" id="passfield" type="password" placeholder="Password"/>
                         <input onsubmit="validate(); return false;" id="submit-btn" type="submit" value="Log in"/>
@@ -57,7 +57,8 @@
             </div>
         </div>
     </body>
-    <script>
+    <script language="javascript" type="text/javascript">
+        // not used for now, direct form POSTing used.
         function validate() {
             url = 'login.php'
             data = 'user=' + $('#userfield').val() + '&pass=' + $('#passfield').val();
