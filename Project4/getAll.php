@@ -29,7 +29,7 @@ $stmt->bind_result($fieldA, $fieldB, $fieldC);
 
 $user = array();
     $user['ID'] = $fieldA;
-    $user['Name'] = $fieldB
+    $user['Name'] = $fieldB;
     $user['Dark_Mode'] = $fieldC;
 $stmt->close();
 
