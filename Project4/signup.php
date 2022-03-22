@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8"/>
         <title>Hearne Homepage</title>
-        <link rel="stylesheet" href="./home_style.css">
+        <link rel="stylesheet" href="../../home_style.css">
     </head>
     <body>
         <div id="page-container">
@@ -16,17 +16,21 @@
                 </div>
             </div>
             <div id="content-wrap">
-                <div class="login-container">
-                    <form name="signupform" onsubmit="">
+                <div id="signup-container">
+                    <form name="signupform" onsubmit="createplan()">
                         <input id="userfield" type="text" placeholder="Username"/>
                         <input id="passfield" type="password" placeholder="Password"/>
                         <input id="namefield" type="text" placeholder="Student Name"/>
                         <input id="plannamefield" type="text" placeholder="Plan Name"/>
-                        <input id="majorfield" type="text" placeholder="Student Major"/>
+                        <select name="major" id="major" placeholder="Student Major">
+                            <option value="none" selected disabled hidden>Major</option>
+                            <option value="Comp. Sci.">Computer Science</option>
+                            <option value="Comp. Eng.">Computer Engineering</option>
+                        </select>
                         <label>Page Preference</label>
-                        <input type="radio" class="option" name="mode" value="dark">Dark Mode<br>
-                        <input type="radio" class="option" name="mode" value="light">Light Mode<br>
-                        <input id="submit-btn" class="bottomfield" type="submit" value="Sign up"/>
+                        <label><input type="radio" class="option" name="mode" value="dark">Dark Mode<br></label>
+                        <label><input type="radio" class="option" name="mode" value="light">Light Mode<br></label>
+                        <input id="submit-btn" type="submit" value="Sign up"/>
                     </form>
                 </div>
             </div>
