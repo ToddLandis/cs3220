@@ -53,7 +53,7 @@ function populate() {
       make(convert(newPlan))
 
       // ACCORDIAN //////////////////////////////
-      html = document.getElementById('accordian');
+      html = document.getElementById('accordion');
       var string = "";
       for (let cat in requirements) {
         
