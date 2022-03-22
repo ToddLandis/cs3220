@@ -63,7 +63,6 @@ function populate() {
           electives = json.categories.Electives.courses;
           cognates = json.categories.Cognates.courses;
           */
-          var string = "";
           for (i in cat) {
             string = string.concat("<p class=\"requirement\" tabindex=\"0\" id=\"req_" + i.id + "\" draggable=\"true\" ondragstart=\"drag(event)\" ondragend=\"stopdrag(event)\">" + i.id + ": " + newCatalog.courses[i].name + "</p>");
           }
