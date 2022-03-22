@@ -30,7 +30,7 @@ function populate() {
       json = JSON.parse(myData);
       newPlan = json.plans[0];
       newCatalog = json.catalog;
-      requirements = json.requirements;
+      requirements = json.Requirements;
       
       student = newPlan.User_name;
       stu_ID = newPlan.User_ID;
