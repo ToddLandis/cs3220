@@ -46,7 +46,7 @@
             </div>
             <div id="content-wrap">
                 <div id="login-container">
-                    <form name="loginform" onsubmit="validate()">
+                    <form name="loginform" onsubmit="return validate()">
                         <input name="userfield" id="userfield" type="text" placeholder="Username"/>
                         <input name="passfield" id="passfield" type="password" placeholder="Password"/>
                         <input id="submit-btn" type="submit" value="Log in"/>
