@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8"/>
         <title>Hearne Homepage</title>
-        <link rel="stylesheet" href="../../home_style.css">
+        <link rel="stylesheet" href="./home_style.css">
     </head>
     <body>
         <div id="page-container">
