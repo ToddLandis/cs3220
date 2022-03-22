@@ -3,8 +3,8 @@ $mysqli = new mysqli('james', 'cs3220', '', 'cs3220_Sp22')
     or die('Database connect error.');
 
 // Arguments
-$ID = htmlspecialchars($GET["ID"]);
-$password = htmlspecialchars($GET["pass"]); //FIXME session key
+$ID = htmlspecialchars($_GET["ID"]);
+$password = htmlspecialchars($_GET["pass"]); //FIXME session key
 
 // Return array
 $combined = array();
