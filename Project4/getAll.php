@@ -73,7 +73,7 @@ for ($i = 0; $i < count($plans); $i++) {
 
 
 // catalog
-$stmt = $mysqli->prepare("SELECT ID, Catalog_ID, Course_ID, Year, Designator, Title, Description, Credits from CHL_CatalogCourses,CHL_Catalog,Course
+$stmt = $mysqli->prepare("SELECT ID, Catalog_ID, Course_ID, Year, Designator, Title, Description, Credits from CHL_Catalog_Courses,CHL_Catalog,CHL_Course
         where CHL_CatalogCourses.Catalog_ID = CHL_Catalog.ID AND CHL_CatalogCourses.Course_ID = Course.ID AND Year = ?");
 $stmt->bind_param("i", $year)
         or die('Database bind error.');
