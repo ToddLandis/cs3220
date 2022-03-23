@@ -41,7 +41,7 @@ function populate(planum=0) {
       currentyear = newPlan.currYear;
       currentterm = newPlan.currTerm;
 
-      planMenu = '<select id="planSelect">';
+      planMenu = '<select id="planSelect" onchange="populate(document.getElementById("planSelect").value);">';
       for (i in json.plans) {
         pid = json.plans[i].ID;
         pname = json.plans[i].Plan_Name;
@@ -214,6 +214,8 @@ populate(); // main async function
 // Anything that uses the AJAX data should be called in populate() at the location marked with a comment //AJAXfunctions
 
 // Update when they change the plan
+/*
 document.getElementById("planSelect").onchange = function(){
   populate(document.getElementById("planSelect").value);
  };
+*/
