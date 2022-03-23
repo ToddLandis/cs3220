@@ -2,8 +2,9 @@
 var changestack = [];
 
 class Change {
-  constuctor(change, course, term, year) {
-    this.change = change
+  constuctor(change, plan, course, term, year) {
+    this.change = change;
+    this.plan = plan;
     this.course = course;
     this.term = term;
     this.year = year;
@@ -23,11 +24,12 @@ function allowDrop(ev) {
         ev.target.classList.add('hide');
       }, 0);
 
+      var plan = ""; //FIXME
       var course = ev.target.id;
       var term = ev.target.parentNode.id.substring(0, ev.target.id.search(" "));
       var year = ev.target.parentNode.id.substring(ev.target.id.search(" "));
   
-      changestack.push(new Change("delete", course, term, year));
+      changestack.push(new Change("delete", plan, course, term, year));
       // DEBUG
       console.log("removed " + course + " from "  + ev.target.parentNode.id);
     }
@@ -105,11 +107,12 @@ function allowDrop(ev) {
     else 
         ev.target.appendChild(data);
 
+    var plan = ""; //FIXME
     var course = data.id;
     var term = ev.target.id.substring(0, ev.target.id.search(" "));
     var year = ev.target.id.substring(ev.target.id.search(" "));
-
-    changestack.push(new Change("insert", course, term, year));
+    
+    changestack.push(new Change("insert", plan, course, term, year));
     // DEBUG
     console.log("inserted " + course + " to "  + ev.target.id);
   }
@@ -157,5 +160,10 @@ function allowDrop(ev) {
 
 // write modified plan to the database
 function savePlan() {
-  
+ var dataString = JSON.stringify(changestack);
+ $.ajax({
+    url: 'updatePlan.php',
+    data: {myData: dataString},
+    type: 'POST'
+ });
 }

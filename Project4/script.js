@@ -28,6 +28,7 @@ function populate() {
     if(this.readyState == 4) {
       var myData = this.responseText;
       json = JSON.parse(myData);
+      // Different plans selectable by changing index value
       newPlan = json.plans[0];
       newCatalog = json.catalog;
       requirements = json.Requirements;
@@ -43,11 +44,12 @@ function populate() {
       info = document.getElementById("planinfo");
       var pinfo = "";
       pinfo = pinfo.concat("<p>Student: " + student + "<p/>");
-      pinfo = pinfo.concat("<p>Plan Name: " + planName + "<p/>");
+      pinfo = pinfo.concat("<p>Plan: " + planName + "<p/>"); //FIXME make this dropdown menu from which json.plans array can be selected
       pinfo = pinfo.concat("<p>Major: " + major + "<p/>");
 
       info.innerHTML = pinfo;
 
+      //FIXME When a different plan is selected from dropdown menu, it will have to run make(convert(newPlan)) again.
 
       //AJAXfunctions should go here ///////////////////////////////////////////////////////////////////
 
@@ -69,20 +71,6 @@ function populate() {
             string = string.concat("<p class=\"requirement\" tabindex=\"0\" id=\"req_" + requirements[cat][i].id + "\" draggable=\"true\" ondragstart=\"drag(event)\" ondragend=\"stopdrag(event)\">" + requirements[cat][i].id + ": " + requirements[cat][i].Title+ "</p>");
           }
           string += "</div>";
-        /*
-          string = "";
-          html = document.getElementById('electives');
-          for (i in electives) {
-            string = string.concat("<p class=\"requirement\" tabindex=\"0\" id=\"req_" + electives[i] + "\" draggable=\"true\" ondragstart=\"drag(event)\" ondragend=\"stopdrag(event)\">" + electives[i] + ": " + newCatalog.courses[electives[i]].name + "</p>");
-          }
-          html.innerHTML = string;
-
-          string = "";
-          html = document.getElementById('cognates');
-          for (i in cognates) {
-            string = string.concat("<p class=\"requirement\" tabindex=\"0\" id=\"req_" + cognates[i] + "\" draggable=\"true\" ondragstart=\"drag(event)\" ondragend=\"stopdrag(event)\">" + cognates[i] + ": " + newCatalog.courses[cognates[i]].name + "</p>");
-          }
-          html.innerHTML = string;*/
       }
       html.innerHTML = string;
 
@@ -216,8 +204,3 @@ function make(years) {
 populate(); // main async function
 // Anything that uses the AJAX data should be called in populate() at the location marked with a comment //AJAXfunctions
 
-
-// write modified plan to the database
-function savePlan() {
-  return;
-}
