@@ -149,12 +149,12 @@
                         <input id="plannamefield" name="plannamefield" type="text" placeholder="Plan Name" value="<?= $plan ?>"/>
                         <select name="major" id="major" placeholder="Student Major">
                             <option value="none" selected disabled hidden>Major</option>
-                            <option value="Comp. Sci." <?php if ($major == 'Comp. Sci.') echo selected ?> >Computer Science</option>
-                            <option value="Comp. Eng." <?php if ($major == 'Comp. Eng.') echo selected ?> >Computer Engineering</option>
+                            <option value="Comp. Sci." <?php if ($major == 'Comp. Sci.'){echo selected} ?> >Computer Science</option>
+                            <option value="Comp. Eng." <?php if ($major == 'Comp. Eng.'){echo selected} ?> >Computer Engineering</option>
                         </select>
                         <label>Page Preference</label>
-                        <label><input type="radio" class="option" name="mode" value="dark" <?php if ($mode == 'dark') echo selected ?> >Dark Mode<br></label>
-                        <label><input type="radio" class="option" name="mode" value="light" <?php if ($mode == 'light') echo selected ?> >Light Mode<br></label>
+                        <label><input type="radio" class="option" name="mode" value="dark" <?php if ($mode == 'dark'){echo selected}?> >Dark Mode<br></label>
+                        <label><input type="radio" class="option" name="mode" value="light" <?php if ($mode == 'light'){echo selected}?> >Light Mode<br></label>
                         <input id="submit-btn" type="submit" value="Sign up"/>
                     </form>
                 </div>
