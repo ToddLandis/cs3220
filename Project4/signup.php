@@ -65,7 +65,7 @@
         if (mysqli_query($mysqli, $sql)) {
             echo "New record created successfully";
       } else {
-            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+            echo "Error: " . $sql . "<br>" . mysqli_error($mysqli);
       }
         /*
         $stmt = $mysqli->prepare("INSERT INTO CHL_User (ID, Name, Login, Password, Dark_Mode) VALUES (NULL, ?, ?, ?, ?)")
