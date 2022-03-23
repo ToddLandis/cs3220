@@ -27,6 +27,7 @@ for (i in $data) {
     $stmt->bind_result($plan);
     $stmt->fetch();
     $stmt->close();
+    
     // Convert Course_Designator to Course_ID
     $stmt = $mysqli->prepare("SELECT `ID` from `CHL_Course` 
         where `Designator` = ?")
