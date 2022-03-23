@@ -60,7 +60,7 @@
         $mysqli = new mysqli('james', 'cs3220', '', 'cs3220_Sp22') 
             or die('Database connect error.');
         
-        $mysqli->begin_transaction();
+     //   $mysqli->begin_transaction();
         $sql = "INSERT INTO CHL_User (ID, Name, Login, Password, Dark_Mode) VALUES (NULL, ?, ?, ?, ?)";
         if (mysqli_query($mysqli, $sql)) {
             echo "New record created successfully";
@@ -106,7 +106,7 @@
         
         $stmt->execute();
         $stmt->close();
-        $mysqli->commit();
+    //    $mysqli->commit();
         $mysqli->close();
 
         header("Location: ./login.php");
