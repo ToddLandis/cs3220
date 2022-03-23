@@ -61,12 +61,19 @@
             or die('Database connect error.');
         
         $mysqli->begin_transaction();
-
+        $sql = "INSERT INTO CHL_User (ID, Name, Login, Password, Dark_Mode) VALUES (NULL, ?, ?, ?, ?)";
+        if (mysqli_query($mysqli, $sql)) {
+            echo "New record created successfully";
+      } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+      }
+        /*
         $stmt = $mysqli->prepare("INSERT INTO CHL_User (ID, Name, Login, Password, Dark_Mode) VALUES (NULL, ?, ?, ?, ?)")
             or die("Prepare error.");
         $stmt->bind_param("ssss", $name, $user, $password, $mode)
                 or die('Database bind error.');
         $stmt->execute();
+        */
         $stmt->close();
 
         $stmt = $mysqli->prepare("SELECT ID FROM CHL_User WHERE Name = ?")
