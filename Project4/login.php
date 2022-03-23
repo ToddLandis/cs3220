@@ -1,11 +1,5 @@
 <?php
-    /* If started from the command line, wrap parameters to $_POST and $_GET 
-    This is for debugging purposes. */
-    if (!isset($_SERVER["HTTP_HOST"])) {
-        parse_str($argv[1], $_GET);
-        parse_str($argv[1], $_POST);
-    }
-    /**/
+    session_start();
     $name = htmlspecialchars($_POST["userfield"]);
     $pass = htmlspecialchars($_POST["passfield"]);
 
