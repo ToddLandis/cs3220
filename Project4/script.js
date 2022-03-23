@@ -43,9 +43,8 @@ function populate(planum=0) {
 
       planMenu = '<select id="planSelect" onchange="populate(document.getElementById(\'planSelect\').value);">';
       for (i in json.plans) {
-        pid = json.plans[i].ID;
         pname = json.plans[i].Plan_Name;
-        planMenu = planMenu.concat('<option value="' + pid + '">' + pname + '</option>');
+        planMenu = planMenu.concat('<option value="' + i + '">' + pname + '</option>');
       }
       planMenu = planMenu.concat('</select>');
 
