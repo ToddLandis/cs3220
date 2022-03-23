@@ -150,7 +150,7 @@
     </body>
 </html>
 <?php
-        if ($alert != "") {
+        if ($alert !== "") {
             echo '<script type="text/JavaScript">$( document ).ready(function() { setTimeout(function () {  alert("' . $alert . '") }, 500); });</script>';
         }
 ?>
