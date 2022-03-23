@@ -16,9 +16,7 @@
     $mode   = htmlspecialchars($_POST["mode"]);
     
     $alert = "";
-    //DEBUG
-    $alert .= $user . '<br />' . $pass . '<br />' . $cpass . '<br />' . $name . '<br />' . $plan . '<br />' . $major . '<br />' . $mode . '<br />';
-    //ENDEBUG
+    $alertToken = false;
 
     // CURRENT SEMESTER: TO BE UPDATED EACH REGISTRATION PERIOD
     $cat_ID = 1;
@@ -38,28 +36,27 @@
     $stmt->fetch();
     
     if($stmt->num_rows == 0) {
-        $alert .= "Taken: false";    //DEBUG
         $taken = false;
     }
     else {
-        $alert .= "Taken: true"; //DEBUG
         $taken = true;
     }
     $stmt->close();
     $mysqli->close();
-    $alert .= "Taken: " . $taken; //DEBUG
 
     if (empty($user) || empty($pass) || empty($cpass) || empty($name) || empty($plan) || empty($major) || empty($major)) {
         $alert .= "Please fill in every box.";
+        $alertToken = true;
     }
     elseif ($taken) {
         $alert .= "Username is taken, please select a different one.";
+        $alertToken = true;
     }
     elseif ($pass != $cpass) {
         $alert .= "Your passwords do not match";
+        $alertToken = true;
     }
     else {
-        $alert .= "write to database";
         $mysqli = new mysqli('james', 'cs3220', '', 'cs3220_Sp22') 
             or die('Database connect error.');
         
@@ -150,7 +147,7 @@
     </body>
 </html>
 <?php
-        if ($alert !== "") {
+        if ($alertToken) {
             echo '<script type="text/JavaScript">$( document ).ready(function() { setTimeout(function () {  alert("' . $alert . '") }, 500); });</script>';
         }
 ?>
