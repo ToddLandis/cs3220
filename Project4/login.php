@@ -82,6 +82,6 @@
 <?php
     
         if ($alert) {
-            echo '<script type="text/JavaScript">$( document ).ready(function() { alert(' . '"Username \"' . $name . '\" or password invalid'.'") });</script>';
+            echo '<script type="text/JavaScript">$( document ).ready(function() { setTimeout(function () {  alert(' . '"Username \"' . $name . '\" or password invalid'.'") }, 1000); });</script>';
         }
 ?>
