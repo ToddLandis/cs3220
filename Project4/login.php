@@ -6,7 +6,6 @@
         parse_str($argv[1], $_POST);
     }
     /**/
-    
     $name = htmlspecialchars($_POST["userfield"]);
     $pass = htmlspecialchars($_POST["passfield"]);
 
@@ -62,7 +61,7 @@
             <div id="content-wrap">
                 <div id="login-container">
                     <form name="loginform" method="post" action="login.php">
-                        <input name="userfield" id="userfield" type="text" placeholder="Username" value="<?php echo $username ?>"/>
+                        <input name="userfield" id="userfield" type="text" placeholder="Username" value="<?php echo $name ?>"/>
                         <input name="passfield" id="passfield" type="password" placeholder="Password"/>
                         <input onsubmit="validate(); return false;" id="submit-btn" type="submit" value="Log in"/>
                     </form>
