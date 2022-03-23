@@ -68,13 +68,21 @@
         $alert .= "write to database";
         $mysqli = new mysqli('james', 'cs3220', '', 'cs3220_Sp22') 
         or die('Database connect error.');
+
         $stmt = $mysqli->prepare("INSERT INTO `CHL_User` (`ID`, `Name`, `Login`, `Password`, `Dark_Mode`) 
-            VALUES (NULL, ?, ?, ?, ?);
-            SELECT ID FROM CHL_User WHERE Name = ?")
+            VALUES (NULL, ?, ?, ?, ?)")
             or die("Prepare error.");
-        $stmt->bind_param("sssbs", $name, $user, $password, $mode, $user)
+        $stmt->bind_param("sssb", $name, $user, $password, $mode)
                 or die('Database bind error.');
 
+        $stmt->execute()
+                or die('Database execute error.');
+        $stmt->close();
+
+        $stmt = $mysqli->prepare("SELECT ID FROM CHL_User WHERE Name = ?")
+            or die("Prepare error.");
+        $stmt->bind_param("s", $user)
+                or die('Database bind error.');
         $stmt->execute()
                 or die('Database execute error.');
         $stmt->store_result();  // optional for efficiency; fetches all results
