@@ -6,8 +6,8 @@
     echo 'pass: '.$pass;
     $mysqli = new mysqli('james', 'cs3220', '', 'cs3220_Sp22') 
     or die('Database connect error.');
-    $stmt = $mysqli->prepare("SELECT ID, Name, Password, Dark_Mode from CHL_User 
-        where Login = ?")
+    $stmt = $mysqli->prepare("SELECT ID, Name, Password, Dark_Mode FROM CHL_User 
+        WHERE Login = ?")
         or die("Prepare error.");
     $stmt->bind_param("s", $name)
             or die('Database bind error.');
@@ -17,7 +17,10 @@
     $stmt->store_result();    // optional for efficiency; fetches all results
     $stmt->bind_result($ID, $fieldB, $fieldC, $Dark_Mode);
     $stmt->fetch();
-
+    echo "ID: ".$ID."<br/>";
+    echo "fieldB: ".$fieldB."<br/>";
+    echo "fieldC: ".$fieldC."<br/>";
+    echo "Dark_Mode: ".$Dark_Mode."<br/>";
     if (!(empty($pass))) {
         if ($fieldC == $pass) {
             session_start();
