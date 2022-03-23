@@ -28,7 +28,7 @@
     // Check that username isn't taken
     $mysqli = new mysqli('james', 'cs3220', '', 'cs3220_Sp22') 
         or die('Database connect error.');
-    $stmt = $mysqli->prepare("SELECT ID FROM CHL_User WHERE Name = ?")
+    $stmt = $mysqli->prepare("SELECT ID FROM CHL_User WHERE Login = ?")
         or die("Prepare error.");
     $stmt->bind_param("s", $user)
             or die('Database bind error.');

@@ -5,7 +5,7 @@
     $mysqli = new mysqli('james', 'cs3220', '', 'cs3220_Sp22') 
     or die('Database connect error.');
     $stmt = $mysqli->prepare("SELECT ID, Name, Password, Dark_Mode from CHL_User 
-        where Name = ?")
+        where Login = ?")
         or die("Prepare error.");
     $stmt->bind_param("s", $name)
             or die('Database bind error.');
