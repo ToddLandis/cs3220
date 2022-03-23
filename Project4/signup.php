@@ -61,21 +61,15 @@
             or die('Database connect error.');
         
      //   $mysqli->begin_transaction();
-        $sql = "INSERT INTO CHL_User (ID, Name, Login, Password, Dark_Mode) VALUES (NULL, ?, ?, ?, ?)";
-        if (mysqli_query($mysqli, $sql)) {
-            echo "New record created successfully";
-      } else {
-            echo "Error: " . $sql . "<br>" . mysqli_error($mysqli);
-      }
-        /*
-        $stmt = $mysqli->prepare("INSERT INTO CHL_User (ID, Name, Login, Password, Dark_Mode) VALUES (NULL, ?, ?, ?, ?)")
+
+        $stmt = $mysqli->prepare("INSERT INTO CHL_User (ID, Name, Login, Password, Dark_Mode) VALUES (NULL, ?, ?, ?, ?);")
             or die("Prepare error.");
         $stmt->bind_param("ssss", $name, $user, $password, $mode)
                 or die('Database bind error.');
         $stmt->execute();
         
         $stmt->close();
-        */
+
         $stmt = $mysqli->prepare("SELECT ID FROM CHL_User WHERE Name = ?")
             or die("Prepare error.");
         $stmt->bind_param("s", $user)
@@ -87,7 +81,7 @@
         $stmt->close();
 
 
-        $stmt = $mysqli->prepare("INSERT INTO `CHL_Major` (`ID`, `User_ID`, `Major`) VALUES (NULL, ?, ?)")
+        $stmt = $mysqli->prepare("INSERT INTO `CHL_Major` (`ID`, `User_ID`, `Major`) VALUES (NULL, ?, ?);")
             or die("Prepare error.");
         $stmt->bind_param("ss", $ID, $major)
                 or die('Database bind error.');
@@ -98,8 +92,7 @@
 
         $stmt = $mysqli->prepare("INSERT 
             INTO `CHL_Plan` (`ID`, `User_ID`, `Catalog_ID`, `Plan_name`, `currYear`, `currTerm`, `Major`) 
-            VALUES (NULL, ?, ?, ?, ?, ?, ?)
-        ")
+            VALUES (NULL, ?, ?, ?, ?, ?, ?);")
             or die("Prepare error.");
         $stmt->bind_param("sssiis", $ID, $cat_ID, $plan, $year, $term, $major)
                 or die('Database bind error.');
