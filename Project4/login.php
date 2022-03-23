@@ -74,5 +74,6 @@
                 url: url,
                 data: data
             });
+        }
     </script>
 </html>
