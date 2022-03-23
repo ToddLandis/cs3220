@@ -79,8 +79,10 @@
     </script>
 </html>
 
-<?php 
-    if ($alert) {
-        echo '<script type="text/JavaScript"> alert(' . '"Username \"' . $name . '\" or password invalid'.'") </script>';
-    }
+<?php
+    $( document ).ready(function() {
+        if ($alert) {
+            echo '<script type="text/JavaScript"> alert(' . '"Username \"' . $name . '\" or password invalid'.'") </script>';
+        }
+    });
 ?>
