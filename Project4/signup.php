@@ -59,6 +59,8 @@
         $alert .= "write to database";
         $mysqli = new mysqli('james', 'cs3220', '', 'cs3220_Sp22') 
             or die('Database connect error.');
+        
+        $mysqli->begin_transaction(MYSQLI_TRANS_START_READ_ONLY);
 
         $stmt = $mysqli->prepare("INSERT INTO CHL_User (ID, Name, Login, Password, Dark_Mode) VALUES (NULL, ?, ?, ?, ?)")
             or die("Prepare error.");
@@ -97,6 +99,7 @@
         
         $stmt->execute();
         $stmt->close();
+        $mysqli->commit();
         $mysqli->close();
 
         header("Location: ./login.php");
