@@ -102,7 +102,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8"/>
-        <title>Hearne Homepage</title>
+        <title>Signup</title>
         <link rel="stylesheet" href="./home_style.css">
     </head>
     <body>
