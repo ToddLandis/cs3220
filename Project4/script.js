@@ -21,7 +21,7 @@ class Term {
 var newPlan;
 var newCatalog;
 
-function populate(plan=0) {
+function populate(planum=0) {
   var request = new XMLHttpRequest();
   request.open("GET","/~tilandis/TermProject/Project4/getAll.php",true);
   request.onreadystatechange = function() {
@@ -29,7 +29,7 @@ function populate(plan=0) {
       var myData = this.responseText;
       json = JSON.parse(myData);
       // Different plans selectable by changing index value
-      newPlan = json.plans[plan];
+      newPlan = json.plans[planum];
       newCatalog = json.catalog;
       requirements = json.Requirements;
       
