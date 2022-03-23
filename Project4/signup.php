@@ -22,14 +22,6 @@
     $year = 2022;
     $term = "Spring";
 
-
-    if ($mode == 'dark') {
-        $mode = true;
-    }
-    else {
-        $mode = false;
-    }
-
     // Check that username isn't taken
     $mysqli = new mysqli('james', 'cs3220', '', 'cs3220_Sp22') 
         or die('Database connect error.');
@@ -153,8 +145,8 @@
                             <option value="Comp. Eng." <?php if ($major == 'Comp. Eng.') echo 'selected'; ?> >Computer Engineering</option>
                         </select>
                         <label>Page Preference</label>
-                        <label><input type="radio" class="option" name="mode" value="dark" <?php if ($mode) echo 'checked'; ?> >Dark Mode<br></label>
-                        <label><input type="radio" class="option" name="mode" value="light" <?php if (!$mode) echo 'checked'; ?> >Light Mode<br></label>
+                        <label><input type="radio" class="option" name="mode" value="dark" <?php if ($mode == 'dark') echo 'checked'; ?> >Dark Mode<br></label>
+                        <label><input type="radio" class="option" name="mode" value="light" <?php if ($mode == 'light') echo 'checked'; ?> >Light Mode<br></label>
                         <input id="submit-btn" type="submit" value="Sign up"/>
                     </form>
                 </div>
