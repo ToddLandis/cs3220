@@ -1,5 +1,4 @@
 <?php
-    session_start();
     $name = htmlspecialchars($_POST["userfield"]);
     $pass = htmlspecialchars($_POST["passfield"]);
 
