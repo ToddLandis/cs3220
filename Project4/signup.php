@@ -30,7 +30,7 @@
     $stmt->bind_param("s", $user)
             or die('Database bind error.');
 
-    $stmt->execute()
+    $stmt->execute();
     $stmt->store_result();  // optional for efficiency; fetches all results
     $stmt->fetch();
     
