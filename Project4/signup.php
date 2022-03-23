@@ -14,7 +14,7 @@
     
     $alert = "";
     //DEBUG
-    $alert .= $user . '<br />' . $pass . '<br />' . $cpass . '<br />' . $name . '<br />' . $plan . '<br />' . $major . '<br />' . $mode;
+    $alert .= $user . '<br />' . $pass . '<br />' . $cpass . '<br />' . $name . '<br />' . $plan . '<br />' . $major . '<br />' . $mode . '<br />';
     //ENDEBUG
 
     // CURRENT SEMESTER: TO BE UPDATED EACH REGISTRATION PERIOD
@@ -153,8 +153,8 @@
                             <option value="Comp. Eng." <?php if ($major == 'Comp. Eng.') echo 'selected'; ?> >Computer Engineering</option>
                         </select>
                         <label>Page Preference</label>
-                        <label><input type="radio" class="option" name="mode" value="dark" <?php if ($mode == 'dark') echo 'checked'; ?> >Dark Mode<br></label>
-                        <label><input type="radio" class="option" name="mode" value="light" <?php if ($mode == 'light') echo 'checked'; ?> >Light Mode<br></label>
+                        <label><input type="radio" class="option" name="mode" value="dark" <?php if ($mode) echo 'checked'; ?> >Dark Mode<br></label>
+                        <label><input type="radio" class="option" name="mode" value="light" <?php if (!$mode) echo 'checked'; ?> >Light Mode<br></label>
                         <input id="submit-btn" type="submit" value="Sign up"/>
                     </form>
                 </div>
