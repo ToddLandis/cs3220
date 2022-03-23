@@ -49,10 +49,10 @@
     if (empty($user) || empty($pass) || empty($cpass) || empty($name) || empty($plan) || empty($major) || empty($major)) {
         echo "Please fill in every box.";
     }
-    else if(taken) {
+    elseif (taken) {
         echo "Username is taken, please select a different one.";
     }
-    else if ($pass == $cpass) {
+    elseif ($pass == $cpass) {
         echo "Your passwords do not match";
     }
     else {
