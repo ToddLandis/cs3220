@@ -41,10 +41,16 @@ function populate() {
       currentyear = newPlan.currYear;
       currentterm = newPlan.currTerm;
 
+      planMenu = '<select name="major" id="major" placeholder="Student Major">';
+      for (i in json.plans) {
+        planMenu = planMenu.concat('<option value="' + i + '">' + i.planName + '</option>');
+      }
+      planMenu = planMenu.concat('</select>');
+
       info = document.getElementById("planinfo");
       var pinfo = "";
       pinfo = pinfo.concat("<p>Student: " + student + "<p/>");
-      pinfo = pinfo.concat("<p>Plan: " + planName + "<p/>"); //FIXME make this dropdown menu from which json.plans array can be selected
+      pinfo = pinfo.concat("<p>Plan: " + planMenu + "<p/>"); //FIXME make this dropdown menu from which json.plans array can be selected
       pinfo = pinfo.concat("<p>Major: " + major + "<p/>");
 
       info.innerHTML = pinfo;
