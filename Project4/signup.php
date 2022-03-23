@@ -58,7 +58,7 @@
     if (empty($user) || empty($pass) || empty($cpass) || empty($name) || empty($plan) || empty($major) || empty($major)) {
         $alert .= "Please fill in every box.";
     }
-    elseif (taken == true) {
+    elseif ($taken == true) {
         $alert .= "Username is taken, please select a different one.";
     }
     elseif ($pass == $cpass) {
