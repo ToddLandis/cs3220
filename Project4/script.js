@@ -43,7 +43,7 @@ function populate() {
       currentyear = newPlan.currYear;
       currentterm = newPlan.currTerm;
 
-      planMenu = '<select id="planSelect" onchange="make(Plans[document.getElementById(\'planSelect\').value]);">';
+      planMenu = '<select id="planSelect" onchange="make(document.getElementById(\'planSelect\').value);">';
       for (i in json.plans) {
         pname = json.plans[i].Plan_Name;
         planMenu = planMenu.concat('<option value="' + i + '">' + pname + '</option>');
@@ -63,7 +63,7 @@ function populate() {
 
       //AJAXfunctions should go here ///////////////////////////////////////////////////////////////////
 
-      make(convert(newPlan))
+      make(convert(0))
 
       // ACCORDIAN //////////////////////////////
       html = document.getElementById('accordion');
@@ -126,8 +126,8 @@ function populate() {
   request.send(null);
 }
   
-function convert(plan) {
-  
+function convert(plannum) {
+  plan = Plans[plannum]
   var myYears = {};
 
   // create 4 years with semesters
