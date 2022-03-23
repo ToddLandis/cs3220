@@ -38,9 +38,11 @@
     $stmt->fetch();
     
     if($stmt->num_rows == 0) {
+        echo "Taken: false";
         $taken = false;
     }
     else {
+        echo "Taken: true";
         $taken = true;
     }
     $stmt->close();
