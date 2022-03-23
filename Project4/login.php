@@ -26,7 +26,7 @@
         else {
             //TODO Joshua this is right up your alley
             // Modify page to show that the wrong username/password was used.
-            echo '<script type="text/JavaScript">$( document ).ready(function() { setTimeout(function () {  alert(' . '"Username \"' . $name . '\" or password invalid'.'") }, 1000); });</script>';
+            $alert = true;
             // if you need it in the html body you could set a variable here which is detected later in the page in another set of php brackets
         }
     }
@@ -78,3 +78,10 @@
         }
     </script>
 </html>
+
+<?php
+    
+        if ($alert) {
+            echo '<script type="text/JavaScript">$( document ).ready(function() { setTimeout(function () {  alert(' . '"Username \"' . $name . '\" or password invalid'.'") }, 1000); });</script>';
+        }
+?>
