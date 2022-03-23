@@ -5,7 +5,7 @@
     $name   = htmlspecialchars($_POST["namefield"]);
     $plan   = htmlspecialchars($_POST["plannamefield"]);
     $major  = htmlspecialchars($_POST["major"]);
-    $mode    = htmlspecialchars($_POST["mode"]);
+    $mode   = htmlspecialchars($_POST["mode"]);
     
     //DEBUG
     echo $user . '<br />' . $pass . '<br />' . $cpass . '<br />' . $name . '<br />' . $plan . '<br />' . $major . '<br />' . $mode;
@@ -44,6 +44,7 @@
         $taken = true;
     }
     $stmt->close();
+    $mysqli->close();
 
 
     if (empty($user) || empty($pass) || empty($cpass) || empty($name) || empty($plan) || empty($major) || empty($major)) {
@@ -99,6 +100,7 @@
         $stmt->execute()
                 or die('Database execute error.');
         $stmt->close();
+        $mysqli->close();
 
         header("Location: ./login.php");
     }

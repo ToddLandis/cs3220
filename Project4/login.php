@@ -31,6 +31,7 @@
         }
     }
     $stmt->close();
+    $mysqli->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
