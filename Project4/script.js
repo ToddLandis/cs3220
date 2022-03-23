@@ -136,11 +136,11 @@ function convert(plan) {
   year = plan.Year;
   console.log("Year: "+year); //DEBUG
   for (i = year; i<year+4; i++) {
-    console.log("Year: "+year); //DEBUG
-    myYears[year] = new Year();
-    myYears[year].addTerm("Fall", new Term());
-    myYears[year].addTerm("Spring", new Term());
-    myYears[year].addTerm("Summer", new Term());
+    console.log("Year: "+i); //DEBUG
+    myYears[i] = new Year();
+    myYears[i].addTerm("Fall", new Term());
+    myYears[i].addTerm("Spring", new Term());
+    myYears[i].addTerm("Summer", new Term());
   }
 
   courses = plan.courses;
