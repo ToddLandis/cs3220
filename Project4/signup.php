@@ -115,7 +115,7 @@
             </div>
             <div id="content-wrap">
                 <div id="signup-container">
-                    <form name="signupform" onsubmit="createplan()">
+                    <form name="signupform" method="post" action="signup.php">
                         <input id="userfield" type="text" placeholder="Username"/>
                         <input id="passfield" type="password" placeholder="Password"/>
                         <input id="confirmpassfield" type="password" placeholder="Confirm Password"/>
