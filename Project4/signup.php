@@ -7,6 +7,10 @@
     $major  = htmlspecialchars($_POST["major"]);
     $mode    = htmlspecialchars($_POST["mode"]);
     
+    //DEBUG
+    echo $user . '\n' . $pass . '\n' . $cpass . '\n' . $name . '\n' . $plan . '\n' . $major . '\n' . $mode;
+    //ENDEBUG
+
     // CURRENT SEMESTER: TO BE UPDATED EACH REGISTRATION PERIOD
     $cat_ID = 1;
     $year = 2022;
