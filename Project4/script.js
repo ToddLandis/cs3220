@@ -36,6 +36,7 @@ function populate() {
       stu_ID = newPlan.User_ID;
       planName = newPlan.Plan_Name;
       major = newPlan.major;
+      catYear = newPlan.Year;
       currentyear = newPlan.currYear;
       currentterm = newPlan.currTerm;
 
@@ -132,7 +133,7 @@ function convert(plan) {
   var myYears = {};
 
   // create 4 years with semesters
-  year = catalog.year;
+  year = plan.Year;
   console.log("Year: "+year); //DEBUG
   for (i = year; i<year+4; i++) {
     console.log("Year: "+year); //DEBUG

@@ -39,8 +39,8 @@ $stmt->close();
 
 
 // plans
-$stmt = $mysqli->prepare("SELECT CHL_Plan.ID, Name, User_ID, Catalog_ID, Plan_Name, currYear, currTerm, Major from CHL_Plan,CHL_User
-        where CHL_Plan.User_ID = CHL_User.ID AND User_ID = ?");
+$stmt = $mysqli->prepare("SELECT CHL_Plan.ID, Name, User_ID, Year, Plan_Name, currYear, currTerm, Major from CHL_Plan,CHL_Use,CHL_Catalog
+        where CHL_Plan.User_ID = CHL_User.ID AND User_ID = ? AND CHL_Plan.Catalog_ID = CHL_Catalog.ID");
 $stmt->bind_param("i", $ID)
         or die('Database bind error.');
 
@@ -51,7 +51,7 @@ $stmt->bind_result($fieldA, $fieldB, $fieldC, $fieldD, $fieldE, $fieldF, $fieldG
 
 $plans = array();
 while ($stmt->fetch()) {
-    array_push($plans, ['ID'=>$fieldA, 'User_name'=>$fieldB, 'User_ID'=>$fieldC, 'Catalog_ID'=>$fieldD, 'Plan_Name'=>$fieldE, 'currYear'=>$fieldF, 'currTerm'=>$fieldG, 'major'=>$fieldH]);
+    array_push($plans, ['ID'=>$fieldA, 'User_name'=>$fieldB, 'User_ID'=>$fieldC, 'Year'=>$fieldD, 'Plan_Name'=>$fieldE, 'currYear'=>$fieldF, 'currTerm'=>$fieldG, 'major'=>$fieldH]);
 }
 $stmt->close();
 
