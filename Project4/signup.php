@@ -122,11 +122,11 @@
             <div id="content-wrap">
                 <div id="signup-container">
                     <form name="signupform" method="post" action="signup.php">
-                        <input id="userfield" type="text" placeholder="Username"/>
-                        <input id="passfield" type="password" placeholder="Password"/>
-                        <input id="confirmpassfield" type="password" placeholder="Confirm Password"/>
-                        <input id="namefield" type="text" placeholder="Student Name"/>
-                        <input id="plannamefield" type="text" placeholder="Plan Name"/>
+                        <input id="userfield" name="userfield" type="text" placeholder="Username"/>
+                        <input id="passfield" name=id="passfield"  type="password" placeholder="Password"/>
+                        <input id="confirmpassfield" name="confirmpassfield" type="password" placeholder="Confirm Password"/>
+                        <input id="namefield" name="namefield" type="text" placeholder="Student Name"/>
+                        <input id="plannamefield" name="plannamefield" type="text" placeholder="Plan Name"/>
                         <select name="major" id="major" placeholder="Student Major">
                             <option value="none" selected disabled hidden>Major</option>
                             <option value="Comp. Sci.">Computer Science</option>
