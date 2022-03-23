@@ -64,11 +64,6 @@
             </div>
         </div>
     </body>
-    <?php 
-    if ($alert) {
-        echo '<script type="text/JavaScript"> alert(' . '"Username \"' . $name . '\" or password invalid'.'") </script>';
-    }
-    ?>
     <script language="javascript" type="text/javascript">
         // not used for now, direct form POSTing used.
         function validate() {
@@ -83,3 +78,9 @@
         }
     </script>
 </html>
+
+<?php 
+    if ($alert) {
+        echo '<script type="text/JavaScript"> alert(' . '"Username \"' . $name . '\" or password invalid'.'") </script>';
+    }
+?>
