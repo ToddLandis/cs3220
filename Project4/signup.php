@@ -60,7 +60,7 @@
         $mysqli = new mysqli('james', 'cs3220', '', 'cs3220_Sp22') 
             or die('Database connect error.');
         
-        $mysqli->begin_transaction(MYSQLI_TRANS_START_READ_ONLY);
+        $mysqli->begin_transaction();
 
         $stmt = $mysqli->prepare("INSERT INTO CHL_User (ID, Name, Login, Password, Dark_Mode) VALUES (NULL, ?, ?, ?, ?)")
             or die("Prepare error.");
