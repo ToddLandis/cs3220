@@ -8,7 +8,7 @@
     $mode    = htmlspecialchars($_POST["mode"]);
     
     //DEBUG
-    echo $user . '\n' . $pass . '\n' . $cpass . '\n' . $name . '\n' . $plan . '\n' . $major . '\n' . $mode;
+    echo $user . '<br />' . $pass . '<br />' . $cpass . '<br />' . $name . '<br />' . $plan . '<br />' . $major . '<br />' . $mode;
     //ENDEBUG
 
     // CURRENT SEMESTER: TO BE UPDATED EACH REGISTRATION PERIOD
