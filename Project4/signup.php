@@ -7,8 +7,9 @@
     $major  = htmlspecialchars($_POST["major"]);
     $mode   = htmlspecialchars($_POST["mode"]);
     
+    $alert = "";
     //DEBUG
-    echo $user . '<br />' . $pass . '<br />' . $cpass . '<br />' . $name . '<br />' . $plan . '<br />' . $major . '<br />' . $mode;
+    $alert += $user . '<br />' . $pass . '<br />' . $cpass . '<br />' . $name . '<br />' . $plan . '<br />' . $major . '<br />' . $mode;
     //ENDEBUG
 
     // CURRENT SEMESTER: TO BE UPDATED EACH REGISTRATION PERIOD
@@ -38,28 +39,28 @@
     $stmt->fetch();
     
     if($stmt->num_rows == 0) {
-        echo "Taken: false";    //DEBUG
+        alert += "Taken: false";    //DEBUG
         $taken = false;
     }
     else {
-        echo "Taken: true"; //DEBUG
+        alert += "Taken: true"; //DEBUG
         $taken = true;
     }
     $stmt->close();
     $mysqli->close();
-    echo "Taken: " . $taken; //DEBUG
+    alert += "Taken: " . $taken; //DEBUG
 
     if (empty($user) || empty($pass) || empty($cpass) || empty($name) || empty($plan) || empty($major) || empty($major)) {
-        echo "Please fill in every box.";
+        alert += "Please fill in every box.";
     }
     elseif (taken == true) {
-        echo "Username is taken, please select a different one.";
+        alert += "Username is taken, please select a different one.";
     }
     elseif ($pass == $cpass) {
-        echo "Your passwords do not match";
+        alert += "Your passwords do not match";
     }
     else {
-        echo "write to database";
+        alert += "write to database";
         $mysqli = new mysqli('james', 'cs3220', '', 'cs3220_Sp22') 
         or die('Database connect error.');
         $stmt = $mysqli->prepare("INSERT INTO `CHL_User` (`ID`, `Name`, `Login`, `Password`, `Dark_Mode`) 
@@ -127,6 +128,7 @@
             </div>
             <div id="content-wrap">
                 <div id="signup-container">
+                    <?php echo "<p>" . $alert . "</p>" ?>
                     <form name="signupform" method="post" action="signup.php">
                         <input id="userfield" name="userfield" type="text" placeholder="Username"/>
                         <input id="passfield" name="passfield"  type="password" placeholder="Password"/>
