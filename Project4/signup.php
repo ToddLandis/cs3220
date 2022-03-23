@@ -112,6 +112,7 @@
         <meta charset="utf-8"/>
         <title>Signup</title>
         <link rel="stylesheet" href="./home_style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
         <div id="page-container">
