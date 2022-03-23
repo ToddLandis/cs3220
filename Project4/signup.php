@@ -128,7 +128,6 @@
             </div>
             <div id="content-wrap">
                 <div id="signup-container">
-                    <?php echo "<p>" . $alert . "</p>"; ?>
                     <form name="signupform" method="post" action="signup.php">
                         <input id="userfield" name="userfield" type="text" placeholder="Username" value="<?= $user ?>"/>
                         <input id="passfield" name="passfield"  type="password" placeholder="Password"/>
@@ -150,3 +149,9 @@
         </div>
     </body>
 </html>
+<?php
+    
+        if ($alert != "") {
+            echo '<script type="text/JavaScript">$( document ).ready(function() { setTimeout(function () {  alert(' . $alert . '") }, 500); });</script>';
+        }
+?>
