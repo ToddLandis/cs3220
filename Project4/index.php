@@ -63,7 +63,7 @@ if (!isset($_SESSION['ID'])) {
                         <div id="infobar">
                                 <div id="planinfo"></div>
                                 <button class="infobtn" id="savebtn" onclick="savePlan()">Save Plan</button>
-                                <button class="infobtn" id="logoutbtn" onclick="./logout.php">Log Out</button>
+                                <button class="infobtn" id="logoutbtn" onclick="window.location.href='logout.php';">Log Out</button>
                         </div>
                         <div id="upper" class="half">
                                 <div id="UL">
