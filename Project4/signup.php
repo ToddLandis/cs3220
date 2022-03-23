@@ -61,8 +61,7 @@
         $mysqli = new mysqli('james', 'cs3220', '', 'cs3220_Sp22') 
             or die('Database connect error.');
 
-        $stmt = $mysqli->prepare("INSERT INTO `CHL_User` (`ID`, `Name`, `Login`, `Password`, `Dark_Mode`) 
-            VALUES (NULL, ?, ?, ?, ?)")
+        $stmt = $mysqli->prepare("INSERT INTO `CHL_User` (`ID`, `Name`, `Login`, `Password`, `Dark_Mode`) VALUES (NULL, ?, ?, ?, ?)")
             or die("Prepare error.");
         $stmt->bind_param("ssss", $name, $user, $password, $mode)
                 or die('Database bind error.');
