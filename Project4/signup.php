@@ -66,7 +66,6 @@
         $stmt->bind_param("ssss", $name, $user, $password, $mode)
                 or die('Database bind error.');
         $stmt->execute()
-                or die('Database execute error 2.');
         $stmt->close();
 
         $stmt = $mysqli->prepare("SELECT ID FROM CHL_User WHERE Name = ?")
