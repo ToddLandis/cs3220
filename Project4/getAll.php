@@ -39,7 +39,7 @@ $stmt->close();
 
 
 // plans
-$stmt = $mysqli->prepare("SELECT CHL_Plan.ID, Name, User_ID, Year, Plan_Name, currYear, currTerm, Major from CHL_Plan,CHL_Use,CHL_Catalog
+$stmt = $mysqli->prepare("SELECT CHL_Plan.ID, Name, User_ID, Year, Plan_Name, currYear, currTerm, Major from CHL_Plan,CHL_User,CHL_Catalog
         where CHL_Plan.User_ID = CHL_User.ID AND User_ID = ? AND CHL_Plan.Catalog_ID = CHL_Catalog.ID");
 $stmt->bind_param("i", $ID)
         or die('Database bind error.');
