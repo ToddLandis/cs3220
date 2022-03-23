@@ -38,16 +38,16 @@
     $stmt->fetch();
     
     if($stmt->num_rows == 0) {
-        echo "Taken: false";
+        echo "Taken: false";    //DEBUG
         $taken = false;
     }
     else {
-        echo "Taken: true";
+        echo "Taken: true"; //DEBUG
         $taken = true;
     }
     $stmt->close();
     $mysqli->close();
-
+    echo "Taken: " . $taken; //DEBUG
 
     if (empty($user) || empty($pass) || empty($cpass) || empty($name) || empty($plan) || empty($major) || empty($major)) {
         echo "Please fill in every box.";
