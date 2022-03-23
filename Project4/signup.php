@@ -93,6 +93,8 @@
         $stmt->execute()
                 or die('Database execute error.');
         $stmt->close();
+
+        header("Location: ./login.php");
     }
 ?>
 
