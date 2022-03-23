@@ -1,7 +1,9 @@
 <?php
     $name = htmlspecialchars($_POST["userfield"]);
     $pass = htmlspecialchars($_POST["passfield"]);
-
+    //debug
+    echo 'user: '.$name;
+    echo 'pass: '.$pass;
     $mysqli = new mysqli('james', 'cs3220', '', 'cs3220_Sp22') 
     or die('Database connect error.');
     $stmt = $mysqli->prepare("SELECT ID, Name, Password, Dark_Mode from CHL_User 
