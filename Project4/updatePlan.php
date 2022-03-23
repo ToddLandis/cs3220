@@ -9,10 +9,9 @@ $mysqli = new mysqli('james', 'cs3220', '', 'cs3220_Sp22')
     or die('Database connect error.');
     //transaction
 for (i in $data) {
-    //FIXME
     $change = $data[i].change;
-    $plan   = $data[i].plan;    //TODO Make sure this is Plan_ID or use SQL to convert
-    $course = $data[i].course;  //TODO Make sure 
+    $plan   = $data[i].plan;    //TODO Make sure this is Plan_ID
+    $course = $data[i].course;  //TODO Make sure this is course_designator
     $year   = $data[i].year;
     $term   = $data[i].term;
 
@@ -44,7 +43,7 @@ for (i in $data) {
     if ($change = 'insert') {
     $stmt = $mysqli->prepare("INSERT INTO `Plan_Courses` (`ID`, `Plan_ID`, `Course_ID`, `Year`, `Semester`) VALUES (NULL, ?, ?, ?, ?);")
             or die("Prepare error.");
-    $stmt->bind_param("ssss", $plan, $course, $year, $term)
+    $stmt->bind_param("ssis", $plan, $course, $year, $term) //FIXME if i doesn't work, either convert year to int or see if database will convert it if you change i to s
             or die('Database bind error.');
     $stmt->execute();
         
