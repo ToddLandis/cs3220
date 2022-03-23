@@ -16,6 +16,7 @@
     $year = 2022;
     $term = "Spring";
 
+
     if ($mode == 'dark') {
         $mode = true;
     }
@@ -55,6 +56,7 @@
         echo "Your passwords do not match";
     }
     else {
+        echo "write to database";
         $mysqli = new mysqli('james', 'cs3220', '', 'cs3220_Sp22') 
         or die('Database connect error.');
         $stmt = $mysqli->prepare("INSERT INTO `CHL_User` (`ID`, `Name`, `Login`, `Password`, `Dark_Mode`) 
