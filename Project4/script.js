@@ -21,7 +21,7 @@ class Term {
 var newPlan;
 var newCatalog;
 
-function populate() {
+function populate(plan=0) {
   var request = new XMLHttpRequest();
   request.open("GET","/~tilandis/TermProject/Project4/getAll.php",true);
   request.onreadystatechange = function() {
@@ -29,7 +29,7 @@ function populate() {
       var myData = this.responseText;
       json = JSON.parse(myData);
       // Different plans selectable by changing index value
-      newPlan = json.plans[0];
+      newPlan = json.plans[plan];
       newCatalog = json.catalog;
       requirements = json.Requirements;
       
@@ -41,13 +41,14 @@ function populate() {
       currentyear = newPlan.currYear;
       currentterm = newPlan.currTerm;
 
-      planMenu = '<select name="major" id="major" placeholder="Student Major">';
+      planMenu = '<select id="planSelect">';
       for (i in json.plans) {
         pid = json.plans[i].ID;
         pname = json.plans[i].Plan_Name;
         planMenu = planMenu.concat('<option value="' + pid + '">' + pname + '</option>');
       }
       planMenu = planMenu.concat('</select>');
+
 
       info = document.getElementById("planinfo");
       var pinfo = "";
@@ -212,3 +213,7 @@ function make(years) {
 populate(); // main async function
 // Anything that uses the AJAX data should be called in populate() at the location marked with a comment //AJAXfunctions
 
+// Update when they change the plan
+document.getElementById("planSelect").onchange = function(){
+  populate(document.getElementById("planSelect").value);
+ };
