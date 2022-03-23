@@ -39,28 +39,28 @@
     $stmt->fetch();
     
     if($stmt->num_rows == 0) {
-        alert .= "Taken: false";    //DEBUG
+        $alert .= "Taken: false";    //DEBUG
         $taken = false;
     }
     else {
-        alert .= "Taken: true"; //DEBUG
+        $alert .= "Taken: true"; //DEBUG
         $taken = true;
     }
     $stmt->close();
     $mysqli->close();
-    alert .= "Taken: " . $taken; //DEBUG
+    $alert .= "Taken: " . $taken; //DEBUG
 
     if (empty($user) || empty($pass) || empty($cpass) || empty($name) || empty($plan) || empty($major) || empty($major)) {
-        alert .= "Please fill in every box.";
+        $alert .= "Please fill in every box.";
     }
     elseif (taken == true) {
-        alert .= "Username is taken, please select a different one.";
+        $alert .= "Username is taken, please select a different one.";
     }
     elseif ($pass == $cpass) {
-        alert .= "Your passwords do not match";
+        $alert .= "Your passwords do not match";
     }
     else {
-        alert .= "write to database";
+        $alert .= "write to database";
         $mysqli = new mysqli('james', 'cs3220', '', 'cs3220_Sp22') 
         or die('Database connect error.');
         $stmt = $mysqli->prepare("INSERT INTO `CHL_User` (`ID`, `Name`, `Login`, `Password`, `Dark_Mode`) 
