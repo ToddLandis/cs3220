@@ -123,7 +123,7 @@
                 <div id="signup-container">
                     <form name="signupform" method="post" action="signup.php">
                         <input id="userfield" name="userfield" type="text" placeholder="Username"/>
-                        <input id="passfield" name=id="passfield"  type="password" placeholder="Password"/>
+                        <input id="passfield" name="passfield"  type="password" placeholder="Password"/>
                         <input id="confirmpassfield" name="confirmpassfield" type="password" placeholder="Confirm Password"/>
                         <input id="namefield" name="namefield" type="text" placeholder="Student Name"/>
                         <input id="plannamefield" name="plannamefield" type="text" placeholder="Plan Name"/>
