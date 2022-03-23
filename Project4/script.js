@@ -43,7 +43,7 @@ function populate() {
       currentyear = newPlan.currYear;
       currentterm = newPlan.currTerm;
 
-      planMenu = '<select id="planSelect" onchange="make(Plans[document.getElementById(\'planSelect\').value)];">';
+      planMenu = '<select id="planSelect" onchange="make(Plans[document.getElementById(\'planSelect\').value)]);">';
       for (i in json.plans) {
         pname = json.plans[i].Plan_Name;
         planMenu = planMenu.concat('<option value="' + i + '">' + pname + '</option>');
