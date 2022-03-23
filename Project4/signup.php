@@ -10,7 +10,7 @@
     // CURRENT SEMESTER: TO BE UPDATED EACH REGISTRATION PERIOD
     $cat_ID = 1;
     $year = 2022;
-    $term = Spring;
+    $term = "Spring";
 
     if ($mode == 'dark') {
         $mode = true;
