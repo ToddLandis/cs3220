@@ -16,7 +16,6 @@
     $mode   = htmlspecialchars($_POST["mode"]);
     
     $alert = "";
-    $alertToken = false;
 
     // CURRENT SEMESTER: TO BE UPDATED EACH REGISTRATION PERIOD
     $cat_ID = 1;
@@ -45,16 +44,15 @@
     $mysqli->close();
 
     if (empty($user) || empty($pass) || empty($cpass) || empty($name) || empty($plan) || empty($major) || empty($major)) {
-        $alert .= "Please fill in every box.";
-        $alertToken = true;
+        if (!(empty($user) && empty($pass) && empty($cpass) && empty($name) && empty($plan) && empty($major) && empty($major))) {
+            $alert .= "Please fill in every box.";
+        }
     }
     elseif ($taken) {
         $alert .= "Username is taken, please select a different one.";
-        $alertToken = true;
     }
     elseif ($pass != $cpass) {
         $alert .= "Your passwords do not match";
-        $alertToken = true;
     }
     else {
         $mysqli = new mysqli('james', 'cs3220', '', 'cs3220_Sp22') 
@@ -148,7 +146,7 @@
     </body>
 </html>
 <?php
-        if ($alertToken) {
+        if ($alert != "") {
             echo '<script type="text/JavaScript">$( document ).ready(function() { setTimeout(function () {  alert("' . $alert . '") }, 500); });</script>';
         }
 ?>
