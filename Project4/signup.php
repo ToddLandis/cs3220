@@ -72,7 +72,7 @@
             or die("Prepare error.");
         $stmt->bind_param("s", $user)
                 or die('Database bind error.');
-        $stmt->execute()
+        $stmt->execute();
         $stmt->store_result();  // optional for efficiency; fetches all results
         $stmt->bind_result($ID);// probably wrong, possibly more return values.
         $stmt->fetch();
@@ -85,7 +85,7 @@
         $stmt->bind_param("ss", $ID, $major)
                 or die('Database bind error.');
         
-        $stmt->execute()
+        $stmt->execute();
         $stmt->store_result();    // optional for efficiency; fetches all results
         $stmt->bind_result($ID, $fieldB, $fieldC, $Dark_Mode);
         $stmt->fetch();
@@ -100,7 +100,7 @@
         $stmt->bind_param("sssiis", $ID, $cat_ID, $plan, $year, $term, $major)
                 or die('Database bind error.');
         
-        $stmt->execute()
+        $stmt->execute();
         $stmt->close();
         $mysqli->close();
 
