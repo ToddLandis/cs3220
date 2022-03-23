@@ -130,9 +130,9 @@ function populate() {
 function convert(plan) {
   
   var myYears = {};
-  
+
   // create 4 years with semesters
-  year = catalog.year
+  year = catalog.year;
   for (i = year; i<year+4; i++) {
     myYears[year] = new Year();
     myYears[year].addTerm("Fall", new Term());
@@ -145,7 +145,7 @@ function convert(plan) {
     
     // Year object holds Fall of same year, but Spring and Summer of next year
     if (courses[i].term == "Fall") {
-      year = courses[i].year
+      year = courses[i].year;
     }
     else {
       year = (parseInt(courses[i].year) - 1).toString();
@@ -168,7 +168,6 @@ function convert(plan) {
 }
   
 function make(years) {
-  //var years = convert(populate()); // had to change with async
   var instring = "";
   
   instring = instring.concat("<div class=\"profile\"></div>")
