@@ -58,10 +58,10 @@
     if (empty($user) || empty($pass) || empty($cpass) || empty($name) || empty($plan) || empty($major) || empty($major)) {
         $alert .= "Please fill in every box.";
     }
-    elseif ($taken == true) {
+    elseif ($taken) {
         $alert .= "Username is taken, please select a different one.";
     }
-    elseif ($pass == $cpass) {
+    elseif ($pass != $cpass) {
         $alert .= "Your passwords do not match";
     }
     else {
@@ -74,7 +74,6 @@
             or die("Prepare error.");
         $stmt->bind_param("sssb", $name, $user, $password, $mode)
                 or die('Database bind error.');
-
         $stmt->execute()
                 or die('Database execute error.');
         $stmt->close();
