@@ -133,6 +133,7 @@ function convert(plan) {
 
   // create 4 years with semesters
   year = catalog.year;
+  console.log("Year: "+year); //DEBUG
   for (i = year; i<year+4; i++) {
     console.log("Year: "+year); //DEBUG
     myYears[year] = new Year();
