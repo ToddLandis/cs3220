@@ -131,6 +131,15 @@ function convert(plan) {
   
   var myYears = {};
   
+  // create 4 years with semesters
+  year = catalog.year
+  for (i = year; i<year+4; i++) {
+    myYears[year] = new Year();
+    myYears[year].addTerm("Fall", new Term());
+    myYears[year].addTerm("Spring", new Term());
+    myYears[year].addTerm("Summer", new Term());
+  }
+
   courses = plan.courses;
   for (let i in courses) {
     
