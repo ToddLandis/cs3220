@@ -31,7 +31,8 @@
             or die('Database execute error.');
     $stmt->store_result();  // optional for efficiency; fetches all results
     $stmt->fetch();
-    if(mysql_num_rows($stmt) == 0) {
+    
+    if($stmt->num_rows == 0) {
         $taken = false;
     }
     else {
@@ -39,11 +40,12 @@
     }
     $stmt->close();
 
-    if(taken) {
-        echo "Username is taken, please select a different one.";
-    }
-    else if (empty($user) || empty($pass) || empty($cpass) || empty($name) || empty($plan) || empty($major) || empty($major)) {
+
+    if (empty($user) || empty($pass) || empty($cpass) || empty($name) || empty($plan) || empty($major) || empty($major)) {
         echo "Please fill in every box.";
+    }
+    else if(taken) {
+        echo "Username is taken, please select a different one.";
     }
     else if ($pass == $cpass) {
         echo "Your passwords do not match";
