@@ -52,7 +52,7 @@
     if (empty($user) || empty($pass) || empty($cpass) || empty($name) || empty($plan) || empty($major) || empty($major)) {
         echo "Please fill in every box.";
     }
-    elseif (taken) {
+    elseif (taken == true) {
         echo "Username is taken, please select a different one.";
     }
     elseif ($pass == $cpass) {
