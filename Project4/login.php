@@ -80,9 +80,8 @@
 </html>
 
 <?php
-    $( document ).ready(function() {
+    
         if ($alert) {
-            echo '<script type="text/JavaScript"> alert(' . '"Username \"' . $name . '\" or password invalid'.'") </script>';
+            echo '<script type="text/JavaScript">$( document ).ready(function() { alert(' . '"Username \"' . $name . '\" or password invalid'.'") });</script>';
         }
-    });
 ?>
