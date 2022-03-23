@@ -153,8 +153,8 @@
                             <option value="Comp. Eng." <?php if ($major == 'Comp. Eng.'){echo selected} ?> >Computer Engineering</option>
                         </select>
                         <label>Page Preference</label>
-                        <label><input type="radio" class="option" name="mode" value="dark" <?php if ($mode == 'dark'){echo selected}?> >Dark Mode<br></label>
-                        <label><input type="radio" class="option" name="mode" value="light" <?php if ($mode == 'light'){echo selected}?> >Light Mode<br></label>
+                        <label><input type="radio" class="option" name="mode" value="dark" <?php if ($mode == 'dark'){echo selected} ?> >Dark Mode<br></label>
+                        <label><input type="radio" class="option" name="mode" value="light" <?php if ($mode == 'light'){echo selected} ?> >Light Mode<br></label>
                         <input id="submit-btn" type="submit" value="Sign up"/>
                     </form>
                 </div>
