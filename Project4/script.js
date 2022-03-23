@@ -43,7 +43,9 @@ function populate() {
 
       planMenu = '<select name="major" id="major" placeholder="Student Major">';
       for (i in json.plans) {
-        planMenu = planMenu.concat('<option value="' + i + '">' + i.Plan_Name + '</option>');
+        pid = json.plans[i].ID;
+        pname = json.plans[i].Plan_Name;
+        planMenu = planMenu.concat('<option value="' + pid + '">' + pname + '</option>');
       }
       planMenu = planMenu.concat('</select>');
 
