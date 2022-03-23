@@ -31,7 +31,6 @@
             or die('Database bind error.');
 
     $stmt->execute()
-            or die('Database execute error 1.');
     $stmt->store_result();  // optional for efficiency; fetches all results
     $stmt->fetch();
     
@@ -79,16 +78,12 @@
         $stmt->close();
 
 
-        $stmt = $mysqli->prepare("INSERT INTO `CHL_Major` (`ID`, `User_ID`, `Major`) VALUES (NULL, ?, ?)
-        ")
+        $stmt = $mysqli->prepare("INSERT INTO `CHL_Major` (`ID`, `User_ID`, `Major`) VALUES (NULL, ?, ?)")
             or die("Prepare error.");
         $stmt->bind_param("ss", $ID, $major)
                 or die('Database bind error.');
         
         $stmt->execute();
-        $stmt->store_result();    // optional for efficiency; fetches all results
-        $stmt->bind_result($ID, $fieldB, $fieldC, $Dark_Mode);
-        $stmt->fetch();
         $stmt->close();
 
 
