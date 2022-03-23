@@ -72,7 +72,7 @@
         $stmt = $mysqli->prepare("INSERT INTO `CHL_User` (`ID`, `Name`, `Login`, `Password`, `Dark_Mode`) 
             VALUES (NULL, ?, ?, ?, ?)")
             or die("Prepare error.");
-        $stmt->bind_param("sssb", $name, $user, $password, $mode)
+        $stmt->bind_param("sssi", $name, $user, $password, $mode)
                 or die('Database bind error.');
         $stmt->execute()
                 or die('Database execute error 2.');
