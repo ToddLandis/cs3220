@@ -73,7 +73,6 @@
         $stmt->bind_param("s", $user)
                 or die('Database bind error.');
         $stmt->execute()
-                or die('Database execute error 3.');
         $stmt->store_result();  // optional for efficiency; fetches all results
         $stmt->bind_result($ID);// probably wrong, possibly more return values.
         $stmt->fetch();
@@ -87,7 +86,6 @@
                 or die('Database bind error.');
         
         $stmt->execute()
-                or die('Database execute error 4.');
         $stmt->store_result();    // optional for efficiency; fetches all results
         $stmt->bind_result($ID, $fieldB, $fieldC, $Dark_Mode);
         $stmt->fetch();
@@ -103,7 +101,6 @@
                 or die('Database bind error.');
         
         $stmt->execute()
-                or die('Database execute error 5.');
         $stmt->close();
         $mysqli->close();
 
