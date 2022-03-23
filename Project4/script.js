@@ -41,7 +41,7 @@ function populate(planum=0) {
       currentyear = newPlan.currYear;
       currentterm = newPlan.currTerm;
 
-      planMenu = '<select id="planSelect" onchange="populate(document.getElementById("planSelect").value);">';
+      planMenu = '<select id="planSelect" onchange="populate(document.getElementById(\'planSelect\').value);">';
       for (i in json.plans) {
         pid = json.plans[i].ID;
         pname = json.plans[i].Plan_Name;
