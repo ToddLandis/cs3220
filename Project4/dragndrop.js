@@ -168,7 +168,7 @@ function savePlan() {
   for (i in changestack) {
     array.push({'change':changestack[i].change,'plan':changestack[i].plan,'course':changestack[i].course,'year':changestack[i].year,'term':changestack[i].term});
   }
-  var dataString = JSON.encode(array);
+  var dataString = JSON.stringify(array);
   console.log("JSON Data: " + dataString); //DEBUG
   $.ajax({
     url: 'updatePlan.php',
