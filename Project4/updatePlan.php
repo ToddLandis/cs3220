@@ -23,7 +23,7 @@ for ($i=0; $i < count($data); $i++) {
     $year   = $data[$i]->year;
     $term   = $data[$i]->term;
 
-    if (($term == "Spring") || ($term == "Fall")){
+    if (($term == "Spring") || ($term == "Summer")){
         $year++;
     }
 
