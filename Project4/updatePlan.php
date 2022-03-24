@@ -50,7 +50,7 @@ for ($i=0; $i < count($data); $i++) {
     $stmt->close();
 
     if ($change = 'insert') {
-    $stmt = $mysqli->prepare("INSERT INTO `Plan_Courses` (`ID`, `Plan_ID`, `Course_ID`, `Year`, `Semester`) VALUES (NULL, ?, ?, ?, ?);")
+    $stmt = $mysqli->prepare("INSERT INTO `CHL_Plan_Courses` (`ID`, `Plan_ID`, `Course_ID`, `Year`, `Semester`) VALUES (NULL, ?, ?, ?, ?);")
             or die("Prepare error.");
     $stmt->bind_param("ssis", $plan, $course, $year, $term) //FIXME if i doesn't work, either convert year to int or see if database will convert it if you change i to s
             or die('Database bind error.');
