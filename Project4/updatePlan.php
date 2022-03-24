@@ -53,16 +53,16 @@ for ($i=0; $i < count($data); $i++) {
     $stmt->fetch();
     $stmt->close();
 
-    if ($change = 'insert') {
-    $stmt = $mysqli->prepare("INSERT INTO `CHL_Plan_Courses` (`ID`, `Plan_ID`, `Course_ID`, `Year`, `Semester`) VALUES (NULL, ?, ?, ?, ?);")
-            or die("Prepare error.");
-    $stmt->bind_param("iiis", $plan, $course, $year, $term) //FIXME if i doesn't work, either convert year to int or see if database will convert it if you change i to s
-            or die('Database bind error.');
-    $stmt->execute();
-        
-    $stmt->close();
+    if ($change == 'insert') {
+        $stmt = $mysqli->prepare("INSERT INTO `CHL_Plan_Courses` (`ID`, `Plan_ID`, `Course_ID`, `Year`, `Semester`) VALUES (NULL, ?, ?, ?, ?);")
+                or die("Prepare error.");
+        $stmt->bind_param("iiis", $plan, $course, $year, $term) //FIXME if i doesn't work, either convert year to int or see if database will convert it if you change i to s
+                or die('Database bind error.');
+        $stmt->execute();
+            
+        $stmt->close();
     }
-    elseif ($change = 'delete') {
+    elseif ($change == 'delete') {
         $stmt = $mysqli->prepare("DELETE FROM `CHL_Plan_Courses` WHERE `CHL_Plan_Courses`.`Plan_ID` = ? AND `CHL_Plan_Courses`.`Course_ID` = ?")
             or die("Prepare error.");
         $stmt->bind_param("ii", $plan, $course)
