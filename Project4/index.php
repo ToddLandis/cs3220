@@ -100,11 +100,22 @@ if (!isset($_SESSION['ID'])) {
         <script type="text/javascript" src="./script.js"></script>
         <script type="text/javascript" src="./style.js"></script>
         <script type="text/javascript" src="./dragndrop.js"></script>
+        <!--
         <script>
                 $( function() {
                   	$( "#accordion" ).accordion({
 				heightStyle: "fill"
 			});
                 } );
+        </script>
+        -->
+        <script type="text/JavaScript">
+        $( document ).ready(function() { 
+                setTimeout(function () {  
+                        $( "#accordion" ).accordion({
+				heightStyle: "fill"
+			});
+                }, 500); 
+        });
         </script>
 </html>
