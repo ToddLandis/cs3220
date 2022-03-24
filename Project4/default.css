@@ -73,6 +73,10 @@ a {
 p, a, h2, h3, h4, h5, ul {
 	color: var(--text-color)
 }
+select {
+	color: var(--text-color);
+	background-color: var(--bg-color);
+}
 
 *:focus {
     outline: none;
