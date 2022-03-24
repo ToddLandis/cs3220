@@ -6,11 +6,11 @@
         parse_str($argv[1], $_POST);
     }
     /**/
-
 session_start();
 $ID = $_SESSION["ID"];
 $data = json_decode($_POST["myData"]);
-
+echo 'JSON: '.$_POST["myData"];
+echo 'Raw: '.$data;
 // POST JSON to Array (hopefully?)
 
 $mysqli = new mysqli('james', 'cs3220', '', 'cs3220_Sp22') 
