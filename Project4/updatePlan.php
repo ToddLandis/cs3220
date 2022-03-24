@@ -44,7 +44,7 @@ for ($i=0; $i < count($data); $i++) {
     $stmt = $mysqli->prepare("SELECT `ID` from `CHL_Course` 
         where `Designator` = ?")
         or die("Prepare error.");
-    $stmt->bind_param("i", $course)
+    $stmt->bind_param("s", $course)
             or die('Database bind error.');
     $stmt->execute()
             or die('Database execute error.');
