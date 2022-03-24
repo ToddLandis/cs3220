@@ -107,7 +107,7 @@ $stmt->bind_result($fieldA, $fieldB, $fieldC);
 $requirements = array();
 while ($stmt->fetch()) {
         if (!array_key_exists($fieldC, $requirements) {
-                $requirements[$fieldC] = array();
+                $requirements[$fieldC] = array()
         }
         array_push($requirements[$fieldC], ['id'=>$fieldA, 'Title'=>$fieldB, 'category'=>$fieldC]);
 }
