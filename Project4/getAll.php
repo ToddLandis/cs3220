@@ -15,8 +15,10 @@ $combined = array();
 
 //FIXME move to // plans and get from SQL
 $year = 2020;   // get from Plan
-$major='Comp. Sci.';  // id field for CS major; get from Plan FIXME
 
+
+$major='Comp. Sci.';  // id field for CS major; get from Plan FIXME
+//FIXME get major from database after user because $ID
 
 // user
 $stmt = $mysqli->prepare("SELECT ID, Name, Dark_Mode from CHL_User 
