@@ -61,7 +61,7 @@ for ($i=0; $i < count($data); $i++) {
     elseif ($change = 'delete') {
         $stmt = $mysqli->prepare("DELETE FROM `CHL_Plan_Courses` WHERE `CHL_Plan_Courses`.`Plan_ID` = ? AND `CHL_Plan_Courses`.`Course_ID` = ?")
             or die("Prepare error.");
-        $stmt->bind_param("ss", $plan, $course)
+        $stmt->bind_param("ii", $plan, $course)
                 or die('Database bind error.');
         $stmt->execute();
             
