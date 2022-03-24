@@ -149,6 +149,8 @@ function allowDrop(ev) {
   function removeclass(ev) {
     var oldclass = document.getElementById(ev.target.parentNode.id);
     
+    var plan = document.getElementById('planSelect').options[document.getElementById('planSelect').value].text; //FIXME
+    console.log("Insert Plan: " + plan); //DEBUG
     var course = oldclass.id;
     var term = oldclass.parentNode.id.substring(0, ev.target.id.search(" "));
     var year = oldclass.parentNode.id.substring(ev.target.id.search(" "));
@@ -162,11 +164,15 @@ function allowDrop(ev) {
 
 // write modified plan to the database
 function savePlan() {
- var dataString = JSON.stringify(changestack);
- console.log("JSON Data: " + dataString); //DEBUG
- $.ajax({
+  var array = [];
+  for (i in changestack) {
+    array.push({'change':changestack[i].change,'plan':changestack[i].plan,'course':changestack[i].course,'year':changestack[i].year,'term':changestack[i].term});
+  }
+  var dataString = JSON.stringify(array);
+  console.log("JSON Data: " + dataString); //DEBUG
+  $.ajax({
     url: 'updatePlan.php',
     data: {myData: dataString},
     type: 'POST'
- });
+  });
 }
