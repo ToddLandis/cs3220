@@ -92,7 +92,7 @@
             INTO `CHL_Plan` (`ID`, `User_ID`, `Catalog_ID`, `Plan_name`, `currYear`, `currTerm`, `Major`) 
             VALUES (NULL, ?, ?, ?, ?, ?, ?);")
             or die("Prepare error.");
-        $stmt->bind_param("sssiis", $ID, $cat_ID, $plan, $year, $term, $major)
+        $stmt->bind_param("iisiss", $ID, $cat_ID, $plan, $year, $term, $major)
                 or die('Database bind error.');
         
         $stmt->execute();
