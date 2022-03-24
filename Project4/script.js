@@ -176,7 +176,7 @@ function make(years) {
   for (let year in years) {
     thisYear = years[year];
     instring = instring.concat("<div class=\"years\">");
-    
+    var totalHours = 0;
     for (let term in thisYear.terms) {
       thisTerm = thisYear.terms[term];
       
@@ -192,6 +192,7 @@ function make(years) {
       for (let course in thisTerm.courses) {
         thisCourse = thisTerm.courses[course];
         hours += newCatalog.courses[thisCourse.DBID].credits;
+        totalHours += newCatalog.courses[thisCourse.DBID].credits;
       }
       instring = instring.concat("<h5 id='hours'>Hours: " + hours + "</h5></div>")
       
@@ -203,6 +204,7 @@ function make(years) {
 
       instring = instring.concat("</div>");
     }
+    document.getElementById("planMenu").innerHTML += "<p>Total Hours: "+totalHours+"</p>"; 
     instring = instring.concat("</div>");
   }
   // set #UR to be dynamic
