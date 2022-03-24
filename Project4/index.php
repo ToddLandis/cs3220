@@ -115,7 +115,7 @@ if (!isset($_SESSION['ID'])) {
                         $( "#accordion" ).accordion({
 				heightStyle: "fill"
 			});
-                }, 10); 
+                }, 100); 
         });
         </script>
 </html>
