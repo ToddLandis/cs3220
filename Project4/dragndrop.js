@@ -24,7 +24,7 @@ function allowDrop(ev) {
         ev.target.classList.add('hide');
       }, 0);
 
-      var plan = ""; //FIXME
+      var plan = Plan[document.getElementById('planSelect').value].ID; //FIXME
       var course = ev.target.id;
       var term = ev.target.parentNode.id.substring(0, ev.target.id.search(" "));
       var year = ev.target.parentNode.id.substring(ev.target.id.search(" "));
@@ -107,7 +107,7 @@ function allowDrop(ev) {
     else 
         ev.target.appendChild(data);
 
-    var plan = ""; //FIXME
+    var plan = Plan[document.getElementById('planSelect').value].ID;; //FIXME
     var course = data.id;
     var term = ev.target.id.substring(0, ev.target.id.search(" "));
     var year = ev.target.id.substring(ev.target.id.search(" "));
