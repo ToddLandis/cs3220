@@ -193,7 +193,7 @@ function make(years) {
         thisCourse = thisTerm.courses[course];
         hours += newCatalog.courses[thisCourse.DBID].credits;
       }
-      instring = instring.concat("<h5>Hours: " + hours + "</h5></div>")
+      instring = instring.concat("<h5 id='hours'>Hours: " + hours + "</h5></div>")
       
       // add each course to the term
       for (let course in thisTerm.courses) {
