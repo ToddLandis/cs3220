@@ -54,9 +54,9 @@ function populate() {
       info = document.getElementById("planinfo");
       var pinfo = "";
       pinfo = pinfo.concat("<p>Student: " + student + "<p/>");
-      pinfo = pinfo.concat("<p>Plan: " + planMenu + "<p/>"); //FIXME make this dropdown menu from which json.plans array can be selected
+      pinfo = pinfo.concat("<p>Plan: " + planMenu + "<p/>");
       pinfo = pinfo.concat("<p>Major: " + major + "<p/>");
-
+      pinfo = pinfo.concat("<p>Credits: </p><p id='credits'></p>")
       info.innerHTML = pinfo;
 
       //FIXME When a different plan is selected from dropdown menu, it will have to run make(convert(newPlan)) again.
@@ -207,7 +207,7 @@ function make(years) {
     }
     instring = instring.concat("</div>");
   }
-  document.getElementById("planinfo").innerHTML += "<p>Total Hours: "+totalHours+"</p>"; 
+  document.getElementById("credits").innerHTML = totalHours; 
   // set #UR to be dynamic
   doc = document.getElementById("UR");
   doc.innerHTML = instring;
