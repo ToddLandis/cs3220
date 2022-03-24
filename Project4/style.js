@@ -30,6 +30,6 @@ function darkModeFunction() {
     element.classList.toggle("dark-mode");
     console.log("innerText: "+content.innerText); //DEBUG
     console.log("innerHTML: "+content.innerHTML); //DEBUG
-    if (content.innerHTML == "Dark Mode") {content.innerHTML = "Light Mode";}
-    if (content.innerHTML == "Light Mode") {content.innerHTML = "Dark Mode";}
+    if (content.innerHTML == "Dark Mode") {console.log("True1"); content.innerHTML = "Light Mode";}
+    if (content.innerHTML == "Light Mode") {console.log("True2"); content.innerHTML = "Dark Mode";}
 }
