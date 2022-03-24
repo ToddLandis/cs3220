@@ -8,7 +8,7 @@ $data = json_decode($_POST["myData"]);
 $mysqli = new mysqli('james', 'cs3220', '', 'cs3220_Sp22') 
     or die('Database connect error.');
     //transaction
-for (i in $data) {
+for ($i=0; $i < count($data); $i++) {
     $change = $data[i].change;
     $plan   = $data[i].plan;    //TODO Make sure this is Plan_ID
     $course = $data[i].course;  //TODO Make sure this is course_designator
@@ -50,7 +50,7 @@ for (i in $data) {
         
     $stmt->close();
     }
-    else if ($change = 'delete') {
+    elseif ($change = 'delete') {
         $stmt = $mysqli->prepare("DELETE FROM `CHL_Plan_Courses` WHERE `CHL_Plan_Courses`.`Plan_ID` = ? AND `CHL_Plan_Courses`.`Course_ID` = ?")
             or die("Prepare error.");
         $stmt->bind_param("ss", $plan, $course)
