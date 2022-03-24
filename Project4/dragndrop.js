@@ -24,7 +24,7 @@ function allowDrop(ev) {
         ev.target.classList.add('hide');
       }, 0);
 
-      var plan = Plan[document.getElementById('planSelect').value].ID; //FIXME
+      var plan = document.getElementById('planSelect').innerHTML; //FIXME
       console.log("Insert Plan: " + plan); //DEBUG
       var course = ev.target.id;
       var term = ev.target.parentNode.id.substring(0, ev.target.id.search(" "));
