@@ -114,7 +114,8 @@ function allowDrop(ev) {
     var term = ev.target.id.substring(0, ev.target.id.search(" "));
     var year = ev.target.id.substring(ev.target.id.search(" "));
     
-    changestack.push(new Change("insert", plan, course, term, year));
+    //changestack.push(new Change("insert", plan, course, term, year));
+    changestack.push({'change':'insert','plan':plan,'course':course,'year':year,'term':term});
     // DEBUG
     console.log("inserted " + course + " to "  + ev.target.id);
   }
@@ -164,12 +165,13 @@ function allowDrop(ev) {
 
 // write modified plan to the database
 function savePlan() {
+  /*
   var array = [];
   for (i in changestack) {
     array.push({'change':changestack[i].change,'plan':changestack[i].plan,'course':changestack[i].course,'year':changestack[i].year,'term':changestack[i].term});
-  }
-  console.log("Changestack: " + array); //DEBUG
-  var dataString = JSON.stringify(array);
+  }*/
+  console.log("Changestack: " + changestack); //DEBUG
+  var dataString = JSON.stringify(changestack);
   console.log("JSON Data: " + dataString); //DEBUG
   $.ajax({
     url: 'updatePlan.php',
