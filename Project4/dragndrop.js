@@ -25,6 +25,7 @@ function allowDrop(ev) {
       }, 0);
 
       var plan = Plan[document.getElementById('planSelect').value].ID; //FIXME
+      console.log("Insert Plan: " + plan); //DEBUG
       var course = ev.target.id;
       var term = ev.target.parentNode.id.substring(0, ev.target.id.search(" "));
       var year = ev.target.parentNode.id.substring(ev.target.id.search(" "));
@@ -108,6 +109,7 @@ function allowDrop(ev) {
         ev.target.appendChild(data);
 
     var plan = Plan[document.getElementById('planSelect').value].ID;; //FIXME
+    console.log("Insert Plan: " + plan); //DEBUG
     var course = data.id;
     var term = ev.target.id.substring(0, ev.target.id.search(" "));
     var year = ev.target.id.substring(ev.target.id.search(" "));
