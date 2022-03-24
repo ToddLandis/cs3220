@@ -163,6 +163,7 @@ function savePlan() {
     data: {myData: dataString},
     type: 'POST'
   });
+  changestack = [];
   /*
   request = new XMLHttpRequest()
   request.open("POST", "updatePlan.php", true)
