@@ -163,7 +163,7 @@ function allowDrop(ev) {
 // write modified plan to the database
 function savePlan() {
  var dataString = JSON.stringify(changestack);
- console.log("JSON Data: " + dataString);
+ console.log("JSON Data: " + dataString); //DEBUG
  $.ajax({
     url: 'updatePlan.php',
     data: {myData: dataString},
