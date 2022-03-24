@@ -13,13 +13,6 @@ if (!isset($_SESSION['ID'])) {
                 <!--- This code is taken from JQueryUI to implement the accordion -->
                 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
                 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
-                <script>
-                $( function() {
-                  	$( "#accordion" ).accordion({
-				heightStyle: "fill"
-			});
-                } );
-                </script>
 
                 <!-- Datatables Scripts -->
                 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.css">
@@ -107,4 +100,11 @@ if (!isset($_SESSION['ID'])) {
         <script type="text/javascript" src="./script.js"></script>
         <script type="text/javascript" src="./style.js"></script>
         <script type="text/javascript" src="./dragndrop.js"></script>
+        <script>
+                $( function() {
+                  	$( "#accordion" ).accordion({
+				heightStyle: "fill"
+			});
+                } );
+        </script>
 </html>
