@@ -164,9 +164,4 @@ function savePlan() {
     type: 'POST'
   });
   changestack = [];
-  /*
-  request = new XMLHttpRequest()
-  request.open("POST", "updatePlan.php", true)
-  request.setRequestHeader("Content-type", "application/json")
-  request.send("myData="+dataString);*/
 }
