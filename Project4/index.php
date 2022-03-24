@@ -110,10 +110,12 @@ if (!isset($_SESSION['ID'])) {
         </script>
         -->
         <script type="text/JavaScript">
-        $( document ).ready(function() {  
-                $( "#accordion" ).accordion({
-                        heightStyle: "fill"
-                });
+        $( document ).ready(function() { 
+                setTimeout(function () {  
+                        $( "#accordion" ).accordion({
+				heightStyle: "fill"
+			});
+                }, 10); 
         });
         </script>
 </html>
