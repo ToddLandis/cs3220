@@ -450,13 +450,13 @@ input[type=text] {
 	transition-delay: 0;
 }
 
-#table_id tr.odd td.sorting_1 {
+#table_id.tr.odd.td.sorting_1 {
 	background-color: var(--row-odd-title);
 	transition-duration: 0.3s;
 	transition-delay: 0;
 }
 
-#table_id tr.even td.sorting_1 {
+#table_id.tr.even.td.sorting_1 {
 	background-color: var(--row-even-title);
 	transition-duration: 0.3s;
 	transition-delay: 0;
