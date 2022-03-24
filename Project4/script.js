@@ -173,13 +173,14 @@ function make(years) {
   
   instring = instring.concat("<div class=\"profile\"></div>")
 
+  var totalHours = 0;
   for (let year in years) {
     thisYear = years[year];
     instring = instring.concat("<div class=\"years\">");
-    var totalHours = 0;
+    
     for (let term in thisYear.terms) {
       thisTerm = thisYear.terms[term];
-      
+
       // add header to the term
       if (term == "Fall") {
         instring = instring.concat("<div class=\"semester\" id=\"" + term + " " + year + "\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"><div class=\"term_head\"><h4>" + term + " " + year + "</h4>");
@@ -204,9 +205,9 @@ function make(years) {
 
       instring = instring.concat("</div>");
     }
-    document.getElementById("planinfo").innerHTML += "<p>Total Hours: "+totalHours+"</p>"; 
     instring = instring.concat("</div>");
   }
+  document.getElementById("planinfo").innerHTML += "<p>Total Hours: "+totalHours+"</p>"; 
   // set #UR to be dynamic
   doc = document.getElementById("UR");
   doc.innerHTML = instring;
