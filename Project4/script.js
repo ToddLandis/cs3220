@@ -70,7 +70,7 @@ function populate() {
       var string = "";
       for (let cat in requirements) {
           console.log("DEBUG: "+requirements);
-          string += '<div id="core" class="accordion-content"><h3>' + cat + '</h3>';
+          string += '<h3>' + cat + '</h3><div id="core" class="accordion-content">';
         /*
           core = json.categories.Core.courses;
           electives = json.categories.Electives.courses;
