@@ -69,7 +69,6 @@ function populate() {
       html = document.getElementById('accordion');
       var string = "";
       for (let cat in requirements) {
-          console.log("DEBUG: "+requirements);
           string += '<h3>' + cat + '</h3><div id="core" class="accordion-content">';
         /*
           core = json.categories.Core.courses;
@@ -77,7 +76,6 @@ function populate() {
           cognates = json.categories.Cognates.courses;
           */
           for (i in requirements[cat]) {
-            console.log("DEBUG2:"+requirements[cat]);
             string = string.concat("<p class=\"requirement\" tabindex=\"0\" id=\"req_" + requirements[cat][i].id + "\" draggable=\"true\" ondragstart=\"drag(event)\" ondragend=\"stopdrag(event)\">" + requirements[cat][i].id + ": " + requirements[cat][i].Title+ "</p>");
           }
           string += "</div>";
@@ -132,9 +130,7 @@ function convert(plannum) {
 
   // create 4 years with semesters
   year = plan.Year;
-  console.log("Year: "+year); //DEBUG
   for (i = year; i<year+4; i++) {
-    console.log("Year: "+i); //DEBUG
     myYears[i] = new Year();
     myYears[i].addTerm("Fall", new Term());
     myYears[i].addTerm("Spring", new Term());
