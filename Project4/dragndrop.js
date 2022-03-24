@@ -157,14 +157,15 @@ function savePlan() {
   console.log("Changestack: " + changestack); //DEBUG
   var dataString = JSON.stringify(changestack);
   console.log("JSON Data: " + dataString); //DEBUG
-  /*
+  
   $.ajax({
     url: 'updatePlan.php',
     data: {myData: dataString},
     type: 'POST'
-  });*/
+  });
+  /*
   request = new XMLHttpRequest()
   request.open("POST", "updatePlan.php", true)
   request.setRequestHeader("Content-type", "application/json")
-  request.send("myData="+dataString);
+  request.send("myData="+dataString);*/
 }
