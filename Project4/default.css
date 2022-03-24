@@ -76,6 +76,7 @@ p, a, h2, h3, h4, h5, ul {
 select {
 	color: var(--text-color);
 	background-color: var(--bg-color);
+	transition-duration:0.3s;
 }
 
 *:focus {
