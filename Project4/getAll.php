@@ -21,7 +21,7 @@ $major='Comp. Sci.';  // id field for CS major; get from Plan FIXME
 //FIXME get major from database after user because $ID
 
 // user
-$stmt = $mysqli->prepare("SELECT ID, Name, Dark_Mode from CHL_User 
+$stmt = $mysqli->prepare("SELECT ID, Name, Dark_Mode, from CHL_User 
         where ID = ?")
         or die("Prepare error.");
 $stmt->bind_param("i", $ID) //FIXME probably remove "ii"
@@ -55,6 +55,7 @@ $plans = array();
 while ($stmt->fetch()) {
     array_push($plans, ['ID'=>$fieldA, 'User_name'=>$fieldB, 'User_ID'=>$fieldC, 'Year'=>$fieldD, 'Plan_Name'=>$fieldE, 'currYear'=>$fieldF, 'currTerm'=>$fieldG, 'major'=>$fieldH]);
 }
+$major = $fieldH;
 $stmt->close();
 
 for ($i = 0; $i < count($plans); $i++) {
@@ -67,7 +68,7 @@ for ($i = 0; $i < count($plans); $i++) {
                 or die('Database execute error.');
         $stmt->store_result();    // optional for efficiency; fetches all results
         $stmt->bind_result($fieldA, $fieldB, $fieldC, $fieldD, $fieldE);
-
+        
         $plan_courses = array();
         while ($stmt->fetch()) {
                 array_push($plan_courses, ['DBID'=>$fieldA, 'id'=>$fieldB, 'name'=>$fieldC, 'year'=>$fieldD, 'term'=>$fieldE]);
