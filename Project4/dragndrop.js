@@ -108,7 +108,7 @@ function allowDrop(ev) {
     else 
         ev.target.appendChild(data);
 
-    var plan = Plan[document.getElementById('planSelect').value].ID;; //FIXME
+    var plan = document.getElementById('planSelect').innerHTML; //FIXME
     console.log("Insert Plan: " + plan); //DEBUG
     var course = data.id;
     var term = ev.target.id.substring(0, ev.target.id.search(" "));
