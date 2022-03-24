@@ -16,6 +16,7 @@ for (i in $data) {
     $term   = $data[i].term;
 
     // Convert Plan_name to Plan_ID
+    /*
     $stmt = $mysqli->prepare("SELECT `ID` from `CHL_Plan` 
         where `User_ID` = ? AND `plan_name` = ?")
         or die("Prepare error.");
@@ -27,7 +28,7 @@ for (i in $data) {
     $stmt->bind_result($plan);
     $stmt->fetch();
     $stmt->close();
-    
+    */
     // Convert Course_Designator to Course_ID
     $stmt = $mysqli->prepare("SELECT `ID` from `CHL_Course` 
         where `Designator` = ?")
