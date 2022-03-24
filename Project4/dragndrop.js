@@ -24,7 +24,7 @@ function allowDrop(ev) {
         ev.target.classList.add('hide');
       }, 0);
 
-      var plan = document.getElementById('planSelect').innerHTML; //FIXME
+      var plan = document.getElementById('planSelect').options[document.getElementById('planSelect').value].text; //FIXME
       console.log("Insert Plan: " + plan); //DEBUG
       var course = ev.target.id;
       var term = ev.target.parentNode.id.substring(0, ev.target.id.search(" "));
@@ -108,7 +108,7 @@ function allowDrop(ev) {
     else 
         ev.target.appendChild(data);
 
-    var plan = document.getElementById('planSelect').innerHTML; //FIXME
+    var plan = document.getElementById('planSelect').options[document.getElementById('planSelect').value].text; //FIXME
     console.log("Insert Plan: " + plan); //DEBUG
     var course = data.id;
     var term = ev.target.id.substring(0, ev.target.id.search(" "));
