@@ -204,7 +204,7 @@ function make(years) {
 
       instring = instring.concat("</div>");
     }
-    document.getElementById("planMenu").innerHTML += "<p>Total Hours: "+totalHours+"</p>"; 
+    document.getElementById("planinfo").innerHTML += "<p>Total Hours: "+totalHours+"</p>"; 
     instring = instring.concat("</div>");
   }
   // set #UR to be dynamic
