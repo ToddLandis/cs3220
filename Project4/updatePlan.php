@@ -17,11 +17,11 @@ $mysqli = new mysqli('james', 'cs3220', '', 'cs3220_Sp22')
     or die('Database connect error.');
     //transaction
 for ($i=0; $i < count($data); $i++) {
-    $change = $data[$i].change;
-    $plan   = $data[$i].plan;    //TODO Make sure this is Plan_ID
-    $course = $data[$i].course;  //TODO Make sure this is course_designator
-    $year   = $data[$i].year;
-    $term   = $data[$i].term;
+    $change = $data[$i]['change'];
+    $plan   = $data[$i]['plan'];    //TODO Make sure this is Plan_ID
+    $course = $data[$i]['course'];  //TODO Make sure this is course_designator
+    $year   = $data[$i]['year'];
+    $term   = $data[$i]['term'];
 
     // Convert Plan_name to Plan_ID
     $stmt = $mysqli->prepare("SELECT `ID` from `CHL_Plan` 
