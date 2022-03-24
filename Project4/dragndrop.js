@@ -164,11 +164,13 @@ function allowDrop(ev) {
 
 // write modified plan to the database
 function savePlan() {
+  /*
   var array = [];
   for (i in changestack) {
     array.push({'change':changestack[i].change,'plan':changestack[i].plan,'course':changestack[i].course,'year':changestack[i].year,'term':changestack[i].term});
-  }
-  var dataString = JSON.stringify(array);
+  }*/
+  console.log("Changestack: " + changestack); //DEBUG
+  var dataString = JSON.stringify(changestack);
   console.log("JSON Data: " + dataString); //DEBUG
   $.ajax({
     url: 'updatePlan.php',
