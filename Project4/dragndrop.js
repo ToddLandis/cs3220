@@ -89,24 +89,28 @@ function allowDrop(ev) {
       }
     }
 
+    var parentSemester;
+    // special cases for dropping class on other elements
     if (ev.target.getAttribute("draggable") == "true")
-        ev.target.parentNode.appendChild(data);
+        parentSemester = ev.target.parentNode;
     else if (ev.target.parentNode.classList.contains("term_head"))
-        ev.target.parentNode.parentNode.appendChild(data);
+        parentSemester = ev.target.parentNode.parentNode;
     else if (ev.target.classList.contains("term_head"))
-        ev.target.parentNode.appendChild(data);
+        parentSemester = ev.target.parentNode;
     else 
-        ev.target.appendChild(data);
+        parentSemester = ev.target;
+
+    parentSemester.appendChild(data);
 
     var plan = document.getElementById('planSelect').options[document.getElementById('planSelect').value].text; //FIXME
     console.log("Insert Plan: " + plan); //DEBUG
     var course = data.id;
-    var term = ev.target.id.substring(0, ev.target.id.search(" "));
-    var year = ev.target.id.substring(ev.target.id.search(" "));
+    var term = parentSemester.id.substring(0, parentSemester.id.search(" "));
+    var year = parentSemester.id.substring(parentSemester.id.search(" "));
     
     changestack.push({'change':'insert','plan':plan,'course':course,'year':year,'term':term});
     // DEBUG
-    console.log("inserted " + course + " to "  + ev.target.id);
+    console.log("inserted " + course + " to "  + parentSemester.id);
   }
 
   function deleteoption(ev) {
