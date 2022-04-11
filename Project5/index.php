@@ -48,11 +48,11 @@ if (!isset($_SESSION['ID'])) {
                                         <div class="menu">
                                                 <button onclick="projDropdownFunction()" class="headerbtn" id="projdropbtn">v5.0</button>
                                                 <div id="projDropdown" class="dropdown-content">
-                                                        <a href="/~hearne/TermProject/Project1/index.html">Version 1</a>
-                                                        <a href="/~hearne/TermProject/Project2/index.html">Version 2</a>
-                                                        <a href="/~hearne/TermProject/Project3/index.html">Version 3</a>
-                                                        <a href="/~hearne/TermProject/Project4/index.php">Version 4</a>
-                                                        <a href="/~hearne/TermProject/Project6/index.html">Version 6</a>
+                                                        <a href="/~tilandis/TermProject/Project1/index.html">Version 1</a>
+                                                        <a href="/~tilandis/TermProject/Project2/index.html">Version 2</a>
+                                                        <a href="/~tilandis/TermProject/Project3/index.html">Version 3</a>
+                                                        <a href="/~tilandis/TermProject/Project4/index.php">Version 4</a>
+                                                        <a href="/~tilandis/TermProject/Project6/index.html">Version 6</a>
                                                 </div>
                                         </div>
                                 </div>
