@@ -28,8 +28,8 @@ function populate(plansOnly) {
   request.onreadystatechange = function() {
     if(this.readyState == 4) {
       var myData = this.responseText;
-      console.log(myData);
       json = JSON.parse(myData);
+      console.log(json); //DEBUG
       // Different plans selectable by changing index value
       Plans = json.plans;
       newPlan = json.plans[0];
