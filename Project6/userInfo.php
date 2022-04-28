@@ -24,5 +24,6 @@
     $stmt->close();
     $mysqli->close();
     
+    header("Access-Control-Allow-Origin: *");
     echo json_encode($return);
 ?>
