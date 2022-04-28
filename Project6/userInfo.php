@@ -18,7 +18,7 @@
     $stmt->bind_result($ID, $Name, $Password, $Dark_Mode);
     $stmt->fetch();
     $return['ID'] = $ID;
-    $return['Username'] = $Name;
+    $return['Username'] = $name;
     $return['Password'] = $Password;
     $return['Dark_Mode'] = $Dark_Mode;
     $stmt->close();
