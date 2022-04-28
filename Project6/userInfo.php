@@ -17,13 +17,14 @@
     $stmt->store_result();    // optional for efficiency; fetches all results
     $stmt->bind_result($ID, $Name, $Password, $Dark_Mode);
     $stmt->fetch();
-    $return['ID'] = $ID;
-    $return['Username'] = $Name;
-    $return['Password'] = $Password;
-    $return['Dark_Mode'] = $Dark_Mode;
+    if ($pass == $Password) {
+        $return['ID'] = $ID;
+        $return['Username'] = $Name;
+        $return['Dark_Mode'] = $Dark_Mode;
+    }
     $stmt->close();
     $mysqli->close();
-    
+
     header("Access-Control-Allow-Origin: *");
     echo json_encode($return);
 ?>
