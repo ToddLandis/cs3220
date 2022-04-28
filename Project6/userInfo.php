@@ -1,7 +1,7 @@
 <?php
     $name = htmlspecialchars($_POST["userfield"]);
     $pass = htmlspecialchars($_POST["passfield"]);
-    $name = 'Admin'; //DEBUG
+    //$name = 'Admin'; //DEBUG
     $return = array();
 
     $mysqli = new mysqli('james', 'cs3220', '', 'cs3220_Sp22') 
