@@ -22,5 +22,5 @@
     $stmt->close();
     $mysqli->close();
     
-    echo json_encode();
+    echo json_encode($return);
 ?>
