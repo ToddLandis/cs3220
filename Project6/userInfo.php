@@ -8,7 +8,7 @@
     or (die('Database connect error.') and echo("Database connect error."));
     $stmt = $mysqli->prepare("SELECT ID, Name, Password, Dark_Mode FROM CHL_User 
         WHERE Login = ?")
-        or (die("Prepare error.") and echo("Prepare Error.");
+        or (die("Prepare error.") and echo("Prepare Error."));
     $stmt->bind_param("s", $name)
             or (die('Database bind error.') and echo("Database bind error."));
 
