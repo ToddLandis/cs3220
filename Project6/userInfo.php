@@ -26,7 +26,8 @@
     $stmt->close();
     $mysqli->close();
 
-    header('Access-Control-Allow-Origin: *');
+    header("Access-Control-Allow-Origin: *");
+    //header('Access-Control-Allow-Origin: *');
     //header('Access-Control-Allow-Methods: GET, OPTIONS, POST, PUT');
     //header('Access-Control-Allow-Headers: Content-Type');
     echo json_encode($return);
