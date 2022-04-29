@@ -2,6 +2,7 @@
     $name = htmlspecialchars($_POST["userfield"]);
     $pass = htmlspecialchars($_POST["passfield"]);
     //$name = 'Admin'; //DEBUG
+    echo 'user:'.$name.' pass:'.$pass//DEBUG
     $return = array();
 
     $mysqli = new mysqli('james', 'cs3220', '', 'cs3220_Sp22') 
@@ -26,5 +27,7 @@
     $mysqli->close();
 
     header("Access-Control-Allow-Origin: *");
+    header('Access-Control-Allow-Methods: GET, OPTIONS, POST, PUT');
+    header('Access-Control-Allow_headers: Content-Type');
     echo json_encode($return);
 ?>
