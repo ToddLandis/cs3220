@@ -21,6 +21,8 @@
         $return['ID'] = $ID;
         $return['Username'] = $Name;
         $return['Dark_Mode'] = $Dark_Mode;
+        $return['ajaxpass'] = $pass;
+        $return['sqlpass'] = $Password;
    // }
     $stmt->close();
     $mysqli->close();
