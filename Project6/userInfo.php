@@ -17,13 +17,13 @@
     $stmt->store_result();    // optional for efficiency; fetches all results
     $stmt->bind_result($ID, $Name, $Password, $Dark_Mode);
     $stmt->fetch();
-   // if ($pass == $Password) {
+    if ($pass == $Password) {
         $return['ID'] = $ID;
         $return['Username'] = $Name;
         $return['Dark_Mode'] = $Dark_Mode;
         $return['ajaxpass'] = $pass;
         $return['sqlpass'] = $Password;
-   // }
+    }
     $stmt->close();
     $mysqli->close();
 
