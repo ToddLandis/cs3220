@@ -2,7 +2,6 @@
     $name = htmlspecialchars($_POST["userfield"]);
     $pass = htmlspecialchars($_POST["passfield"]);
     //$name = 'Admin'; //DEBUG
-    echo 'user:'.$name.' pass:'.$pass//DEBUG
     $return = array();
 
     $mysqli = new mysqli('james', 'cs3220', '', 'cs3220_Sp22') 
