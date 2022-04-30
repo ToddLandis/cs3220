@@ -94,7 +94,7 @@ $stmt->bind_result($fieldA, $fieldB, $fieldC, $fieldD, $fieldE, $fieldF, $fieldG
 
 $catalog['courses'] = array();
 while ($stmt->fetch()) {
-    $catalog['courses'][$fieldB] = ['id'=>$fieldD, 'name'=>$fieldE, 'description'=>$fieldF, 'credits'=>$fieldG];
+    $catalog['courses'][$fieldD] = ['DBID'=> $fieldB, 'id'=>$fieldD, 'name'=>$fieldE, 'description'=>$fieldF, 'credits'=>$fieldG];
 }
 $stmt->close();
 
