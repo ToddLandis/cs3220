@@ -3,15 +3,17 @@
 $mysqli = new mysqli('james', 'cs3220', '', 'cs3220_Sp22') 
     or die('Database connect error.');
 
+/* FIXME will have to bring in URL args
 // Arguments
 session_start(); // This will directly bring in variables referenced like "$ID"
 //$ID = 1; //DEBUG
 $ID = $_SESSION["ID"];
 //$password = htmlspecialchars($_GET["pass"]); //FIXME session key
+*/
+$ID = htmlspecialchars($_POST["id"]);
 
 // Return array
 $combined = array();
-
 
 //FIXME move to // plans and get from SQL
 $year = 2020;   // get from Plan
@@ -123,8 +125,11 @@ $combined['plans'] = $plans; //modified from 'plan'
 $combined['catalog'] = $catalog;
 $combined['Requirements'] = $requirements;
 $combined['User'] = $user;
-$combined['PlanList'] = $planList; //dontneed
 
 $mysqli->close();
+
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET, OPTIONS, POST, PUT');
+header('Access-Control-Allow-Headers: Content-Type');
 echo json_encode($combined);
 ?>
